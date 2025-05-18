@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
+using WindowsForm_Padaria.Services;
 
 namespace WindowsForm_Padaria.Forms.Cadastro
 {
@@ -21,28 +22,13 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            var validador = new Validacao();
-
-            string desc = txtDescricao.Text;
-
             Pagamento p = new Pagamento
             {
-                Descricao = desc,
+                Descricao = txtDescricao.Text,
             };
 
-            var res = validador.Pagamento(p);
-
-            if (!res.Valido)
-            {
-                MessageBox.Show(string.Join("\n", res.Erros), "Erro", MessageBoxButtons.OK);
-                return;
-            }
-
-            using (var context = new AppDbContext())
-            {
-                context.Pagamento.Add(p);
-                context.SaveChanges();
-            }
+            Pagamento_Service pagamento_Service = new Pagamento_Service();
+            pagamento_Service.Salvar(p);
         }
 
         private void btnSair_Click(object sender, EventArgs e)

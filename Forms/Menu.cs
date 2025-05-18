@@ -85,7 +85,14 @@ namespace WindowsForm_Padaria.Forms
 
         private void pRODUTOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            panel1.Controls.Clear();
+            C_FornecedorProduto fp = new C_FornecedorProduto();
+            fp.TopLevel = false;
+            fp.FormBorderStyle = FormBorderStyle.None;
+            fp.Dock = DockStyle.Fill;
+            
+            panel1.Controls.Add(fp);
+            fp.Show();
         }
     }
 }
