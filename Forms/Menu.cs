@@ -90,9 +90,21 @@ namespace WindowsForm_Padaria.Forms
             fp.TopLevel = false;
             fp.FormBorderStyle = FormBorderStyle.None;
             fp.Dock = DockStyle.Fill;
-            
+
             panel1.Controls.Add(fp);
             fp.Show();
+        }
+
+        private void pRODUTOToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            C_PadariaProduto pp = new C_PadariaProduto();
+            pp.TopLevel = false;
+            pp.FormBorderStyle = FormBorderStyle.None;
+            pp.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(pp);
+            pp.Show();
         }
     }
 }

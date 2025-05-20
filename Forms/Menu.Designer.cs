@@ -96,6 +96,7 @@
             pRODUTOToolStripMenuItem1.Name = "pRODUTOToolStripMenuItem1";
             pRODUTOToolStripMenuItem1.Size = new Size(358, 62);
             pRODUTOToolStripMenuItem1.Text = "PRODUTO";
+            pRODUTOToolStripMenuItem1.Click += pRODUTOToolStripMenuItem1_Click;
             // 
             // rECEITAToolStripMenuItem
             // 
