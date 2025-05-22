@@ -19,18 +19,61 @@ namespace WindowsForm_Padaria.Services
             _valido = new Validacao();
         }
 
-        public void Salvar(Pagamento p)
+        private void criar(Pagamento p)
         {
-            var res = _valido.Pagamento(p);
+            ResultadoValidacao res = _valido.Pagamento(p);
 
             if (!res.Valido)
             {
-                MessageBox.Show(string.Join("\n", res.Erros),"Erro ao cadastrar", MessageBoxButtons.OK);
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao criar", MessageBoxButtons.OK);
                 return;
             }
 
             _context.Pagamento.Add(p);
             _context.SaveChanges();
+
+            MessageBox.Show($"O pagamento {p.Descricao} foi criado com sucesso!", "Sucesso", MessageBoxButtons.OK);
+        }
+
+        private List<Pagamento> listarTodos()
+        {
+            List<Pagamento> pagamentos = new List<Pagamento>();
+
+            pagamentos = _context.Pagamento.ToList();
+
+            return pagamentos;
+        }
+
+        private void atualizar(Pagamento p)
+        {
+            ResultadoValidacao res = _valido.Pagamento(p);
+
+            if (!res.Valido)
+            {
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao atualizar", MessageBoxButtons.OK);
+                return;
+            }
+
+            _context.Pagamento.Update(p);
+            _context.SaveChanges();
+
+            MessageBox.Show($"O pagamento {p.Descricao} foi atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
+        }
+
+        private void deletar(Pagamento p)
+        {
+            ResultadoValidacao res = _valido.Pagamento(p);
+
+            if (!res.Valido)
+            {
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+                return;
+            }
+
+            _context.Pagamento.Remove(p);
+            _context.SaveChanges();
+
+            MessageBox.Show($"O pagamento {p.Descricao} foi deletado com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace WindowsForm_Padaria.Services
             _context.Categoria.Add(c);
             _context.SaveChanges();
 
-            MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+            MessageBox.Show($"A categoria {c.Nome} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
 
         private List<Categoria> listarTodos ()
@@ -57,7 +57,7 @@ namespace WindowsForm_Padaria.Services
             _context.Categoria.Update(c);
             _context.SaveChanges();
 
-            MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+            MessageBox.Show($"A categoria {c.Nome} foi atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
 
         private void deletar (Categoria c)
@@ -73,7 +73,7 @@ namespace WindowsForm_Padaria.Services
              _context.Categoria.Remove(c);
              _context.SaveChanges();
 
-            MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+            MessageBox.Show($"A categoria {c.Nome} foi deletada com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
     }
 }
