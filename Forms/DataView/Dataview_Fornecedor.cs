@@ -21,7 +21,7 @@ namespace WindowsForm_Padaria.Forms.Tabela
         public Dataview_Fornecedor()
         {
             fornecedor_Service = new Fornecedor_Service();
-            fornecedor_Service.popularBanco();
+            //fornecedor_Service.popularBanco();
             InitializeComponent();
             _context = new AppDbContext();
             AtualizarGrid();

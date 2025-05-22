@@ -22,7 +22,7 @@ namespace WindowsForm_Padaria.Forms.Tabela
             _context = new AppDbContext();
             categoria_Service = new Categoria_Service();
             InitializeComponent();
-            categoria_Service.PopularCategorias();
+            //categoria_Service.PopularCategorias();
             AtualizarGrid();
         }
 

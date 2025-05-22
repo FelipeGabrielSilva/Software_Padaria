@@ -15,8 +15,10 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 {
     public partial class C_Pagamento : Form
     {
+        private readonly Pagamento_Service pagamento_Service;
         public C_Pagamento()
         {
+            pagamento_Service = new Pagamento_Service();
             InitializeComponent();
         }
 
@@ -27,8 +29,7 @@ namespace WindowsForm_Padaria.Forms.Cadastro
                 Descricao = txtDescricao.Text,
             };
 
-            Pagamento_Service pagamento_Service = new Pagamento_Service();
-            pagamento_Service.Salvar(p);
+            pagamento_Service.criar(p);
         }
 
         private void btnSair_Click(object sender, EventArgs e)

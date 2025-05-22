@@ -37,6 +37,8 @@
             richTextBox1 = new RichTextBox();
             button1 = new Button();
             button2 = new Button();
+            label5 = new Label();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -69,7 +71,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 259);
+            label4.Location = new Point(12, 378);
             label4.Name = "label4";
             label4.Size = new Size(285, 58);
             label4.TabIndex = 3;
@@ -91,7 +93,7 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(303, 259);
+            richTextBox1.Location = new Point(303, 378);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new Size(670, 300);
             richTextBox1.TabIndex = 6;
@@ -105,6 +107,7 @@
             button1.TabIndex = 7;
             button1.Text = "SALVAR";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -116,12 +119,34 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(12, 279);
+            label5.Name = "label5";
+            label5.Size = new Size(311, 58);
+            label5.TabIndex = 9;
+            label5.Text = "FORNECEDOR:";
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownHeight = 200;
+            comboBox1.Font = new Font("JetBrains Mono", 26F);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.IntegralHeight = false;
+            comboBox1.Location = new Point(329, 272);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(644, 65);
+            comboBox1.TabIndex = 10;
+            // 
             // C_FornecedorProduto
             // 
             AutoScaleDimensions = new SizeF(26F, 57F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(comboBox1);
+            Controls.Add(label5);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(richTextBox1);
@@ -150,5 +175,7 @@
         private RichTextBox richTextBox1;
         private Button button1;
         private Button button2;
+        private Label label5;
+        private ComboBox comboBox1;
     }
 }
