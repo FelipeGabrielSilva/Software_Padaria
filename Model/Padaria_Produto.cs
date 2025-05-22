@@ -17,7 +17,8 @@ namespace WindowsForm_Padaria.Model
         public required string Nome { get; set; }
         public required string Descricao { get; set; }
         public required float Preco { get; set; }
+
+        [ForeignKey(nameof(CategoriaId))]
         public required int CategoriaId { get; set; }
-        public required Categoria Categoria { get; set; }
     }
 }

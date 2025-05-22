@@ -13,8 +13,9 @@ namespace WindowsForm_Padaria.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        [ForeignKey(nameof(ProdutoId))]
         public required int ProdutoId { get; set; }
-        public required Padaria_Produto Produto { get; set; }
         public required Tipo Tipo { get; set; }
         public required int Quantidade { get; set; }
         public required DateTime Data { get; set; }

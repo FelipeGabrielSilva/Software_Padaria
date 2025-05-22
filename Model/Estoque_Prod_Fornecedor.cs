@@ -15,11 +15,12 @@ namespace WindowsForm_Padaria.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public required int Quantidade { get; set; }
-        public required int FornecedorId { get; set; }
-        public required Fornecedor Fornecedor { get; set; }
-        public required int ProdutoId { get; set; }
-        public required Fornecedor_Produto Produto { get; set; }
 
+        [ForeignKey(nameof(FornecedorId))]
+        public required int FornecedorId { get; set; }
+
+        [ForeignKey(nameof(ProdutoId))]
+        public required int ProdutoId { get; set; }
         public required Tipo tipo { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace WindowsForm_Padaria.Model
         public required string Bairro { get; set; }
         public required string Numero { get; set; }
         public required string CNPJ { get; set; }
+        [ForeignKey(nameof(TipoPagamentoId))]
         public required int TipoPagamentoId { get; set; }
-        public required Pagamento TipoPagamento { get; set; }
     }
 }

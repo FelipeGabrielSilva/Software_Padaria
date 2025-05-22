@@ -19,11 +19,15 @@ namespace WindowsForm_Padaria.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        [ForeignKey(nameof(ProdutosId))]
+        public required List<int> ProdutosId { get; set; }
         public required DateTime Data { get; set; }
         public required Status Status { get; set; }
-        public required string CPF_CNPJ { get; set; }
+        public string CPF_CNPJ { get; set; }
         public required float Preco { get; set; }
+
+        [ForeignKey(nameof(TipoPagamentoId))]
         public required int TipoPagamentoId { get; set; }
-        public required Pagamento TipoPagamento { get; set; }
     }
 }

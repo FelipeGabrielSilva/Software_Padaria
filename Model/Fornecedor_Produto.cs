@@ -16,5 +16,8 @@ namespace WindowsForm_Padaria.Model
         public int Codigo { get; set; }
         public required string Nome { get; set; }
         public required string Descricao { get; set; }
+
+        [ForeignKey(nameof(FornecedorId))]
+        public required int FornecedorId { get; set; }
     }
 }
