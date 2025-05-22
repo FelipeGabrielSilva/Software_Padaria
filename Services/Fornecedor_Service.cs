@@ -19,7 +19,7 @@ namespace WindowsForm_Padaria.Services
             _valido = new Validacao();
         }
 
-        private void criar(Fornecedor f)
+        public void criar(Fornecedor f)
         {
             ResultadoValidacao res = _valido.Fornecedor(f);
 
@@ -35,7 +35,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"O fornecedor {f.Nome} foi criado com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
 
-        private List<Fornecedor> listarTodos()
+        public List<Fornecedor> listarTodos()
         {
             List<Fornecedor> Fornecedores = new List<Fornecedor>();
                 
@@ -44,7 +44,7 @@ namespace WindowsForm_Padaria.Services
             return Fornecedores;
         }
 
-        private void atualizar(Fornecedor f)
+        public void atualizar(Fornecedor f)
         {
             ResultadoValidacao res = _valido.Fornecedor(f);
 
@@ -60,7 +60,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"O fornecedor {f.Nome} foi atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
 
-        private void deletar(Fornecedor f)
+        public void deletar(Fornecedor f)
         {
             ResultadoValidacao res = _valido.Fornecedor(f);
 

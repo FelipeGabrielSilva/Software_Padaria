@@ -19,7 +19,7 @@ namespace WindowsForm_Padaria.Services
             _valido = new Validacao();
         }
 
-        private void criar (Categoria c)
+        public void criar (Categoria c)
         {
             ResultadoValidacao res = _valido.Categoria(c);
 
@@ -35,7 +35,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A categoria {c.Nome} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
 
-        private List<Categoria> listarTodos ()
+        public List<Categoria> listarTodos ()
         {
             List<Categoria> categorias = new List<Categoria>();
                 
@@ -44,7 +44,7 @@ namespace WindowsForm_Padaria.Services
             return categorias;
         }
 
-        private void atualizar (Categoria c)
+        public void atualizar (Categoria c)
         {
             ResultadoValidacao res = _valido.Categoria(c);
 
@@ -60,7 +60,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A categoria {c.Nome} foi atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
 
-        private void deletar (Categoria c)
+        public void deletar (Categoria c)
         {
             ResultadoValidacao res = _valido.Categoria(c);
 

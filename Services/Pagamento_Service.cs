@@ -19,7 +19,7 @@ namespace WindowsForm_Padaria.Services
             _valido = new Validacao();
         }
 
-        private void criar(Pagamento p)
+        public void criar(Pagamento p)
         {
             ResultadoValidacao res = _valido.Pagamento(p);
 
@@ -35,7 +35,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"O pagamento {p.Descricao} foi criado com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
 
-        private List<Pagamento> listarTodos()
+        public List<Pagamento> listarTodos()
         {
             List<Pagamento> pagamentos = new List<Pagamento>();
 
@@ -44,7 +44,7 @@ namespace WindowsForm_Padaria.Services
             return pagamentos;
         }
 
-        private void atualizar(Pagamento p)
+        public void atualizar(Pagamento p)
         {
             ResultadoValidacao res = _valido.Pagamento(p);
 
@@ -60,7 +60,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"O pagamento {p.Descricao} foi atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
 
-        private void deletar(Pagamento p)
+        public void deletar(Pagamento p)
         {
             ResultadoValidacao res = _valido.Pagamento(p);
 

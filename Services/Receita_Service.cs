@@ -19,7 +19,7 @@ namespace WindowsForm_Padaria.Services
             _valido = new Validacao();
         }
 
-        private void criar(Receita r)
+        public void criar(Receita r)
         {
             ResultadoValidacao res = _valido.Receita(r);
 
@@ -35,7 +35,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A receita {r.Nome} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
 
-        private List<Receita> listarTodos()
+        public List<Receita> listarTodos()
         {
             List<Receita> receitas = new List<Receita>();
 
@@ -44,7 +44,7 @@ namespace WindowsForm_Padaria.Services
             return receitas;
         }
 
-        private void atualizar(Receita r)
+        public void atualizar(Receita r)
         {
             ResultadoValidacao res = _valido.Receita(r);
 
@@ -60,7 +60,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A receita {r.Nome} foi atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK);
         }
 
-        private void deletar(Receita r)
+        public void deletar(Receita r)
         {
             ResultadoValidacao res = _valido.Receita(r);
 
