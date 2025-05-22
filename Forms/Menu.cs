@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForm_Padaria.Forms.Cadastro;
+using WindowsForm_Padaria.Forms.Estoque;
 
 namespace WindowsForm_Padaria.Forms
 {
@@ -105,6 +106,30 @@ namespace WindowsForm_Padaria.Forms
 
             panel1.Controls.Add(pp);
             pp.Show();
+        }
+
+        private void pADARIAToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            E_Prod_Pararia ep = new E_Prod_Pararia();
+            ep.TopLevel = false;
+            ep.FormBorderStyle = FormBorderStyle.None;
+            ep.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(ep);
+            ep.Show();
+        }
+
+        private void fORNECEDORToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            E_Prod_Fornecedor ef = new E_Prod_Fornecedor();
+            ef.TopLevel = false;
+            ef.FormBorderStyle = FormBorderStyle.None;
+            ef.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(ef);
+            ef.Show();
         }
     }
 }

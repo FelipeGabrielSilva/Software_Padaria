@@ -40,6 +40,10 @@
             cATEGORIAToolStripMenuItem = new ToolStripMenuItem();
             pAGAMENTOToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            eSTOQUEToolStripMenuItem = new ToolStripMenuItem();
+            pADARIAToolStripMenuItem1 = new ToolStripMenuItem();
+            fORNECEDORToolStripMenuItem1 = new ToolStripMenuItem();
+            vENDAToolStripMenuItem = new ToolStripMenuItem();
             menuStrip2.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +52,7 @@
             menuStrip2.BackColor = SystemColors.ControlLight;
             menuStrip2.Font = new Font("JetBrains Mono", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menuStrip2.ImageScalingSize = new Size(20, 20);
-            menuStrip2.Items.AddRange(new ToolStripItem[] { cADASTROToolStripMenuItem });
+            menuStrip2.Items.AddRange(new ToolStripItem[] { cADASTROToolStripMenuItem, eSTOQUEToolStripMenuItem, vENDAToolStripMenuItem });
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
             menuStrip2.Size = new Size(1563, 66);
@@ -128,6 +132,33 @@
             panel1.Size = new Size(1563, 793);
             panel1.TabIndex = 2;
             // 
+            // eSTOQUEToolStripMenuItem
+            // 
+            eSTOQUEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pADARIAToolStripMenuItem1, fORNECEDORToolStripMenuItem1 });
+            eSTOQUEToolStripMenuItem.Name = "eSTOQUEToolStripMenuItem";
+            eSTOQUEToolStripMenuItem.Size = new Size(221, 62);
+            eSTOQUEToolStripMenuItem.Text = "ESTOQUE";
+            // 
+            // pADARIAToolStripMenuItem1
+            // 
+            pADARIAToolStripMenuItem1.Name = "pADARIAToolStripMenuItem1";
+            pADARIAToolStripMenuItem1.Size = new Size(384, 62);
+            pADARIAToolStripMenuItem1.Text = "PADARIA";
+            pADARIAToolStripMenuItem1.Click += pADARIAToolStripMenuItem1_Click;
+            // 
+            // fORNECEDORToolStripMenuItem1
+            // 
+            fORNECEDORToolStripMenuItem1.Name = "fORNECEDORToolStripMenuItem1";
+            fORNECEDORToolStripMenuItem1.Size = new Size(384, 62);
+            fORNECEDORToolStripMenuItem1.Text = "FORNECEDOR";
+            fORNECEDORToolStripMenuItem1.Click += fORNECEDORToolStripMenuItem1_Click;
+            // 
+            // vENDAToolStripMenuItem
+            // 
+            vENDAToolStripMenuItem.Name = "vENDAToolStripMenuItem";
+            vENDAToolStripMenuItem.Size = new Size(169, 62);
+            vENDAToolStripMenuItem.Text = "VENDA";
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(26F, 57F);
@@ -159,5 +190,9 @@
         private ToolStripMenuItem cATEGORIAToolStripMenuItem;
         private ToolStripMenuItem pAGAMENTOToolStripMenuItem;
         private Panel panel1;
+        private ToolStripMenuItem eSTOQUEToolStripMenuItem;
+        private ToolStripMenuItem pADARIAToolStripMenuItem1;
+        private ToolStripMenuItem fORNECEDORToolStripMenuItem1;
+        private ToolStripMenuItem vENDAToolStripMenuItem;
     }
 }

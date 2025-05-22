@@ -8,11 +8,6 @@ using System.Threading.Tasks;
 
 namespace WindowsForm_Padaria.Model
 {
-    public enum Tipo
-    {
-        Entrada,
-        Saida,
-    }
     public class Estoque_Prod_Padaria
     {
         [Key]

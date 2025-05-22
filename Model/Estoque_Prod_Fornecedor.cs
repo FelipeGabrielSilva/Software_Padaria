@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace WindowsForm_Padaria.Model
 {
+
     public class Estoque_Prod_Fornecedor
     {
         [Key]
@@ -18,5 +19,7 @@ namespace WindowsForm_Padaria.Model
         public required Fornecedor Fornecedor { get; set; }
         public required int ProdutoId { get; set; }
         public required Fornecedor_Produto Produto { get; set; }
+
+        public required Tipo tipo { get; set; }
     }
 }
