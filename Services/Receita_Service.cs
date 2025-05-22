@@ -25,14 +25,14 @@ namespace WindowsForm_Padaria.Services
 
             if (!res.Valido)
             {
-                MessageBox.Show(string.Join("\n", res.Erros), "Erro", MessageBoxButtons.OK);
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             _context.Receita.Add(r);
             _context.SaveChanges();
 
-            MessageBox.Show($"A receita {r.Nome} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK);
+            MessageBox.Show($"A receita {r.Nome} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public List<Receita> listarTodos()
@@ -50,14 +50,14 @@ namespace WindowsForm_Padaria.Services
 
             if (!res.Valido)
             {
-                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao atualizar", MessageBoxButtons.OK);
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao atualizar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             _context.Receita.Update(r);
             _context.SaveChanges();
 
-            MessageBox.Show($"A receita {r.Nome} foi atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK);
+            MessageBox.Show($"A receita {r.Nome} foi atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void deletar(Receita r)
@@ -66,14 +66,14 @@ namespace WindowsForm_Padaria.Services
 
             if (!res.Valido)
             {
-                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             _context.Receita.Remove(r);
             _context.SaveChanges();
 
-            MessageBox.Show($"A receita {r.Nome} foi deletada com sucesso!", "Sucesso", MessageBoxButtons.OK);
+            MessageBox.Show($"A receita {r.Nome} foi deletada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

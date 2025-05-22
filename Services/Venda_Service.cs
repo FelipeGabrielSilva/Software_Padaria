@@ -25,14 +25,14 @@ namespace WindowsForm_Padaria.Services
 
             if (!res.Valido)
             {
-                MessageBox.Show(string.Join("\n", res.Erros), "Erro", MessageBoxButtons.OK);
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             _context.Venda.Add(v);
             _context.SaveChanges();
 
-            MessageBox.Show($"A venda {v.Id} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK);
+            MessageBox.Show($"A venda {v.Id} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public List<Venda> listarTodos()
@@ -50,14 +50,14 @@ namespace WindowsForm_Padaria.Services
 
             if (!res.Valido)
             {
-                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             _context.Venda.Remove(r);
             _context.SaveChanges();
 
-            MessageBox.Show($"A venda {r.Id} foi deletada com sucesso!", "Sucesso", MessageBoxButtons.OK);
+            MessageBox.Show($"A venda {r.Id} foi deletada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

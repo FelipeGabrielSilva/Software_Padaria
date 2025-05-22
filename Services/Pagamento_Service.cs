@@ -25,14 +25,14 @@ namespace WindowsForm_Padaria.Services
 
             if (!res.Valido)
             {
-                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao criar", MessageBoxButtons.OK);
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao criar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             _context.Pagamento.Add(p);
             _context.SaveChanges();
 
-            MessageBox.Show($"O pagamento {p.Descricao} foi criado com sucesso!", "Sucesso", MessageBoxButtons.OK);
+            MessageBox.Show($"O pagamento {p.Descricao} foi criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public List<Pagamento> listarTodos()
@@ -50,14 +50,14 @@ namespace WindowsForm_Padaria.Services
 
             if (!res.Valido)
             {
-                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao atualizar", MessageBoxButtons.OK);
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao atualizar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             _context.Pagamento.Update(p);
             _context.SaveChanges();
 
-            MessageBox.Show($"O pagamento {p.Descricao} foi atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK);
+            MessageBox.Show($"O pagamento {p.Descricao} foi atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void deletar(Pagamento p)
@@ -66,14 +66,14 @@ namespace WindowsForm_Padaria.Services
 
             if (!res.Valido)
             {
-                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             _context.Pagamento.Remove(p);
             _context.SaveChanges();
 
-            MessageBox.Show($"O pagamento {p.Descricao} foi deletado com sucesso!", "Sucesso", MessageBoxButtons.OK);
+            MessageBox.Show($"O pagamento {p.Descricao} foi deletado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
