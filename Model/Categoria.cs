@@ -14,5 +14,6 @@ namespace WindowsForm_Padaria.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public required string Nome { get; set; }
+        public string? Descricao { get; set; }
     }
 }

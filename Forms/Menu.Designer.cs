@@ -39,6 +39,16 @@
             rECEITAToolStripMenuItem = new ToolStripMenuItem();
             cATEGORIAToolStripMenuItem = new ToolStripMenuItem();
             pAGAMENTOToolStripMenuItem = new ToolStripMenuItem();
+            eSTOQUEToolStripMenuItem = new ToolStripMenuItem();
+            pADARIAToolStripMenuItem1 = new ToolStripMenuItem();
+            fORNECEDORToolStripMenuItem1 = new ToolStripMenuItem();
+            vENDAToolStripMenuItem = new ToolStripMenuItem();
+            tABELAToolStripMenuItem = new ToolStripMenuItem();
+            cATEGORIAToolStripMenuItem1 = new ToolStripMenuItem();
+            fORNECEDORToolStripMenuItem2 = new ToolStripMenuItem();
+            vENDAToolStripMenuItem1 = new ToolStripMenuItem();
+            pAGAMENTOToolStripMenuItem1 = new ToolStripMenuItem();
+            rECEITAToolStripMenuItem1 = new ToolStripMenuItem();
             panel1 = new Panel();
             menuStrip2.SuspendLayout();
             SuspendLayout();
@@ -48,7 +58,7 @@
             menuStrip2.BackColor = SystemColors.ControlLight;
             menuStrip2.Font = new Font("JetBrains Mono", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menuStrip2.ImageScalingSize = new Size(20, 20);
-            menuStrip2.Items.AddRange(new ToolStripItem[] { cADASTROToolStripMenuItem });
+            menuStrip2.Items.AddRange(new ToolStripItem[] { cADASTROToolStripMenuItem, eSTOQUEToolStripMenuItem, vENDAToolStripMenuItem, tABELAToolStripMenuItem });
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
             menuStrip2.Size = new Size(1563, 66);
@@ -118,6 +128,73 @@
             pAGAMENTOToolStripMenuItem.Text = "PAGAMENTO";
             pAGAMENTOToolStripMenuItem.Click += pAGAMENTOToolStripMenuItem_Click;
             // 
+            // eSTOQUEToolStripMenuItem
+            // 
+            eSTOQUEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pADARIAToolStripMenuItem1, fORNECEDORToolStripMenuItem1 });
+            eSTOQUEToolStripMenuItem.Name = "eSTOQUEToolStripMenuItem";
+            eSTOQUEToolStripMenuItem.Size = new Size(221, 62);
+            eSTOQUEToolStripMenuItem.Text = "ESTOQUE";
+            // 
+            // pADARIAToolStripMenuItem1
+            // 
+            pADARIAToolStripMenuItem1.Name = "pADARIAToolStripMenuItem1";
+            pADARIAToolStripMenuItem1.Size = new Size(384, 62);
+            pADARIAToolStripMenuItem1.Text = "PADARIA";
+            pADARIAToolStripMenuItem1.Click += pADARIAToolStripMenuItem1_Click;
+            // 
+            // fORNECEDORToolStripMenuItem1
+            // 
+            fORNECEDORToolStripMenuItem1.Name = "fORNECEDORToolStripMenuItem1";
+            fORNECEDORToolStripMenuItem1.Size = new Size(384, 62);
+            fORNECEDORToolStripMenuItem1.Text = "FORNECEDOR";
+            fORNECEDORToolStripMenuItem1.Click += fORNECEDORToolStripMenuItem1_Click;
+            // 
+            // vENDAToolStripMenuItem
+            // 
+            vENDAToolStripMenuItem.Name = "vENDAToolStripMenuItem";
+            vENDAToolStripMenuItem.Size = new Size(169, 62);
+            vENDAToolStripMenuItem.Text = "VENDA";
+            // 
+            // tABELAToolStripMenuItem
+            // 
+            tABELAToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cATEGORIAToolStripMenuItem1, fORNECEDORToolStripMenuItem2, vENDAToolStripMenuItem1, pAGAMENTOToolStripMenuItem1, rECEITAToolStripMenuItem1 });
+            tABELAToolStripMenuItem.Name = "tABELAToolStripMenuItem";
+            tABELAToolStripMenuItem.Size = new Size(195, 62);
+            tABELAToolStripMenuItem.Text = "TABELA";
+            // 
+            // cATEGORIAToolStripMenuItem1
+            // 
+            cATEGORIAToolStripMenuItem1.Name = "cATEGORIAToolStripMenuItem1";
+            cATEGORIAToolStripMenuItem1.Size = new Size(384, 62);
+            cATEGORIAToolStripMenuItem1.Text = "CATEGORIA";
+            cATEGORIAToolStripMenuItem1.Click += cATEGORIAToolStripMenuItem1_Click;
+            // 
+            // fORNECEDORToolStripMenuItem2
+            // 
+            fORNECEDORToolStripMenuItem2.Name = "fORNECEDORToolStripMenuItem2";
+            fORNECEDORToolStripMenuItem2.Size = new Size(384, 62);
+            fORNECEDORToolStripMenuItem2.Text = "FORNECEDOR";
+            fORNECEDORToolStripMenuItem2.Click += fORNECEDORToolStripMenuItem2_Click;
+            // 
+            // vENDAToolStripMenuItem1
+            // 
+            vENDAToolStripMenuItem1.Name = "vENDAToolStripMenuItem1";
+            vENDAToolStripMenuItem1.Size = new Size(384, 62);
+            vENDAToolStripMenuItem1.Text = "VENDA";
+            // 
+            // pAGAMENTOToolStripMenuItem1
+            // 
+            pAGAMENTOToolStripMenuItem1.Name = "pAGAMENTOToolStripMenuItem1";
+            pAGAMENTOToolStripMenuItem1.Size = new Size(384, 62);
+            pAGAMENTOToolStripMenuItem1.Text = "PAGAMENTO";
+            pAGAMENTOToolStripMenuItem1.Click += pAGAMENTOToolStripMenuItem1_Click;
+            // 
+            // rECEITAToolStripMenuItem1
+            // 
+            rECEITAToolStripMenuItem1.Name = "rECEITAToolStripMenuItem1";
+            rECEITAToolStripMenuItem1.Size = new Size(384, 62);
+            rECEITAToolStripMenuItem1.Text = "RECEITA";
+            // 
             // panel1
             // 
             panel1.AutoSize = true;
@@ -158,5 +235,15 @@
         private ToolStripMenuItem cATEGORIAToolStripMenuItem;
         private ToolStripMenuItem pAGAMENTOToolStripMenuItem;
         private Panel panel1;
+        private ToolStripMenuItem eSTOQUEToolStripMenuItem;
+        private ToolStripMenuItem pADARIAToolStripMenuItem1;
+        private ToolStripMenuItem fORNECEDORToolStripMenuItem1;
+        private ToolStripMenuItem vENDAToolStripMenuItem;
+        private ToolStripMenuItem tABELAToolStripMenuItem;
+        private ToolStripMenuItem cATEGORIAToolStripMenuItem1;
+        private ToolStripMenuItem fORNECEDORToolStripMenuItem2;
+        private ToolStripMenuItem vENDAToolStripMenuItem1;
+        private ToolStripMenuItem pAGAMENTOToolStripMenuItem1;
+        private ToolStripMenuItem rECEITAToolStripMenuItem1;
     }
 }

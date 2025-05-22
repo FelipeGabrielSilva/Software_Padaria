@@ -15,5 +15,8 @@ namespace WindowsForm_Padaria.Model
         public int Id { get; set; }
         public required string Nome { get; set; }
         public required string Descricao { get; set; }
+
+        [ForeignKey(nameof(ProdutosIds))]
+        public required List<int> ProdutosIds { get; set; }
     }
 }

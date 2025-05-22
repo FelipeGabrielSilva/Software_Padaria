@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForm_Padaria.Forms.Cadastro;
+using WindowsForm_Padaria.Forms.Estoque;
+using WindowsForm_Padaria.Forms.Tabela;
 
 namespace WindowsForm_Padaria.Forms
 {
@@ -86,6 +88,42 @@ namespace WindowsForm_Padaria.Forms
         private void pRODUTOToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pAGAMENTOToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            DataView_Pagamento dtp = new DataView_Pagamento();
+            dtp.TopLevel = false;
+            dtp.FormBorderStyle = FormBorderStyle.None;
+            dtp.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(dtp);
+            dtp.Show();
+        }
+
+        private void fORNECEDORToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Dataview_Fornecedor dtf = new Dataview_Fornecedor();
+            dtf.TopLevel = false;
+            dtf.FormBorderStyle = FormBorderStyle.None;
+            dtf.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(dtf);
+            dtf.Show();
+        }
+
+        private void cATEGORIAToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            DataView_Categoria dtc = new DataView_Categoria();
+            dtc.TopLevel = false;
+            dtc.FormBorderStyle = FormBorderStyle.None;
+            dtc.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(dtc);
+            dtc.Show();
         }
     }
 }
