@@ -137,14 +137,8 @@ namespace WindowsForm_Padaria
             if (p.ReceitaId <= 0)
                 res.Erros.Add("ReceitaId deve ser maior que zero.");
 
-            if (p.Receita == null)
-                res.Erros.Add("Receita associada é obrigatória.");
-
             if (p.ProdutoId <= 0)
                 res.Erros.Add("ProdutoId deve ser maior que zero.");
-
-            if (p.Produto == null)
-                res.Erros.Add("Produto associado é obrigatório.");
 
             return res;
         }
@@ -165,10 +159,10 @@ namespace WindowsForm_Padaria
             if (string.IsNullOrWhiteSpace(p.Descricao))
                 res.Erros.Add("Descrição do produto é obrigatória.");
 
-            if (p.Preco <= 0)
+            if (p.Preco < 0)
                 res.Erros.Add("Preço do produto deve ser maior que zero.");
 
-            if (p.CategoriaId <= 0 || p.Categoria == null)
+            if (p.CategoriaId < 1)
                 res.Erros.Add("Categoria do produto é obrigatória.");
 
             return res;
@@ -203,14 +197,8 @@ namespace WindowsForm_Padaria
             if (p.ProdutoId <= 0)
                 res.Erros.Add("ProdutoId deve ser maior que zero.");
 
-            if (p.Produto == null)
-                res.Erros.Add("Produto do fornecedor é obrigatório.");
-
             if (p.ReceitaId <= 0)
                 res.Erros.Add("ReceitaId deve ser maior que zero.");
-
-            if (p.Receita == null)
-                res.Erros.Add("Receita associada é obrigatória.");
 
             return res;
         }
@@ -250,7 +238,7 @@ namespace WindowsForm_Padaria
             if (v.Preco <= 0)
                 res.Erros.Add("Preço da venda deve ser maior que zero.");
 
-            if (v.TipoPagamentoId <= 0 || v.TipoPagamento == null)
+            if (v.TipoPagamentoId < 1 )
                 res.Erros.Add("Tipo de pagamento é obrigatório.");
 
             if (!Enum.IsDefined(typeof(Status), v.Status))
