@@ -3,10 +3,77 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsForm_Padaria.Model;
+using WindowsForm_Padaria.Resources;
 
 namespace WindowsForm_Padaria.Services
 {
     public class Categoria_Service
     {
+        private readonly AppDbContext _context;
+        private readonly Validacao _valido;
+
+        public Categoria_Service()
+        {
+            _context = new AppDbContext();
+            _valido = new Validacao();
+        }
+
+        private void criar (Categoria c)
+        {
+            ResultadoValidacao res = _valido.Categoria(c);
+
+            if(!res.Valido)
+            {
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao cadastrar", MessageBoxButtons.OK);
+                return;
+            }
+
+            _context.Categoria.Add(c);
+            _context.SaveChanges();
+
+            MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+        }
+
+        private List<Categoria> listarTodos ()
+        {
+            List<Categoria> categorias = new List<Categoria>();
+                
+            categorias = _context.Categoria.ToList();
+
+            return categorias;
+        }
+
+        private void atualizar (Categoria c)
+        {
+            ResultadoValidacao res = _valido.Categoria(c);
+
+            if (!res.Valido)
+            {
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao atualizar", MessageBoxButtons.OK);
+                return;
+            }
+
+            _context.Categoria.Update(c);
+            _context.SaveChanges();
+
+            MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+        }
+
+        private void deletar (Categoria c)
+        {
+            ResultadoValidacao res = _valido.Categoria(c);
+
+            if (!res.Valido)
+            {
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+                return;
+            }
+
+             _context.Categoria.Remove(c);
+             _context.SaveChanges();
+
+            MessageBox.Show(string.Join("\n", res.Erros), "Erro ao deletar", MessageBoxButtons.OK);
+        }
     }
 }
