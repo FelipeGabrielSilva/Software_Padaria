@@ -46,9 +46,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(519, 58);
+            label1.Size = new Size(753, 58);
             label1.TabIndex = 1;
-            label1.Text = "CADASTRO DE PRODUTO";
+            label1.Text = "Cadastro - Produto (Padaria)";
             // 
             // label2
             // 
@@ -57,7 +57,7 @@
             label2.Name = "label2";
             label2.Size = new Size(155, 58);
             label2.TabIndex = 2;
-            label2.Text = "NOME:";
+            label2.Text = "Nome:";
             // 
             // label3
             // 
@@ -66,7 +66,7 @@
             label3.Name = "label3";
             label3.Size = new Size(285, 58);
             label3.TabIndex = 3;
-            label3.Text = "DESCRIÇÃO:";
+            label3.Text = "Descrição:";
             // 
             // label4
             // 
@@ -75,7 +75,7 @@
             label4.Name = "label4";
             label4.Size = new Size(181, 58);
             label4.TabIndex = 4;
-            label4.Text = "PREÇO:";
+            label4.Text = "Preço:";
             // 
             // label5
             // 
@@ -84,7 +84,7 @@
             label5.Name = "label5";
             label5.Size = new Size(285, 58);
             label5.TabIndex = 5;
-            label5.Text = "CATEGORIA:";
+            label5.Text = "Categoria:";
             // 
             // txtDescricao
             // 

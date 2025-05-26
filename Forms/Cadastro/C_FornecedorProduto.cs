@@ -33,7 +33,7 @@ namespace WindowsForm_Padaria.Forms.Cadastro
         {
             comboBox1.ValueMember = "Id";
             comboBox1.DisplayMember = "Nome";
-            comboBox1.DataSource = fornecedor_service.listarTodos();
+            comboBox1.DataSource = fornecedor_service.ListarTodos();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -40,9 +40,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(571, 58);
+            label1.Size = new Size(545, 58);
             label1.TabIndex = 1;
-            label1.Text = "CADASTRO DE CATEGORIA";
+            label1.Text = "Cadastro - Categoria";
             // 
             // txtNome
             // 
@@ -58,7 +58,7 @@
             label2.Name = "label2";
             label2.Size = new Size(155, 58);
             label2.TabIndex = 2;
-            label2.Text = "NOME:";
+            label2.Text = "Nome:";
             // 
             // button1
             // 

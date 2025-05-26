@@ -42,9 +42,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(519, 58);
+            label1.Size = new Size(493, 58);
             label1.TabIndex = 0;
-            label1.Text = "CADASTRO DE RECEITA";
+            label1.Text = "Cadastro - Receita";
             // 
             // label2
             // 
@@ -53,7 +53,7 @@
             label2.Name = "label2";
             label2.Size = new Size(155, 58);
             label2.TabIndex = 1;
-            label2.Text = "NOME:";
+            label2.Text = "Nome:";
             // 
             // label3
             // 
@@ -62,7 +62,7 @@
             label3.Name = "label3";
             label3.Size = new Size(285, 58);
             label3.TabIndex = 2;
-            label3.Text = "DESCRIÇÃO:";
+            label3.Text = "Descrição:";
             // 
             // textBox1
             // 

@@ -46,9 +46,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(987, 58);
+            label1.Size = new Size(857, 58);
             label1.TabIndex = 0;
-            label1.Text = "CADASTRO DE PRODUTOS DOS FORNECEDORES";
+            label1.Text = "Cadastro - Produtos (Fornecedor)";
             // 
             // label2
             // 
@@ -57,7 +57,7 @@
             label2.Name = "label2";
             label2.Size = new Size(207, 58);
             label2.TabIndex = 1;
-            label2.Text = "CÓDIGO:";
+            label2.Text = "Código:";
             // 
             // label3
             // 
@@ -66,7 +66,7 @@
             label3.Name = "label3";
             label3.Size = new Size(155, 58);
             label3.TabIndex = 2;
-            label3.Text = "NOME:";
+            label3.Text = "Nome:";
             // 
             // label4
             // 
@@ -75,7 +75,7 @@
             label4.Name = "label4";
             label4.Size = new Size(285, 58);
             label4.TabIndex = 3;
-            label4.Text = "DESCRIÇÃO:";
+            label4.Text = "Descrição:";
             // 
             // textBox1
             // 
@@ -126,7 +126,7 @@
             label5.Name = "label5";
             label5.Size = new Size(311, 58);
             label5.TabIndex = 9;
-            label5.Text = "FORNECEDOR:";
+            label5.Text = "Fornecedor:";
             // 
             // comboBox1
             // 

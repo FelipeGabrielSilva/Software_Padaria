@@ -55,9 +55,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(597, 58);
+            label1.Size = new Size(571, 58);
             label1.TabIndex = 0;
-            label1.Text = "CADASTRO DE FORNECEDOR";
+            label1.Text = "Cadastro - Fornecedor";
             // 
             // label2
             // 
@@ -66,7 +66,7 @@
             label2.Name = "label2";
             label2.Size = new Size(155, 58);
             label2.TabIndex = 1;
-            label2.Text = "NOME:";
+            label2.Text = "Nome:";
             // 
             // label3
             // 
@@ -75,7 +75,7 @@
             label3.Name = "label3";
             label3.Size = new Size(181, 58);
             label3.TabIndex = 2;
-            label3.Text = "EMAIL:";
+            label3.Text = "Email:";
             // 
             // label4
             // 
@@ -84,7 +84,7 @@
             label4.Name = "label4";
             label4.Size = new Size(259, 58);
             label4.TabIndex = 3;
-            label4.Text = "TELEFONE:";
+            label4.Text = "Telefone:";
             // 
             // label5
             // 
@@ -93,7 +93,7 @@
             label5.Name = "label5";
             label5.Size = new Size(259, 58);
             label5.TabIndex = 4;
-            label5.Text = "ENDEREÇO:";
+            label5.Text = "Endereço:";
             // 
             // label6
             // 
@@ -102,7 +102,7 @@
             label6.Name = "label6";
             label6.Size = new Size(207, 58);
             label6.TabIndex = 5;
-            label6.Text = "BAIRRO:";
+            label6.Text = "Bairro:";
             // 
             // label7
             // 
@@ -111,7 +111,7 @@
             label7.Name = "label7";
             label7.Size = new Size(207, 58);
             label7.TabIndex = 6;
-            label7.Text = "NUMERO:";
+            label7.Text = "Número:";
             // 
             // label8
             // 
@@ -129,7 +129,7 @@
             label9.Name = "label9";
             label9.Size = new Size(285, 58);
             label9.TabIndex = 8;
-            label9.Text = "PAGAMENTO:";
+            label9.Text = "Pagamento:";
             // 
             // txtNome
             // 

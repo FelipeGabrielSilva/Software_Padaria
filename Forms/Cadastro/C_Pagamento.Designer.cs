@@ -49,16 +49,16 @@
             label2.Name = "label2";
             label2.Size = new Size(285, 58);
             label2.TabIndex = 2;
-            label2.Text = "DESCRIÇÃO:";
+            label2.Text = "Descrição:";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(779, 58);
+            label1.Size = new Size(545, 58);
             label1.TabIndex = 1;
-            label1.Text = "CADASTRO DE TIPO DE PAGAMENTO";
+            label1.Text = "Cadastro - Pagamento";
             // 
             // btnSalvar
             // 
