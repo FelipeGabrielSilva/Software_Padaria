@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsForm_Padaria.GerarDados;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
 
@@ -19,7 +20,7 @@ namespace WindowsForm_Padaria.Services
             _valido = new Validacao();
         }
 
-        public void criar(Fornecedor f)
+        public void Criar(Fornecedor f)
         {
             ResultadoValidacao res = _valido.Fornecedor(f);
 
@@ -35,16 +36,16 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"O fornecedor {f.Nome} foi criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public List<Fornecedor> listarTodos()
+        public List<Fornecedor> ListarTodos()
         {
             List<Fornecedor> Fornecedores = new List<Fornecedor>();
-                
+
             Fornecedores = _context.Fornecedor.ToList();
 
             return Fornecedores;
         }
 
-        public void atualizar(Fornecedor f)
+        public void Atualizar(Fornecedor f)
         {
             ResultadoValidacao res = _valido.Fornecedor(f);
 
@@ -60,7 +61,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"O fornecedor {f.Nome} foi atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void deletar(Fornecedor f)
+        public void Deletar(Fornecedor f)
         {
             ResultadoValidacao res = _valido.Fornecedor(f);
 
@@ -76,21 +77,17 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"O fornecedor {f.Nome} foi deletado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void popularBanco()
+        public void PopularBanco()
         {
-            // Verifica se já existem fornecedores no banco
             if (_context.Fornecedor.Any())
             {
-                MessageBox.Show("O banco de dados já contém fornecedores.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // Obtém a lista de fornecedores fictícios
-            var fornecedores = FornecedorData.GetFornecedores();
+            List<Fornecedor> fornecedores = FornecedorData.GetFornecedores();
 
             try
             {
-                // Adiciona todos os fornecedores de uma vez
                 _context.Fornecedor.AddRange(fornecedores);
                 _context.SaveChanges();
 

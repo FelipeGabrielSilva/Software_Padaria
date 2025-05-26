@@ -77,33 +77,33 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A categoria {c.Nome} foi deletada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void PopularCategorias()
-        {
-            if (_context.Categoria.Any())
-            {
-                MessageBox.Show("O banco de dados já contém categorias.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+        //public void PopularCategorias()
+        //{
+        //    if (_context.Categoria.Any())
+        //    {
+        //        MessageBox.Show("O banco de dados já contém categorias.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
 
-            var categorias = CategoriaData.GetCategorias();
+        //    var categorias = CategoriaData.GetCategorias();
 
-            try
-            {
-                _context.Categoria.AddRange(categorias);
-                _context.SaveChanges();
+        //    try
+        //    {
+        //        _context.Categoria.AddRange(categorias);
+        //        _context.SaveChanges();
 
-                MessageBox.Show($"Foram adicionadas {categorias.Count} categorias ao banco de dados com sucesso!",
-                               "Sucesso",
-                               MessageBoxButtons.OK,
-                               MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocorreu um erro ao popular as categorias: {ex.Message}",
-                               "Erro",
-                               MessageBoxButtons.OK,
-                               MessageBoxIcon.Error);
-            }
-        }
+        //        MessageBox.Show($"Foram adicionadas {categorias.Count} categorias ao banco de dados com sucesso!",
+        //                       "Sucesso",
+        //                       MessageBoxButtons.OK,
+        //                       MessageBoxIcon.Information);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Ocorreu um erro ao popular as categorias: {ex.Message}",
+        //                       "Erro",
+        //                       MessageBoxButtons.OK,
+        //                       MessageBoxIcon.Error);
+        //    }
+        //}
     }
 }
