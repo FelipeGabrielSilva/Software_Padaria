@@ -20,7 +20,7 @@ namespace WindowsForm_Padaria.Services
             _valido = new Validacao();
         }
 
-        public void criar (Categoria c)
+        public void Criar (Categoria c)
         {
             ResultadoValidacao res = _valido.Categoria(c);
 
@@ -36,7 +36,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A categoria {c.Nome} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public List<Categoria> listarTodos ()
+        public List<Categoria> ListarTodos ()
         {
             List<Categoria> categorias = new List<Categoria>();
                 
@@ -45,7 +45,7 @@ namespace WindowsForm_Padaria.Services
             return categorias;
         }
 
-        public void atualizar (Categoria c)
+        public void Atualizar (Categoria c)
         {
             ResultadoValidacao res = _valido.Categoria(c);
 
@@ -61,7 +61,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A categoria {c.Nome} foi atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void deletar (Categoria c)
+        public void Deletar (Categoria c)
         {
             ResultadoValidacao res = _valido.Categoria(c);
 
@@ -77,33 +77,32 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A categoria {c.Nome} foi deletada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        //public void PopularCategorias()
-        //{
-        //    if (_context.Categoria.Any())
-        //    {
-        //        MessageBox.Show("O banco de dados já contém categorias.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        return;
-        //    }
+        public void PopularBanco()
+        {
+            if (_context.Categoria.Any())
+            {
+                return;
+            }
 
-        //    var categorias = CategoriaData.GetCategorias();
+            var categorias = CategoriaData.GetCategorias();
 
-        //    try
-        //    {
-        //        _context.Categoria.AddRange(categorias);
-        //        _context.SaveChanges();
+            try
+            {
+                _context.Categoria.AddRange(categorias);
+                _context.SaveChanges();
 
-        //        MessageBox.Show($"Foram adicionadas {categorias.Count} categorias ao banco de dados com sucesso!",
-        //                       "Sucesso",
-        //                       MessageBoxButtons.OK,
-        //                       MessageBoxIcon.Information);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Ocorreu um erro ao popular as categorias: {ex.Message}",
-        //                       "Erro",
-        //                       MessageBoxButtons.OK,
-        //                       MessageBoxIcon.Error);
-        //    }
-        //}
+                MessageBox.Show($"Foram adicionadas {categorias.Count} categorias ao banco de dados com sucesso!",
+                               "Sucesso",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao popular as categorias: {ex.Message}",
+                               "Erro",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+            }
+        }
     }
 }
