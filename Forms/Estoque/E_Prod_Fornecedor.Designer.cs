@@ -40,9 +40,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(935, 58);
+            label1.Size = new Size(805, 58);
             label1.TabIndex = 1;
-            label1.Text = "ESTOQUE DE PRODUTOS DE FORNECEDORES";
+            label1.Text = "Estoque - Produto (Fornecedor)";
             // 
             // label2
             // 
