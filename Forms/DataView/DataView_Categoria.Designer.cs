@@ -49,9 +49,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(285, 58);
+            label1.Size = new Size(259, 58);
             label1.TabIndex = 0;
-            label1.Text = "CATEGORIAS";
+            label1.Text = "Categoria";
             // 
             // categoriaBindingSource
             // 
@@ -61,6 +61,7 @@
             // 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 16F);
@@ -80,7 +81,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.Location = new Point(12, 122);
+            dataGridView1.Location = new Point(12, 100);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
@@ -93,7 +94,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 64;
             dataGridView1.RowTemplate.Resizable = DataGridViewTriState.True;
-            dataGridView1.Size = new Size(1062, 188);
+            dataGridView1.Size = new Size(1800, 500);
             dataGridView1.TabIndex = 1;
             dataGridView1.UseWaitCursor = true;
             // 

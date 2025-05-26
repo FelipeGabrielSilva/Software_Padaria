@@ -22,14 +22,14 @@ namespace WindowsForm_Padaria.Forms.Tabela
             _context = new AppDbContext();
             categoria_Service = new Categoria_Service();
             InitializeComponent();
-            //categoria_Service.PopularCategorias();
+            categoria_Service.PopularBanco();
             AtualizarGrid();
         }
 
         private void AtualizarGrid() 
         { 
             List<Categoria> c = new List<Categoria>();
-            c = _context.Categoria.ToList();
+            c = categoria_Service.ListarTodos();
 
             dataGridView1.DataSource = c;
         }
