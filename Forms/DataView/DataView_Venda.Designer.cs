@@ -31,15 +31,16 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            vendaBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             statusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cPFCNPJDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             precoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tipoPagamentoIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            vendaBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             SuspendLayout();
@@ -58,34 +59,38 @@
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, cPFCNPJDataGridViewTextBoxColumn, precoDataGridViewTextBoxColumn, tipoPagamentoIdDataGridViewTextBoxColumn });
             dataGridView1.DataSource = vendaBindingSource;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 16F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.Location = new Point(12, 100);
-            dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 12F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.Location = new Point(12, 100);
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 12F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1800, 500);
             dataGridView1.TabIndex = 1;
-            // 
-            // vendaBindingSource
-            // 
-            vendaBindingSource.DataSource = typeof(Model.Venda);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -93,7 +98,7 @@
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 106;
+            idDataGridViewTextBoxColumn.Width = 76;
             // 
             // dataDataGridViewTextBoxColumn
             // 
@@ -101,7 +106,7 @@
             dataDataGridViewTextBoxColumn.HeaderText = "Data";
             dataDataGridViewTextBoxColumn.MinimumWidth = 6;
             dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            dataDataGridViewTextBoxColumn.Width = 158;
+            dataDataGridViewTextBoxColumn.Width = 108;
             // 
             // statusDataGridViewTextBoxColumn
             // 
@@ -109,7 +114,7 @@
             statusDataGridViewTextBoxColumn.HeaderText = "Status";
             statusDataGridViewTextBoxColumn.MinimumWidth = 6;
             statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            statusDataGridViewTextBoxColumn.Width = 210;
+            statusDataGridViewTextBoxColumn.Width = 140;
             // 
             // cPFCNPJDataGridViewTextBoxColumn
             // 
@@ -117,7 +122,7 @@
             cPFCNPJDataGridViewTextBoxColumn.HeaderText = "CPF_CNPJ";
             cPFCNPJDataGridViewTextBoxColumn.MinimumWidth = 6;
             cPFCNPJDataGridViewTextBoxColumn.Name = "cPFCNPJDataGridViewTextBoxColumn";
-            cPFCNPJDataGridViewTextBoxColumn.Width = 262;
+            cPFCNPJDataGridViewTextBoxColumn.Width = 172;
             // 
             // precoDataGridViewTextBoxColumn
             // 
@@ -125,7 +130,7 @@
             precoDataGridViewTextBoxColumn.HeaderText = "Preco";
             precoDataGridViewTextBoxColumn.MinimumWidth = 6;
             precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
-            precoDataGridViewTextBoxColumn.Width = 184;
+            precoDataGridViewTextBoxColumn.Width = 124;
             // 
             // tipoPagamentoIdDataGridViewTextBoxColumn
             // 
@@ -133,7 +138,11 @@
             tipoPagamentoIdDataGridViewTextBoxColumn.HeaderText = "TipoPagamentoId";
             tipoPagamentoIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             tipoPagamentoIdDataGridViewTextBoxColumn.Name = "tipoPagamentoIdDataGridViewTextBoxColumn";
-            tipoPagamentoIdDataGridViewTextBoxColumn.Width = 444;
+            tipoPagamentoIdDataGridViewTextBoxColumn.Width = 284;
+            // 
+            // vendaBindingSource
+            // 
+            vendaBindingSource.DataSource = typeof(Model.Venda);
             // 
             // DataView_Venda
             // 
