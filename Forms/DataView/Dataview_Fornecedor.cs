@@ -15,22 +15,20 @@ namespace WindowsForm_Padaria.Forms.Tabela
 {
     public partial class Dataview_Fornecedor : Form
     {
-        private readonly AppDbContext _context;
         private readonly Fornecedor_Service fornecedor_Service;
 
         public Dataview_Fornecedor()
         {
             fornecedor_Service = new Fornecedor_Service();
-            //fornecedor_Service.popularBanco();
+            fornecedor_Service.PopularBanco();
             InitializeComponent();
-            _context = new AppDbContext();
             AtualizarGrid();
         }
 
         private void AtualizarGrid ()
         {
             List<Fornecedor> f = new List<Fornecedor>();
-            f = _context.Fornecedor.ToList();
+            f = fornecedor_Service.ListarTodos();
 
             dataGridView1.DataSource = f;
 

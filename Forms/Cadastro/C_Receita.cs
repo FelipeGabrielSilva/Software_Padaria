@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsForm_Padaria.Forms.Components;
 
 namespace WindowsForm_Padaria.Forms.Cadastro
 {
@@ -20,8 +19,6 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SelecaoProdutos sp = new SelecaoProdutos();
-            sp.Show();
         }
     }
 }

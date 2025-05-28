@@ -29,7 +29,7 @@ namespace WindowsForm_Padaria.Forms.Cadastro
                 Descricao = txtDescricao.Text,
             };
 
-            pagamento_Service.criar(p);
+            pagamento_Service.Criar(p);
         }
 
         private void btnSair_Click(object sender, EventArgs e)

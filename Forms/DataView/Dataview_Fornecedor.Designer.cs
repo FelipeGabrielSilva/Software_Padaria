@@ -54,7 +54,7 @@
             label1.Name = "label1";
             label1.Size = new Size(337, 58);
             label1.TabIndex = 0;
-            label1.Text = "FORNECEDORES";
+            label1.Text = "Fornecedores";
             // 
             // dataGridView1
             // 

@@ -15,11 +15,9 @@ namespace WindowsForm_Padaria.Forms.Tabela
 {
     public partial class DataView_Categoria : Form
     {
-        private readonly AppDbContext _context;
         private readonly Categoria_Service categoria_Service;
         public DataView_Categoria()
         {
-            _context = new AppDbContext();
             categoria_Service = new Categoria_Service();
             InitializeComponent();
             categoria_Service.PopularBanco();

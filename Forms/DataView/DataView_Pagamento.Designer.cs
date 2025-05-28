@@ -46,9 +46,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(545, 58);
+            label1.Size = new Size(285, 58);
             label1.TabIndex = 0;
-            label1.Text = "TABELA DE PAGAMENTOS";
+            label1.Text = "Pagamentos";
             // 
             // dataGridView1
             // 

@@ -19,7 +19,7 @@ namespace WindowsForm_Padaria.Services
             _valido = new Validacao();
         }
 
-        public void criar(Venda v)
+        public void Criar(Venda v)
         {
             ResultadoValidacao res = _valido.Venda(v);
 
@@ -35,7 +35,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A venda {v.Id} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public List<Venda> listarTodos()
+        public List<Venda> ListarTodos()
         {
             List<Venda> Vendas = new List<Venda>();
 
@@ -44,7 +44,7 @@ namespace WindowsForm_Padaria.Services
             return Vendas;
         }
 
-        public void deletar(Venda r)
+        public void Deletar(Venda r)
         {
             ResultadoValidacao res = _valido.Venda(r);
 

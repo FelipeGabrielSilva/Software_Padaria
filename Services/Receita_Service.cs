@@ -45,7 +45,7 @@ namespace WindowsForm_Padaria.Services
             return receitas;
         }
 
-        public void atualizar(Receita r)
+        public void Atualizar(Receita r)
         {
             ResultadoValidacao res = _valido.Receita(r);
 
