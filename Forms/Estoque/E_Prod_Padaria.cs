@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsForm_Padaria.Forms.Estoque
 {
-    public partial class E_Prod_Pararia : Form
+    public partial class E_Prod_Padaria : Form
     {
-        public E_Prod_Pararia()
+        public E_Prod_Padaria()
         {
             InitializeComponent();
         }

@@ -16,5 +16,10 @@ namespace WindowsForm_Padaria.Forms.Estoque
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -112,7 +112,7 @@ namespace WindowsForm_Padaria.Forms
         private void pADARIAToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            E_Prod_Pararia ep = new E_Prod_Pararia();
+            E_Prod_Padaria ep = new E_Prod_Padaria();
             ep.TopLevel = false;
             ep.FormBorderStyle = FormBorderStyle.None;
             ep.Dock = DockStyle.Fill;
