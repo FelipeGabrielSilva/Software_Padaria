@@ -35,8 +35,6 @@
             richTextBox1 = new RichTextBox();
             button1 = new Button();
             button2 = new Button();
-            label4 = new Label();
-            button3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -60,7 +58,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 285);
+            label3.Location = new Point(10, 191);
             label3.Name = "label3";
             label3.Size = new Size(285, 58);
             label3.TabIndex = 2;
@@ -75,7 +73,7 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(303, 285);
+            richTextBox1.Location = new Point(301, 191);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new Size(700, 300);
             richTextBox1.TabIndex = 4;
@@ -89,6 +87,7 @@
             button1.TabIndex = 6;
             button1.Text = "SAIR";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -99,33 +98,12 @@
             button2.Text = "SALVAR";
             button2.UseVisualStyleBackColor = true;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 202);
-            label4.Name = "label4";
-            label4.Size = new Size(259, 58);
-            label4.TabIndex = 8;
-            label4.Text = "Produtos:";
-            // 
-            // button3
-            // 
-            button3.Location = new Point(266, 202);
-            button3.Name = "button3";
-            button3.Size = new Size(407, 65);
-            button3.TabIndex = 9;
-            button3.Text = "Procurar";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
             // C_Receita
             // 
             AutoScaleDimensions = new SizeF(26F, 57F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);
-            Controls.Add(button3);
-            Controls.Add(label4);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(richTextBox1);
@@ -150,7 +128,5 @@
         private RichTextBox richTextBox1;
         private Button button1;
         private Button button2;
-        private Label label4;
-        private Button button3;
     }
 }
