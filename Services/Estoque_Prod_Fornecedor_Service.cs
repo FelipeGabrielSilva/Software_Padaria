@@ -19,7 +19,7 @@ namespace WindowsForm_Padaria.Services
             _valido = new Validacao();
         }
 
-        public void criar (Estoque_Prod_Fornecedor epf)
+        public void Criar (Estoque_Prod_Fornecedor epf)
         {
             ResultadoValidacao res = _valido.Estoque_Prod_Fornecedor(epf);
 
@@ -33,14 +33,14 @@ namespace WindowsForm_Padaria.Services
             _context.SaveChanges();
         }
 
-        public List<Estoque_Prod_Fornecedor> carregar ()
+        public List<Estoque_Prod_Fornecedor> ListarTodos ()
         {
             List<Estoque_Prod_Fornecedor> epf = _context.Estoque_Prod_Fornecedor.ToList();
 
             return epf;
         }
 
-        public void deletar() {
+        public void Deletar() {
         }
     }
 }

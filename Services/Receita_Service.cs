@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsForm_Padaria.GerarDados;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
 
@@ -19,7 +20,7 @@ namespace WindowsForm_Padaria.Services
             _valido = new Validacao();
         }
 
-        public void criar(Receita r)
+        public void Criar(Receita r)
         {
             ResultadoValidacao res = _valido.Receita(r);
 
@@ -35,7 +36,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A receita {r.Nome} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public List<Receita> listarTodos()
+        public List<Receita> ListarTodos()
         {
             List<Receita> receitas = new List<Receita>();
 
@@ -60,7 +61,7 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"A receita {r.Nome} foi atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void deletar(Receita r)
+        public void Deletar(Receita r)
         {
             ResultadoValidacao res = _valido.Receita(r);
 
@@ -74,6 +75,34 @@ namespace WindowsForm_Padaria.Services
             _context.SaveChanges();
 
             MessageBox.Show($"A receita {r.Nome} foi deletada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void PopularBanco()
+        {
+            if (_context.Receita.Any())
+            {
+                return;
+            }
+
+            List<Receita> receitas = ReceitaData.GetReceitas();
+
+            try
+            {
+                _context.Receita.AddRange(receitas);
+                _context.SaveChanges();
+
+                MessageBox.Show($"Foram adicionados {receitas.Count} fornecedores ao banco de dados com sucesso!",
+                               "Sucesso",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao popular o banco de dados: {ex.Message}",
+                               "Erro",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+            }
         }
     }
 }
