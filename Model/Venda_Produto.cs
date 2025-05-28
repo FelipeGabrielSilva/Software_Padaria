@@ -18,7 +18,7 @@ namespace WindowsForm_Padaria.Model
         [Required]
         public required int VendaId { get; set; }
         public required int Quantidade { get; set; }
-        public required float PrecoUnitario { get; set; }
+        public required decimal PrecoUnitario { get; set; }
         [ForeignKey(nameof(ProdutoId))]
         public required Padaria_Produto Produto { get; set; }
         [ForeignKey(nameof(VendaId))]

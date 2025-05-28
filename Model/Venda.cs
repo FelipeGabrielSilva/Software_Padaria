@@ -25,7 +25,7 @@ namespace WindowsForm_Padaria.Model
         public required DateTime Data { get; set; }
         public required Status Status { get; set; }
         public string CPF_CNPJ { get; set; }
-        public required float Preco { get; set; }
+        public required decimal Preco { get; set; }
 
         [ForeignKey(nameof(TipoPagamentoId))]
         public required int TipoPagamentoId { get; set; }
