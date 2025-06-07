@@ -39,6 +39,8 @@
             cmbCategoria = new ComboBox();
             button1 = new Button();
             button2 = new Button();
+            textBox1 = new TextBox();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -53,7 +55,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 87);
+            label2.Location = new Point(12, 168);
             label2.Name = "label2";
             label2.Size = new Size(155, 58);
             label2.TabIndex = 2;
@@ -62,7 +64,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 320);
+            label3.Location = new Point(12, 401);
             label3.Name = "label3";
             label3.Size = new Size(285, 58);
             label3.TabIndex = 3;
@@ -71,7 +73,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 164);
+            label4.Location = new Point(12, 245);
             label4.Name = "label4";
             label4.Size = new Size(181, 58);
             label4.TabIndex = 4;
@@ -80,7 +82,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 243);
+            label5.Location = new Point(12, 324);
             label5.Name = "label5";
             label5.Size = new Size(285, 58);
             label5.TabIndex = 5;
@@ -88,33 +90,33 @@
             // 
             // txtDescricao
             // 
-            txtDescricao.Location = new Point(303, 320);
+            txtDescricao.Location = new Point(303, 401);
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(455, 304);
-            txtDescricao.TabIndex = 4;
+            txtDescricao.TabIndex = 5;
             txtDescricao.Text = "";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(173, 84);
+            txtNome.Location = new Point(173, 165);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(585, 65);
-            txtNome.TabIndex = 1;
+            txtNome.TabIndex = 2;
             // 
             // txtPreco
             // 
-            txtPreco.Location = new Point(199, 161);
+            txtPreco.Location = new Point(199, 242);
             txtPreco.Name = "txtPreco";
             txtPreco.Size = new Size(225, 65);
-            txtPreco.TabIndex = 2;
+            txtPreco.TabIndex = 3;
             // 
             // cmbCategoria
             // 
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(303, 243);
+            cmbCategoria.Location = new Point(303, 324);
             cmbCategoria.Name = "cmbCategoria";
             cmbCategoria.Size = new Size(455, 65);
-            cmbCategoria.TabIndex = 3;
+            cmbCategoria.TabIndex = 4;
             // 
             // button1
             // 
@@ -131,10 +133,26 @@
             button2.Location = new Point(1662, 780);
             button2.Name = "button2";
             button2.Size = new Size(250, 64);
-            button2.TabIndex = 5;
+            button2.TabIndex = 6;
             button2.Text = "SALVAR";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(225, 82);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(225, 65);
+            textBox1.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(12, 89);
+            label6.Name = "label6";
+            label6.Size = new Size(207, 58);
+            label6.TabIndex = 10;
+            label6.Text = "Código:";
             // 
             // C_PadariaProduto
             // 
@@ -142,6 +160,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(textBox1);
+            Controls.Add(label6);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(cmbCategoria);
@@ -174,5 +194,7 @@
         private ComboBox cmbCategoria;
         private Button button1;
         private Button button2;
+        private TextBox textBox1;
+        private Label label6;
     }
 }

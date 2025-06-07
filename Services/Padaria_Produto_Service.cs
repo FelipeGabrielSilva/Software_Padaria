@@ -21,6 +21,18 @@ namespace WindowsForm_Padaria.Services
         }
         public void Criar(Padaria_Produto pp)
         {
+            ResultadoValidacao res = _valido.Padaria_Produto(pp);
+
+            if (!res.Valido)
+            {
+                MessageBox.Show(string.Join("\n", res.Erros), "Erro ao cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _context.Padaria_Produto.Add(pp);
+            _context.SaveChanges();
+
+            MessageBox.Show($"A categoria {pp.Nome} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

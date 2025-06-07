@@ -26,15 +26,15 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*
-            Padaria_Produto P = new Padaria_Produto
+            Padaria_Produto p = new Padaria_Produto
             {
                 Nome = txtNome.Text,
                 Descricao = txtDescricao.Text,
-                Preco = float.Parse(txtPreco.Text),
-                CategoriaId = cmbCategoria.SelectedValue,
-            }
-            */
+                Preco = decimal.Parse(txtPreco.Text),
+                CategoriaId = (int)cmbCategoria.SelectedValue,
+            };
+
+            pps.Criar(p);
         }
 
         private void button1_Click(object sender, EventArgs e)

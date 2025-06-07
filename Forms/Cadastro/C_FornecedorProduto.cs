@@ -14,12 +14,12 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 {
     public partial class C_FornecedorProduto : Form
     {
-        private readonly Fornecedor_Service fornecedor_service;
-        private readonly Fornecedor_Produto_Service fornecedor_produto_service;
+        private readonly Fornecedor_Service fs;
+        private readonly Fornecedor_Produto_Service fps;
         public C_FornecedorProduto()
         {
-            fornecedor_service = new Fornecedor_Service();
-            fornecedor_produto_service = new Fornecedor_Produto_Service();
+            fs = new Fornecedor_Service();
+            fps = new Fornecedor_Produto_Service();
             InitializeComponent();
             AtualizarGrid();
         }
@@ -33,7 +33,7 @@ namespace WindowsForm_Padaria.Forms.Cadastro
         {
             comboBox1.ValueMember = "Id";
             comboBox1.DisplayMember = "Nome";
-            comboBox1.DataSource = fornecedor_service.ListarTodos();
+            comboBox1.DataSource = fs.ListarTodos();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,13 +46,12 @@ namespace WindowsForm_Padaria.Forms.Cadastro
                 FornecedorId = (int)comboBox1.SelectedValue,
             };
 
-            fornecedor_produto_service.Criar(fp);
+            fps.Criar(fp);
 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

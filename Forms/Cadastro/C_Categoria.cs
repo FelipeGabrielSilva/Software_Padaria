@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForm_Padaria.Model;
+using WindowsForm_Padaria.Services;
 
 namespace WindowsForm_Padaria.Forms.Cadastro
 {
     public partial class C_Categoria : Form
     {
+        private readonly Categoria_Service cs;
         public C_Categoria()
         {
+            cs = new Categoria_Service();
             InitializeComponent();
         }
 
@@ -25,17 +28,13 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ResultadoValidacao r = new ResultadoValidacao();
             Categoria c = new Categoria
             {
                 Nome = txtNome.Text,
                 Descricao = richTextBox1.Text,
             };
-
-            if (r.Valido(c))
-            {
-
-            }
+         
+            cs.Criar(c);
         }
     }
 }

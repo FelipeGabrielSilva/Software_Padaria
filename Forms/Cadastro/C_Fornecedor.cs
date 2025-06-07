@@ -43,21 +43,19 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            try
+            Fornecedor f = new Fornecedor
             {
-                string nome = txtTelefone.Text;
-                string email = txtEmail.Text;
-                string tel = txtTelefone.Text;
-                string end = txtEndereco.Text;
-                string bairro = txtBairro.Text;
-                string num = txtNumero.Text;
-                string cnpj = txtCnpj.Text;
+                Nome = txtNome.Text,
+                Email = txtEmail.Text,
+                CNPJ = txtCnpj.Text,
+                Telefone = txtTelefone.Text,
+                Endereco = txtEndereco.Text,
+                Bairro = txtBairro.Text,
+                Numero = txtNumero.Text,
+                TipoPagamentoId = (int)cmbPagamento.SelectedValue,
+            };
 
-            }
-            catch
-            {
-
-            }
+            fs.Criar(f);
         }
 
         private void btnSair_Click(object sender, EventArgs e)
