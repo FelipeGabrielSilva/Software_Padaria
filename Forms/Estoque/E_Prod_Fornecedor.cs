@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm_Padaria.Model;
+using WindowsForm_Padaria.Services;
 
 namespace WindowsForm_Padaria.Forms.Estoque
 {
     public partial class E_Prod_Fornecedor : Form
     {
+        private readonly Fornecedor_Produto_Service fps;
         public E_Prod_Fornecedor()
         {
+            fps = new Fornecedor_Produto_Service();
             InitializeComponent();
+            AtualizarGrid();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,7 +29,7 @@ namespace WindowsForm_Padaria.Forms.Estoque
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -45,7 +50,14 @@ namespace WindowsForm_Padaria.Forms.Estoque
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            ;
+        }
 
+        private void AtualizarGrid()
+        {
+            comboBox1.ValueMember = "Id";
+            comboBox1.DisplayMember = "Nome";
+            comboBox1.DataSource = fps.ListarTodos();
         }
     }
 }

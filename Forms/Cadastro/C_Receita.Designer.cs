@@ -97,6 +97,7 @@
             button2.TabIndex = 7;
             button2.Text = "SALVAR";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // C_Receita
             // 
