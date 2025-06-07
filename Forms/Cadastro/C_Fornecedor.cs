@@ -9,14 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForm_Padaria.Helpers;
 using WindowsForm_Padaria.Model;
+using WindowsForm_Padaria.Services;
 
 namespace WindowsForm_Padaria.Forms.Cadastro
 {
     public partial class C_Fornecedor : Form
     {
+        private readonly Fornecedor_Service fs;
+        private readonly Pagamento_Service ps;
         public C_Fornecedor()
         {
+            fs = new Fornecedor_Service();
+            ps = new Pagamento_Service();
             InitializeComponent();
+            AtualizarGrid();
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
@@ -57,6 +63,19 @@ namespace WindowsForm_Padaria.Forms.Cadastro
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AtualizarGrid()
+        {
+            cmbPagamento.Items.Clear();
+            cmbPagamento.ValueMember = "Id";
+            cmbPagamento.DisplayMember = "Descricao";
+            cmbPagamento.DataSource = ps.ListarTodos();
         }
     }
 }

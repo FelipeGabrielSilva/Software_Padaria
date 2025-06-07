@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForm_Padaria.Model;
 
 namespace WindowsForm_Padaria.Forms.Cadastro
 {
@@ -20,6 +21,21 @@ namespace WindowsForm_Padaria.Forms.Cadastro
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ResultadoValidacao r = new ResultadoValidacao();
+            Categoria c = new Categoria
+            {
+                Nome = txtNome.Text,
+                Descricao = richTextBox1.Text,
+            };
+
+            if (r.Valido(c))
+            {
+
+            }
         }
     }
 }

@@ -49,5 +49,10 @@ namespace WindowsForm_Padaria.Forms.Cadastro
             fornecedor_produto_service.Criar(fp);
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

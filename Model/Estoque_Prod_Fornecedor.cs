@@ -21,6 +21,6 @@ namespace WindowsForm_Padaria.Model
 
         [ForeignKey(nameof(ProdutoId))]
         public required int ProdutoId { get; set; }
-        public required Tipo tipo { get; set; }
+        public required Tipo Tipo { get; set; }
     }
 }

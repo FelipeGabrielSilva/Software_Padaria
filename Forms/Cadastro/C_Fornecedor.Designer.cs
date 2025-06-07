@@ -189,6 +189,7 @@
             cmbPagamento.Name = "cmbPagamento";
             cmbPagamento.Size = new Size(300, 65);
             cmbPagamento.TabIndex = 16;
+            cmbPagamento.SelectedIndexChanged += cmbPagamento_SelectedIndexChanged;
             // 
             // button1
             // 

@@ -39,7 +39,8 @@ namespace WindowsForm_Padaria.Forms.Estoque
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            comboBox1.ValueMember = "Id";
+            comboBox1.DisplayMember = "Nome";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

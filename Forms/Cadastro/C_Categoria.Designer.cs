@@ -33,6 +33,8 @@
             label2 = new Label();
             button1 = new Button();
             button2 = new Button();
+            richTextBox1 = new RichTextBox();
+            label3 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -78,6 +80,24 @@
             button2.TabIndex = 5;
             button2.Text = "SALVAR";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(303, 172);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(700, 300);
+            richTextBox1.TabIndex = 7;
+            richTextBox1.Text = "";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 172);
+            label3.Name = "label3";
+            label3.Size = new Size(285, 58);
+            label3.TabIndex = 6;
+            label3.Text = "Descrição:";
             // 
             // C_Categoria
             // 
@@ -85,6 +105,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);
+            Controls.Add(richTextBox1);
+            Controls.Add(label3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(txtNome);
@@ -105,5 +127,7 @@
         private Label label2;
         private Button button1;
         private Button button2;
+        private RichTextBox richTextBox1;
+        private Label label3;
     }
 }
