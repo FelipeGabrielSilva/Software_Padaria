@@ -117,27 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="estoqueProdPadariaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="padariaProdutoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAALiSURBVGhD7ZnJihRBEECfB/XqxQWXg/oJHtz9BcENNxD1
-        AwQXFMHlpv6A4Ek9CDJ4cMOz28XtD7x4VU+K+8qDTCiCnmG6Oiu7e+gHxRQT2REVlRmRkVEwYcJIsgw4
-        AtwE3gAfgZ/p+gC8TrLDwNL441FgG/AA+AX8m+Xl2PvA1qhsGKwFHjUe7jfwBDgOrAeWAPPT5f0G4ATw
-        NI3Nv3sIrInKa3EA+Jwe5AtwCVgcB82Ajl0GviYdn4B9cVDXnG+8zdvAijigD1YCUw195+KArriYDP5N
-        9/PigJYcA/7UcsblpCEN7orCAuxuOLM3CkthYOeYOB2FBTnTiJnVUViCnJ2MiS5xqeaYMaUXxX1CxWaY
-        VVHYASYPM6E2t0ThIPhmVGqKrYWpWZv3oqAtlh3uwm5g/ewTg+I+o03LG+8H5mh6M4+joALPku1DUdAG
-        izyVWXbU5mSyfT0K2mAVqzJrp9psSrZfRkEbLMVVVjM+Mpb62n4fBW34kZQtiIIKLEy2v0dBG0bBEXf5
-        gRmFpfU2CtqQg91DUW02J9um4YEZhfR7LQraYDNBZR5Pa/M82d4RBW1wneYSpUipMEtyiaLtRVHYFrsd
-        vhkLuVpcSTYt6YuxMSn9NoQyfl0UDkou5X1Dpc7pvVD3nWTrbhSWwGOnG5MGPI52xdlkw87k8igshX0n
-        jdggsFFQmj2N5sP2KCyNrZrsjDNTYpmpw5nITvjXjk3nZGdyzNhka4vJI8dE8zL17o+Du8C+U44ZmxKm
-        5n72GceaYs2E6lBXsx+cnanSRjUB5GyWDVsBWFp4KHIztWr28t7/nUq1U/OhbTEZ2M7A0JwRWzZ2O/r5
-        rODx4FaPYnQ6ZzrrPPbC5WKj4AbwKqVQH9jN7R3wAriaHmqmY4EzMHRnSmF6jzOsMwfjwHFgOmeqpObS
-        zCln/IQx552psmmWRmfsBU+cGTV6JQA/0I4lOxszcyEKxw2XWedfgCdMaPAfOK4TCZw6imIAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
 </root>

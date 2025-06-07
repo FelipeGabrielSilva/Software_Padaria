@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForm_Padaria.Forms.Cadastro;
+using WindowsForm_Padaria.Forms.DataView;
 using WindowsForm_Padaria.Forms.Estoque;
 using WindowsForm_Padaria.Forms.Tabela;
 
@@ -174,7 +175,7 @@ namespace WindowsForm_Padaria.Forms
             panel1.Controls.Clear();
             DataView_Receita dvr = new DataView_Receita();
             dvr.TopLevel = false;
-            dvr.FormBorderStyle = FormBorderStyle.None; 
+            dvr.FormBorderStyle = FormBorderStyle.None;
             dvr.Dock = DockStyle.Fill;
 
             panel1.Controls.Add(dvr);
@@ -185,12 +186,24 @@ namespace WindowsForm_Padaria.Forms
         {
             panel1.Controls.Clear();
             DataView_Venda dvv = new DataView_Venda();
-            dvv.TopLevel = false; 
+            dvv.TopLevel = false;
             dvv.FormBorderStyle = FormBorderStyle.None;
             dvv.Dock = DockStyle.Fill;
 
             panel1.Controls.Add(dvv);
             dvv.Show();
+        }
+
+        private void padariaProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            DataView_PadariaProduto dtpp = new DataView_PadariaProduto();
+            dtpp.TopLevel = false;
+            dtpp.FormBorderStyle = FormBorderStyle.None;
+            dtpp.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(dtpp);
+            dtpp.Show();
         }
     }
 }

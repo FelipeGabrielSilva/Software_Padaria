@@ -50,6 +50,7 @@
             vENDAToolStripMenuItem1 = new ToolStripMenuItem();
             vENDAToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            padariaProdutosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip2.SuspendLayout();
             SuspendLayout();
             // 
@@ -152,7 +153,7 @@
             // 
             // tABELAToolStripMenuItem
             // 
-            tABELAToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cATEGORIAToolStripMenuItem1, fORNECEDORToolStripMenuItem2, pAGAMENTOToolStripMenuItem1, rECEITAToolStripMenuItem1, vENDAToolStripMenuItem1 });
+            tABELAToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cATEGORIAToolStripMenuItem1, fORNECEDORToolStripMenuItem2, padariaProdutosToolStripMenuItem, pAGAMENTOToolStripMenuItem1, rECEITAToolStripMenuItem1, vENDAToolStripMenuItem1 });
             tABELAToolStripMenuItem.Name = "tABELAToolStripMenuItem";
             tABELAToolStripMenuItem.Size = new Size(195, 62);
             tABELAToolStripMenuItem.Text = "Tabela";
@@ -160,35 +161,35 @@
             // cATEGORIAToolStripMenuItem1
             // 
             cATEGORIAToolStripMenuItem1.Name = "cATEGORIAToolStripMenuItem1";
-            cATEGORIAToolStripMenuItem1.Size = new Size(384, 62);
+            cATEGORIAToolStripMenuItem1.Size = new Size(592, 62);
             cATEGORIAToolStripMenuItem1.Text = "Categoria";
             cATEGORIAToolStripMenuItem1.Click += cATEGORIAToolStripMenuItem1_Click;
             // 
             // fORNECEDORToolStripMenuItem2
             // 
             fORNECEDORToolStripMenuItem2.Name = "fORNECEDORToolStripMenuItem2";
-            fORNECEDORToolStripMenuItem2.Size = new Size(384, 62);
+            fORNECEDORToolStripMenuItem2.Size = new Size(592, 62);
             fORNECEDORToolStripMenuItem2.Text = "Fornecedor";
             fORNECEDORToolStripMenuItem2.Click += fORNECEDORToolStripMenuItem2_Click;
             // 
             // pAGAMENTOToolStripMenuItem1
             // 
             pAGAMENTOToolStripMenuItem1.Name = "pAGAMENTOToolStripMenuItem1";
-            pAGAMENTOToolStripMenuItem1.Size = new Size(384, 62);
+            pAGAMENTOToolStripMenuItem1.Size = new Size(592, 62);
             pAGAMENTOToolStripMenuItem1.Text = "Pagamento";
             pAGAMENTOToolStripMenuItem1.Click += pAGAMENTOToolStripMenuItem1_Click;
             // 
             // rECEITAToolStripMenuItem1
             // 
             rECEITAToolStripMenuItem1.Name = "rECEITAToolStripMenuItem1";
-            rECEITAToolStripMenuItem1.Size = new Size(384, 62);
+            rECEITAToolStripMenuItem1.Size = new Size(592, 62);
             rECEITAToolStripMenuItem1.Text = "Receita";
             rECEITAToolStripMenuItem1.Click += rECEITAToolStripMenuItem1_Click;
             // 
             // vENDAToolStripMenuItem1
             // 
             vENDAToolStripMenuItem1.Name = "vENDAToolStripMenuItem1";
-            vENDAToolStripMenuItem1.Size = new Size(384, 62);
+            vENDAToolStripMenuItem1.Size = new Size(592, 62);
             vENDAToolStripMenuItem1.Text = "Venda";
             vENDAToolStripMenuItem1.Click += vENDAToolStripMenuItem1_Click;
             // 
@@ -206,6 +207,13 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1563, 793);
             panel1.TabIndex = 2;
+            // 
+            // padariaProdutosToolStripMenuItem
+            // 
+            padariaProdutosToolStripMenuItem.Name = "padariaProdutosToolStripMenuItem";
+            padariaProdutosToolStripMenuItem.Size = new Size(592, 62);
+            padariaProdutosToolStripMenuItem.Text = "Padaria - Produtos";
+            padariaProdutosToolStripMenuItem.Click += padariaProdutosToolStripMenuItem_Click;
             // 
             // Menu
             // 
@@ -248,5 +256,6 @@
         private ToolStripMenuItem pAGAMENTOToolStripMenuItem1;
         private ToolStripMenuItem rECEITAToolStripMenuItem1;
         private ToolStripMenuItem vENDAToolStripMenuItem1;
+        private ToolStripMenuItem padariaProdutosToolStripMenuItem;
     }
 }
