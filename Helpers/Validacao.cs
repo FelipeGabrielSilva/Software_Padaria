@@ -90,13 +90,13 @@ namespace WindowsForm_Padaria
             if (string.IsNullOrWhiteSpace(f.Bairro))
                 res.Erros.Add("Bairro do fornecedor é obrigatório.");
 
-            if (string.IsNullOrWhiteSpace(f.Numero))
+            if (string.IsNullOrWhiteSpace(f.NumeroEndereco))
                 res.Erros.Add("Número do fornecedor é obrigatório.");
 
             if (string.IsNullOrWhiteSpace(f.CNPJ))
                 res.Erros.Add("CNPJ do fornecedor é obrigatório.");
 
-            if (string.IsNullOrWhiteSpace(Convert.ToString(f.TipoPagamentoId)))
+            if (string.IsNullOrWhiteSpace(Convert.ToString(f.PagamentoId)))
                 res.Erros.Add("Tipo de pagamento do fornecedor é obrigatório.");
 
             return res;
@@ -178,27 +178,8 @@ namespace WindowsForm_Padaria
                 return res;
             }
 
-            if (string.IsNullOrWhiteSpace(p.Descricao))
+            if (string.IsNullOrWhiteSpace(p.Nome))
                 res.Erros.Add("Descrição do pagamento é obrigatória.");
-
-            return res;
-        }
-
-        public ResultadoValidacao Produto_Receita(Produto_Receita p) 
-        {
-            var res = new ResultadoValidacao();
-
-            if (p == null)
-            {
-                res.Erros.Add("Objeto Produto_Receita não pode ser nulo.");
-                return res;
-            }
-
-            if (p.ProdutoId <= 0)
-                res.Erros.Add("ProdutoId deve ser maior que zero.");
-
-            if (p.ReceitaId <= 0)
-                res.Erros.Add("ReceitaId deve ser maior que zero.");
 
             return res;
         }

@@ -19,6 +19,6 @@ namespace WindowsForm_Padaria.Model
 
         [ForeignKey(nameof(FornecedorId))]
         public required int FornecedorId { get; set; }
-        public Fornecedor Fornecedor { get; set; }
+        public Fornecedor Fornecedor { get; set; } = null!;
     }
 }

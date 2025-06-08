@@ -34,13 +34,13 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            vendaBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             statusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cPFCNPJDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             precoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            tipoPagamentoIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            vendaBindingSource = new BindingSource(components);
+            Pagamento = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             SuspendLayout();
@@ -50,7 +50,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(181, 58);
+            label1.Size = new Size(146, 47);
             label1.TabIndex = 0;
             label1.Text = "Vendas";
             // 
@@ -68,7 +68,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, cPFCNPJDataGridViewTextBoxColumn, precoDataGridViewTextBoxColumn, tipoPagamentoIdDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, statusDataGridViewTextBoxColumn, cPFCNPJDataGridViewTextBoxColumn, precoDataGridViewTextBoxColumn, Pagamento });
             dataGridView1.DataSource = vendaBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
@@ -92,13 +92,17 @@
             dataGridView1.Size = new Size(1800, 500);
             dataGridView1.TabIndex = 1;
             // 
+            // vendaBindingSource
+            // 
+            vendaBindingSource.DataSource = typeof(Model.Venda);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 76;
+            idDataGridViewTextBoxColumn.Width = 64;
             // 
             // dataDataGridViewTextBoxColumn
             // 
@@ -106,7 +110,7 @@
             dataDataGridViewTextBoxColumn.HeaderText = "Data";
             dataDataGridViewTextBoxColumn.MinimumWidth = 6;
             dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            dataDataGridViewTextBoxColumn.Width = 108;
+            dataDataGridViewTextBoxColumn.Width = 90;
             // 
             // statusDataGridViewTextBoxColumn
             // 
@@ -114,7 +118,7 @@
             statusDataGridViewTextBoxColumn.HeaderText = "Status";
             statusDataGridViewTextBoxColumn.MinimumWidth = 6;
             statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            statusDataGridViewTextBoxColumn.Width = 140;
+            statusDataGridViewTextBoxColumn.Width = 116;
             // 
             // cPFCNPJDataGridViewTextBoxColumn
             // 
@@ -122,7 +126,7 @@
             cPFCNPJDataGridViewTextBoxColumn.HeaderText = "CPF_CNPJ";
             cPFCNPJDataGridViewTextBoxColumn.MinimumWidth = 6;
             cPFCNPJDataGridViewTextBoxColumn.Name = "cPFCNPJDataGridViewTextBoxColumn";
-            cPFCNPJDataGridViewTextBoxColumn.Width = 172;
+            cPFCNPJDataGridViewTextBoxColumn.Width = 142;
             // 
             // precoDataGridViewTextBoxColumn
             // 
@@ -130,23 +134,18 @@
             precoDataGridViewTextBoxColumn.HeaderText = "Preco";
             precoDataGridViewTextBoxColumn.MinimumWidth = 6;
             precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
-            precoDataGridViewTextBoxColumn.Width = 124;
+            precoDataGridViewTextBoxColumn.Width = 103;
             // 
-            // tipoPagamentoIdDataGridViewTextBoxColumn
+            // Pagamento
             // 
-            tipoPagamentoIdDataGridViewTextBoxColumn.DataPropertyName = "TipoPagamentoId";
-            tipoPagamentoIdDataGridViewTextBoxColumn.HeaderText = "TipoPagamentoId";
-            tipoPagamentoIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            tipoPagamentoIdDataGridViewTextBoxColumn.Name = "tipoPagamentoIdDataGridViewTextBoxColumn";
-            tipoPagamentoIdDataGridViewTextBoxColumn.Width = 284;
-            // 
-            // vendaBindingSource
-            // 
-            vendaBindingSource.DataSource = typeof(Model.Venda);
+            Pagamento.DataPropertyName = "Pagamento";
+            Pagamento.HeaderText = "Pagamento";
+            Pagamento.Name = "Pagamento";
+            Pagamento.Width = 155;
             // 
             // DataView_Venda
             // 
-            AutoScaleDimensions = new SizeF(26F, 57F);
+            AutoScaleDimensions = new SizeF(21F, 47F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);
@@ -166,12 +165,12 @@
 
         private Label label1;
         private DataGridView dataGridView1;
+        private BindingSource vendaBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cPFCNPJDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tipoPagamentoIdDataGridViewTextBoxColumn;
-        private BindingSource vendaBindingSource;
+        private DataGridViewTextBoxColumn Pagamento;
     }
 }

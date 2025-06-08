@@ -43,12 +43,12 @@
             comboBox1 = new ComboBox();
             pictureBox1 = new PictureBox();
             dataGridView2 = new DataGridView();
+            estoqueProdFornecedorBindingSource1 = new BindingSource(components);
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            estoqueProdFornecedorBindingSource1 = new BindingSource(components);
+            Fornecedor = new DataGridViewTextBoxColumn();
+            Produto = new DataGridViewTextBoxColumn();
+            Movimentacao = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)estoqueProdFornecedorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -154,7 +154,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, Fornecedor, Produto, Movimentacao });
             dataGridView2.DataSource = estoqueProdFornecedorBindingSource1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
@@ -174,9 +174,13 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView2.Size = new Size(825, 156);
+            dataGridView2.Size = new Size(1519, 156);
             dataGridView2.TabIndex = 24;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            // 
+            // estoqueProdFornecedorBindingSource1
+            // 
+            estoqueProdFornecedorBindingSource1.DataSource = typeof(Model.Estoque_Prod_Fornecedor);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -192,30 +196,27 @@
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.Width = 168;
             // 
-            // dataGridViewTextBoxColumn3
+            // Fornecedor
             // 
-            dataGridViewTextBoxColumn3.DataPropertyName = "FornecedorId";
-            dataGridViewTextBoxColumn3.HeaderText = "FornecedorId";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.Width = 194;
+            Fornecedor.DataPropertyName = "Fornecedor";
+            Fornecedor.HeaderText = "Fornecedor";
+            Fornecedor.Name = "Fornecedor";
+            Fornecedor.Width = 168;
             // 
-            // dataGridViewTextBoxColumn4
+            // Produto
             // 
-            dataGridViewTextBoxColumn4.DataPropertyName = "ProdutoId";
-            dataGridViewTextBoxColumn4.HeaderText = "ProdutoId";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.Width = 155;
+            Produto.DataPropertyName = "Produto";
+            Produto.HeaderText = "Produto";
+            Produto.Name = "Produto";
+            Produto.Width = 129;
             // 
-            // dataGridViewTextBoxColumn5
+            // Movimentacao
             // 
-            dataGridViewTextBoxColumn5.DataPropertyName = "Tipo";
-            dataGridViewTextBoxColumn5.HeaderText = "Tipo";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.Width = 90;
-            // 
-            // estoqueProdFornecedorBindingSource1
-            // 
-            estoqueProdFornecedorBindingSource1.DataSource = typeof(Model.Estoque_Prod_Fornecedor);
+            Movimentacao.DataPropertyName = "Movimentacao";
+            Movimentacao.HeaderText = "Movimentacao";
+            Movimentacao.Name = "Movimentacao";
+            Movimentacao.ReadOnly = true;
+            Movimentacao.Width = 194;
             // 
             // E_Prod_Fornecedor
             // 
@@ -261,11 +262,11 @@
         private ComboBox comboBox1;
         private PictureBox pictureBox1;
         private DataGridView dataGridView2;
+        private BindingSource estoqueProdFornecedorBindingSource1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private BindingSource estoqueProdFornecedorBindingSource1;
+        private DataGridViewTextBoxColumn Fornecedor;
+        private DataGridViewTextBoxColumn Produto;
+        private DataGridViewTextBoxColumn Movimentacao;
     }
 }

@@ -18,10 +18,11 @@ namespace WindowsForm_Padaria.Model
         public required string Email { get; set; }
         public required string Endereco { get; set; }
         public required string Bairro { get; set; }
-        public required string Numero { get; set; }
+        public required string NumeroEndereco { get; set; }
         public required string CNPJ { get; set; }
-        [ForeignKey(nameof(TipoPagamentoId))]
-        public required int TipoPagamentoId { get; set; }
-        public Pagamento Pagamento { get; set; }
+
+        [ForeignKey(nameof(PagamentoId))]
+        public required int PagamentoId { get; set; }
+        public Pagamento Pagamento { get; set; } = null!;
     }
 }

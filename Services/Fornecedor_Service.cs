@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using WindowsForm_Padaria.GerarDados;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
@@ -40,7 +41,7 @@ namespace WindowsForm_Padaria.Services
         {
             List<Fornecedor> Fornecedores = new List<Fornecedor>();
 
-            Fornecedores = _context.Fornecedor.ToList();
+            Fornecedores = _context.Fornecedor.Include(p => p.Pagamento).ToList();
 
             return Fornecedores;
         }

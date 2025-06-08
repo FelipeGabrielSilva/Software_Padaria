@@ -13,6 +13,6 @@ namespace WindowsForm_Padaria.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public required string Descricao { get; set; }
+        public required string Nome { get; set; }
     }
 }

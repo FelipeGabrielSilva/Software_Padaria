@@ -17,11 +17,11 @@ namespace WindowsForm_Padaria.Model
         public required string Nome { get; set; }
         public required string Descricao { get; set; }
 
-        [Column(TypeName = "decimal(8,2)")]
+        [Column(TypeName = "decimal(9,2)")]
         public required decimal Preco { get; set; }
 
         [ForeignKey(nameof(CategoriaId))]
         public required int CategoriaId { get; set; }
-        public Categoria Categoria { get; set; }
+        public Categoria Categoria { get; set; } = null!;
     }
 }

@@ -20,7 +20,7 @@ namespace WindowsForm_Padaria.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public ICollection<Venda_Produto> Produtos { get; set; } = new List<Venda_Produto>();
+        public ICollection<Venda_Produto> VendaProdutos { get; set; } = new List<Venda_Produto>();
         public required DateTime Data { get; set; }
         public required Status Status { get; set; }
         public string? CPF_CNPJ { get; set; }
@@ -30,6 +30,6 @@ namespace WindowsForm_Padaria.Model
 
         [ForeignKey(nameof(TipoPagamentoId))]
         public required int TipoPagamentoId { get; set; }
-        public Pagamento Pagamento { get; set; }
+        public Pagamento Pagamento { get; set; } = null!;
     }
 }

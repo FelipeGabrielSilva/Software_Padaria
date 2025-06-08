@@ -2,7 +2,7 @@
 {
     public enum Tipo
     {
-        E,
-        S,
+        Entrada,
+        Saida,
     }
 }

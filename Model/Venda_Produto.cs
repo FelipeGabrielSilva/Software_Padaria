@@ -19,9 +19,7 @@ namespace WindowsForm_Padaria.Model
 
         [Column(TypeName = "decimal(9,2)")]
         public required decimal PrecoUnitario { get; set; }
-        [ForeignKey(nameof(ProdutoId))]
-        public required Padaria_Produto Produto { get; set; }
-        [ForeignKey(nameof(VendaId))]
-        public required Venda Venda { get; set; }
+        public required Padaria_Produto Produto { get; set; } = null!;
+        public required Venda Venda { get; set; } = null!;
     }
 }

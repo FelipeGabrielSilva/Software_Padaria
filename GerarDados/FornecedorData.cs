@@ -22,7 +22,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Centro",
                 Numero = "123",
                 CNPJ = "12.345.678/0001-90",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -33,7 +33,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Jardim América",
                 Numero = "456",
                 CNPJ = "23.456.789/0001-01",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -44,7 +44,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Industrial",
                 Numero = "789",
                 CNPJ = "34.567.890/0001-12",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -55,7 +55,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Tecnopolis",
                 Numero = "101",
                 CNPJ = "45.678.901/0001-23",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -66,7 +66,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Nova Cidade",
                 Numero = "202",
                 CNPJ = "56.789.012/0001-34",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -77,7 +77,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Centro Empresarial",
                 Numero = "303",
                 CNPJ = "67.890.123/0001-45",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -88,7 +88,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Limpeza Pura",
                 Numero = "404",
                 CNPJ = "78.901.234/0001-56",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -99,7 +99,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Nova Construção",
                 Numero = "505",
                 CNPJ = "89.012.345/0001-67",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -110,7 +110,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Fashion Mall",
                 Numero = "606",
                 CNPJ = "90.123.456/0001-78",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -121,7 +121,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Digital Park",
                 Numero = "707",
                 CNPJ = "01.234.567/0001-89",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -132,7 +132,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Vida Saudável",
                 Numero = "808",
                 CNPJ = "12.345.679/0001-90",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -143,7 +143,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Motor City",
                 Numero = "909",
                 CNPJ = "23.456.780/0001-01",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -154,7 +154,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Pet Village",
                 Numero = "1010",
                 CNPJ = "34.567.891/0001-12",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -165,7 +165,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Gourmet Square",
                 Numero = "111",
                 CNPJ = "45.678.902/0001-23",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -176,7 +176,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Bem Estar",
                 Numero = "1212",
                 CNPJ = "56.789.013/0001-34",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -187,7 +187,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Logística Center",
                 Numero = "1313",
                 CNPJ = "67.890.124/0001-45",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -198,7 +198,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Saber Mais",
                 Numero = "1414",
                 CNPJ = "78.901.235/0001-56",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -209,7 +209,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Protege Center",
                 Numero = "1515",
                 CNPJ = "89.012.346/0001-67",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -220,7 +220,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Beleza Pura",
                 Numero = "1616",
                 CNPJ = "90.123.457/0001-78",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -231,7 +231,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Atleta Center",
                 Numero = "1717",
                 CNPJ = "01.234.568/0001-89",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -242,7 +242,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Tecno Park",
                 Numero = "1818",
                 CNPJ = "12.345.680/0001-90",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -253,7 +253,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Campo Verde",
                 Numero = "1919",
                 CNPJ = "23.456.791/0001-01",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -264,7 +264,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Diamante Center",
                 Numero = "2020",
                 CNPJ = "34.567.892/0001-12",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -275,7 +275,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Mundo Infantil",
                 Numero = "2121",
                 CNPJ = "45.678.903/0001-23",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -286,7 +286,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Cultura Center",
                 Numero = "2222",
                 CNPJ = "56.789.014/0001-34",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -297,7 +297,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Decor Park",
                 Numero = "2323",
                 CNPJ = "67.890.125/0001-45",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -308,7 +308,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Fragrância Center",
                 Numero = "2424",
                 CNPJ = "78.901.236/0001-56",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -319,7 +319,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Olho Vivo",
                 Numero = "2525",
                 CNPJ = "89.012.347/0001-67",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -330,7 +330,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Presente Park",
                 Numero = "2626",
                 CNPJ = "90.123.458/0001-78",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -341,7 +341,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Cervejaria Village",
                 Numero = "2727",
                 CNPJ = "01.234.569/0001-89",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -352,7 +352,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Constru Forte",
                 Numero = "2828",
                 CNPJ = "12.345.681/0001-90",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -363,7 +363,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Conforto Home",
                 Numero = "2929",
                 CNPJ = "23.456.792/0001-01",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -374,7 +374,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Pneu Center",
                 Numero = "3030",
                 CNPJ = "34.567.893/0001-12",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -385,7 +385,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Mobile Park",
                 Numero = "3131",
                 CNPJ = "45.678.904/0001-23",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -396,7 +396,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Musical Center",
                 Numero = "3232",
                 CNPJ = "56.789.015/0001-34",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -407,7 +407,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Aqua Park",
                 Numero = "3333",
                 CNPJ = "67.890.126/0001-45",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -418,7 +418,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Health Center",
                 Numero = "3434",
                 CNPJ = "78.901.237/0001-56",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -429,7 +429,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Foto Park",
                 Numero = "3535",
                 CNPJ = "89.012.348/0001-67",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -440,7 +440,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Bike Center",
                 Numero = "3636",
                 CNPJ = "90.123.459/0001-78",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -451,7 +451,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Relógio Center",
                 Numero = "3737",
                 CNPJ = "01.234.570/0001-89",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -462,7 +462,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Coffee Village",
                 Numero = "3838",
                 CNPJ = "12.345.682/0001-90",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -473,7 +473,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Pintura Center",
                 Numero = "3939",
                 CNPJ = "23.456.793/0001-01",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -484,7 +484,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Vidro Park",
                 Numero = "4040",
                 CNPJ = "34.567.894/0001-12",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -495,7 +495,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Ferramentas Center",
                 Numero = "4141",
                 CNPJ = "45.678.905/0001-23",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -506,7 +506,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Garden Center",
                 Numero = "4242",
                 CNPJ = "56.789.016/0001-34",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -517,7 +517,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Chocolate Village",
                 Numero = "4343",
                 CNPJ = "67.890.127/0001-45",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -528,7 +528,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Arte Center",
                 Numero = "4444",
                 CNPJ = "78.901.238/0001-56",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -539,7 +539,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Água Park",
                 Numero = "4545",
                 CNPJ = "89.012.349/0001-67",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -550,7 +550,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Antique Center",
                 Numero = "4646",
                 CNPJ = "90.123.460/0001-78",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -561,7 +561,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Auto Center",
                 Numero = "4747",
                 CNPJ = "01.234.571/0001-89",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -572,7 +572,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Hidráulica Center",
                 Numero = "4848",
                 CNPJ = "12.345.683/0001-90",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -583,7 +583,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Segurança Park",
                 Numero = "4949",
                 CNPJ = "23.456.794/0001-01",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             },
             new Fornecedor
             {
@@ -594,7 +594,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Bairro = "Industrial Park",
                 Numero = "5050",
                 CNPJ = "34.567.895/0001-12",
-                TipoPagamentoId = 1
+                PagamentoId = 1
             }
         };
         }
