@@ -26,15 +26,18 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Padaria_Produto p = new Padaria_Produto
+            if (cmbCategoria.SelectedIndex != -1)
             {
-                Nome = txtNome.Text,
-                Descricao = txtDescricao.Text,
-                Preco = decimal.Parse(txtPreco.Text),
-                CategoriaId = (int)cmbCategoria.SelectedValue,
-            };
+                Padaria_Produto p = new Padaria_Produto
+                {
+                    Nome = txtNome.Text,
+                    Descricao = txtDescricao.Text,
+                    Preco = decimal.Parse(txtPreco.Text),
+                    CategoriaId = (int)cmbCategoria.SelectedValue,
+                };
 
-            pps.Criar(p);
+                pps.Criar(p);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,6 +50,7 @@ namespace WindowsForm_Padaria.Forms.Cadastro
             cmbCategoria.Items.Clear();
             cmbCategoria.ValueMember = "Id";
             cmbCategoria.DisplayMember = "Nome";
+            cmbCategoria.SelectedIndex = -1;
             cmbCategoria.DataSource = cs.ListarTodos();
         }
     }

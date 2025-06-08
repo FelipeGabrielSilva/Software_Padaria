@@ -16,6 +16,8 @@ namespace WindowsForm_Padaria.Model
         public int Codigo { get; set; }
         public required string Nome { get; set; }
         public required string Descricao { get; set; }
+
+        [Column(TypeName = "decimal(8,2)")]
         public required decimal Preco { get; set; }
 
         [ForeignKey(nameof(CategoriaId))]
