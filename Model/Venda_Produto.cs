@@ -13,11 +13,11 @@ namespace WindowsForm_Padaria.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
         public required int ProdutoId { get; set; }
-        [Required]
         public required int VendaId { get; set; }
         public required int Quantidade { get; set; }
+
+        [Column(TypeName = "decimal(9,2)")]
         public required decimal PrecoUnitario { get; set; }
         [ForeignKey(nameof(ProdutoId))]
         public required Padaria_Produto Produto { get; set; }

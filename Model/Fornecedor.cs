@@ -22,5 +22,6 @@ namespace WindowsForm_Padaria.Model
         public required string CNPJ { get; set; }
         [ForeignKey(nameof(TipoPagamentoId))]
         public required int TipoPagamentoId { get; set; }
+        public Pagamento Pagamento { get; set; }
     }
 }

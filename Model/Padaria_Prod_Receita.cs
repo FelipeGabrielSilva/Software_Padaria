@@ -16,8 +16,10 @@ namespace WindowsForm_Padaria.Model
 
         [ForeignKey(nameof(ReceitaId))]
         public required int ReceitaId { get; set; }
+        public Receita Receita { get; set; }
 
         [ForeignKey(nameof(ProdutoId))]
         public required int ProdutoId { get; set; }
+        public Padaria_Produto Produto { get; set; }
     }
 }

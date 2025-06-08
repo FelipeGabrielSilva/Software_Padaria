@@ -18,9 +18,19 @@ namespace WindowsForm_Padaria.Model
 
         [ForeignKey(nameof(FornecedorId))]
         public required int FornecedorId { get; set; }
+        public Fornecedor Fornecedor { get; set; }
 
         [ForeignKey(nameof(ProdutoId))]
         public required int ProdutoId { get; set; }
+        public Fornecedor_Produto Produto { get; set; }
         public required string Tipo { get; set; }
+
+        public string Movimentacao
+        {
+            get
+            {
+                return Tipo == "E" ? "Entrada" : "Saída";
+            }
+        }
     }
 }

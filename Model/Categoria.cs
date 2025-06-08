@@ -15,5 +15,6 @@ namespace WindowsForm_Padaria.Model
         public int Id { get; set; }
         public required string Nome { get; set; }
         public string? Descricao { get; set; }
+        public ICollection<Padaria_Produto>Produtos { get; set; } = new List<Padaria_Produto>();
     }
 }
