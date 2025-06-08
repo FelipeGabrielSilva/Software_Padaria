@@ -31,6 +31,8 @@ namespace WindowsForm_Padaria.Services
 
             _context.Estoque_Prod_Fornecedor.Add(epf);
             _context.SaveChanges();
+            
+            MessageBox.Show($"Quantidade adicionada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public List<Estoque_Prod_Fornecedor> ListarTodos ()
