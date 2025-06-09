@@ -189,9 +189,9 @@ namespace WindowsForm_Padaria.Forms.Relatorio
                 string caminhoCompletoDoArquivo = System.IO.Path.Combine(caminhoDoDiretorio, nomeDoArquivo);
 
                 List<Receita> receitas;
-                    receitas = context.Receita 
-                                       .OrderBy(r => r.Nome)
-                                       .ToList();
+                receitas = context.Receita
+                                   .OrderBy(r => r.Nome)
+                                   .ToList();
 
                 if (receitas == null || !receitas.Any())
                 {
@@ -227,7 +227,7 @@ namespace WindowsForm_Padaria.Forms.Relatorio
                     table.SetWidth(UnitValue.CreatePercentValue(100));
                     table.SetMarginBottom(10);
 
-                    iText.Kernel.Colors.Color corHeader = new iText.Kernel.Colors.DeviceRgb(19, 131, 15); 
+                    iText.Kernel.Colors.Color corHeader = new iText.Kernel.Colors.DeviceRgb(19, 131, 15);
 
                     table.AddHeaderCell(new Cell().Add(new Paragraph("Nome da Receita").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
                     table.AddHeaderCell(new Cell().Add(new Paragraph("Descrição").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
@@ -260,9 +260,9 @@ namespace WindowsForm_Padaria.Forms.Relatorio
                 string caminhoCompletoDoArquivo = System.IO.Path.Combine(caminhoDoDiretorio, nomeDoArquivo);
 
                 List<Padaria_Produto> produtosPadaria;
-                    
+
                 produtosPadaria = context.Padaria_Produto
-                                               .Include(p => p.Categoria) 
+                                               .Include(p => p.Categoria)
                                                .OrderBy(p => p.Nome)
                                                .ToList();
 
@@ -296,11 +296,11 @@ namespace WindowsForm_Padaria.Forms.Relatorio
                                             .SetMarginBottom(15);
                     doc.Add(subtitulo);
 
-                    Table table = new Table(UnitValue.CreatePercentArray(new float[] { 10, 25, 35, 15, 15 })); 
+                    Table table = new Table(UnitValue.CreatePercentArray(new float[] { 10, 25, 35, 15, 15 }));
                     table.SetWidth(UnitValue.CreatePercentValue(100));
                     table.SetMarginBottom(10);
 
-                    iText.Kernel.Colors.Color corHeader = new iText.Kernel.Colors.DeviceRgb(15, 75, 130); 
+                    iText.Kernel.Colors.Color corHeader = new iText.Kernel.Colors.DeviceRgb(15, 75, 130);
 
                     table.AddHeaderCell(new Cell().Add(new Paragraph("Código").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
                     table.AddHeaderCell(new Cell().Add(new Paragraph("Nome do Produto").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
@@ -322,6 +322,149 @@ namespace WindowsForm_Padaria.Forms.Relatorio
                 }
 
                 MessageBox.Show("Relatório de produtos da padaria gerado com sucesso em:\n" + caminhoCompletoDoArquivo, "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(caminhoCompletoDoArquivo) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao gerar o relatório: {ex.Message}\nDetalhes: {ex.InnerException?.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RelatorioEntradaProdutosFornecedores_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string caminhoDoDiretorio = @"C:\Dev\";
+                string nomeDoArquivo = $"RelatorioEntradaProdutosFornecedores_{DateTime.Now:ddMMyyyy_HH}.pdf";
+                string caminhoCompletoDoArquivo = System.IO.Path.Combine(caminhoDoDiretorio, nomeDoArquivo);
+
+                List<Estoque_Prod_Fornecedor> entradasFornecedores;
+                using (var dbContext = new AppDbContext())
+                {
+                    entradasFornecedores = dbContext.Estoque_Prod_Fornecedor
+                                                   .Include(e => e.Fornecedor)
+                                                   .Include(e => e.Produto)
+                                                   .Where(e => e.Tipo == Tipo.Entrada)
+                                                   .OrderByDescending(e => e.Entrada)
+                                                   .ToList();
+                }
+
+                if (entradasFornecedores == null || !entradasFornecedores.Any())
+                {
+                    MessageBox.Show("Não há registros de entrada de produtos de fornecedores para gerar o relatório.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // INÍCIO DA GERAÇÃO DO PDF
+                using (var pdfWriter = new PdfWriter(caminhoCompletoDoArquivo))
+                using (var pdfDocument = new PdfDocument(pdfWriter))
+                {
+                    Document doc = new Document(pdfDocument, PageSize.A4);
+
+                    PdfFont fontPadrao = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+                    PdfFont fontNegrito = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+                    iText.Kernel.Colors.Color corHeader = new iText.Kernel.Colors.DeviceRgb(139, 0, 0);
+
+                    doc.Add(new Paragraph("RELATÓRIO DE ENTRADA DE PRODUTOS DE FORNECEDORES")
+                                .SetFont(fontNegrito).SetFontSize(18).SetFontColor(iText.Kernel.Colors.ColorConstants.DARK_GRAY)
+                                .SetTextAlignment(TextAlignment.CENTER).SetMarginBottom(10));
+                    doc.Add(new Paragraph($"Gerado em: {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}")
+                                .SetFont(fontPadrao).SetFontSize(10).SetTextAlignment(TextAlignment.RIGHT).SetMarginBottom(15));
+
+                    Table table = new Table(UnitValue.CreatePercentArray(new float[] { 10, 15, 25, 30, 20 })); // 5 colunas
+                    table.SetWidth(UnitValue.CreatePercentValue(100)).SetMarginBottom(10);
+
+                    table.AddHeaderCell(new Cell().Add(new Paragraph("ID").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
+                    table.AddHeaderCell(new Cell().Add(new Paragraph("Quantidade").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
+                    table.AddHeaderCell(new Cell().Add(new Paragraph("Fornecedor").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
+                    table.AddHeaderCell(new Cell().Add(new Paragraph("Produto").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
+                    table.AddHeaderCell(new Cell().Add(new Paragraph("Data Entrada").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
+
+                    foreach (var entrada in entradasFornecedores)
+                    {
+                        table.AddCell(new Cell().Add(new Paragraph(entrada.Id.ToString()).SetFont(fontPadrao).SetFontSize(9).SetTextAlignment(TextAlignment.CENTER)));
+                        table.AddCell(new Cell().Add(new Paragraph(entrada.Quantidade.ToString()).SetFont(fontPadrao).SetFontSize(9).SetTextAlignment(TextAlignment.CENTER)));
+                        table.AddCell(new Cell().Add(new Paragraph(entrada.Fornecedor?.Nome ?? "N/A").SetFont(fontPadrao).SetFontSize(9)));
+                        table.AddCell(new Cell().Add(new Paragraph(entrada.Produto?.Nome ?? "N/A").SetFont(fontPadrao).SetFontSize(9)));
+                        table.AddCell(new Cell().Add(new Paragraph(entrada.Entrada?.ToString("dd/MM/yyyy HH:mm") ?? "N/A").SetFont(fontPadrao).SetFontSize(9).SetTextAlignment(TextAlignment.CENTER)));
+                    }
+
+                    doc.Add(table);
+                    doc.Close();
+                }
+
+                MessageBox.Show("Relatório de entrada de produtos de fornecedores gerado com sucesso em:\n" + caminhoCompletoDoArquivo, "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(caminhoCompletoDoArquivo) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao gerar o relatório: {ex.Message}\nDetalhes: {ex.InnerException?.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RelatorioSaidaProdutosPadaria_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string caminhoDoDiretorio = @"C:\Dev\";
+                string nomeDoArquivo = $"RelatorioSaidaProdutosPadaria_{DateTime.Now:ddMMyyyy_HH}.pdf";
+                string caminhoCompletoDoArquivo = System.IO.Path.Combine(caminhoDoDiretorio, nomeDoArquivo);
+
+                List<Estoque_Prod_Padaria> saidasPadaria;
+                using (var dbContext = new AppDbContext())
+                {
+                    saidasPadaria = dbContext.Estoque_Prod_Padaria
+                                            .Include(e => e.Produto)
+                                            .Where(e => e.Tipo == Tipo.Saida)
+                                            .OrderByDescending(e => e.Saida)
+                                            .ToList();
+                }
+
+                if (saidasPadaria == null || !saidasPadaria.Any())
+                {
+                    MessageBox.Show("Não há registros de saída de produtos da padaria para gerar o relatório.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // INÍCIO DA GERAÇÃO DO PDF
+                using (var pdfWriter = new PdfWriter(caminhoCompletoDoArquivo))
+                using (var pdfDocument = new PdfDocument(pdfWriter))
+                {
+                    Document doc = new Document(pdfDocument, PageSize.A4);
+
+                    PdfFont fontPadrao = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+                    PdfFont fontNegrito = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+                    iText.Kernel.Colors.Color corHeader = new iText.Kernel.Colors.DeviceRgb(200, 0, 0);
+
+                    doc.Add(new Paragraph("RELATÓRIO DE SAÍDA DE PRODUTOS DA PADARIA")
+                                .SetFont(fontNegrito).SetFontSize(18).SetFontColor(iText.Kernel.Colors.ColorConstants.DARK_GRAY)
+                                .SetTextAlignment(TextAlignment.CENTER).SetMarginBottom(10));
+                    doc.Add(new Paragraph($"Gerado em: {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}")
+                                .SetFont(fontPadrao).SetFontSize(10).SetTextAlignment(TextAlignment.RIGHT).SetMarginBottom(15));
+
+                    Table table = new Table(UnitValue.CreatePercentArray(new float[] { 10, 25, 15, 15, 35 })); // 5 colunas
+                    table.SetWidth(UnitValue.CreatePercentValue(100)).SetMarginBottom(10);
+
+                    table.AddHeaderCell(new Cell().Add(new Paragraph("ID").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
+                    table.AddHeaderCell(new Cell().Add(new Paragraph("Produto").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
+                    table.AddHeaderCell(new Cell().Add(new Paragraph("Qtd.").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
+                    table.AddHeaderCell(new Cell().Add(new Paragraph("Data Saída").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
+                    table.AddHeaderCell(new Cell().Add(new Paragraph("Descrição").SetFont(fontNegrito).SetFontColor(iText.Kernel.Colors.ColorConstants.WHITE).SetTextAlignment(TextAlignment.CENTER)).SetBackgroundColor(corHeader));
+
+                    foreach (var saida in saidasPadaria)
+                    {
+                        table.AddCell(new Cell().Add(new Paragraph(saida.Id.ToString()).SetFont(fontPadrao).SetFontSize(9).SetTextAlignment(TextAlignment.CENTER)));
+                        table.AddCell(new Cell().Add(new Paragraph(saida.Produto?.Nome ?? "N/A").SetFont(fontPadrao).SetFontSize(9)));
+                        table.AddCell(new Cell().Add(new Paragraph(saida.Quantidade.ToString()).SetFont(fontPadrao).SetFontSize(9).SetTextAlignment(TextAlignment.CENTER)));
+                        table.AddCell(new Cell().Add(new Paragraph(saida.Saida.ToString("dd/MM/yyyy HH:mm")).SetFont(fontPadrao).SetFontSize(9).SetTextAlignment(TextAlignment.CENTER)));
+                        table.AddCell(new Cell().Add(new Paragraph(saida.Descricao ?? "N/A").SetFont(fontPadrao).SetFontSize(9)));
+                    }
+
+                    doc.Add(table);
+                    doc.Close();
+                }
+
+                MessageBox.Show("Relatório de saída de produtos da padaria gerado com sucesso em:\n" + caminhoCompletoDoArquivo, "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(caminhoCompletoDoArquivo) { UseShellExecute = true });
             }
             catch (Exception ex)

@@ -33,6 +33,8 @@
             RelatorioProdutosFornecedores = new Button();
             RelatorioReceita = new Button();
             RelatorioProdutosPadaria = new Button();
+            RelatorioEntradaProdutosFornecedores = new Button();
+            RelatorioSaidaProdutosPadaria = new Button();
             SuspendLayout();
             // 
             // RelatorioFornecedores
@@ -70,7 +72,7 @@
             // RelatorioReceita
             // 
             RelatorioReceita.Font = new Font("JetBrains Mono", 16F);
-            RelatorioReceita.Location = new Point(12, 199);
+            RelatorioReceita.Location = new Point(12, 253);
             RelatorioReceita.Name = "RelatorioReceita";
             RelatorioReceita.Size = new Size(300, 48);
             RelatorioReceita.TabIndex = 3;
@@ -81,7 +83,7 @@
             // RelatorioProdutosPadaria
             // 
             RelatorioProdutosPadaria.Font = new Font("JetBrains Mono", 16F);
-            RelatorioProdutosPadaria.Location = new Point(12, 253);
+            RelatorioProdutosPadaria.Location = new Point(12, 307);
             RelatorioProdutosPadaria.Name = "RelatorioProdutosPadaria";
             RelatorioProdutosPadaria.Size = new Size(300, 48);
             RelatorioProdutosPadaria.TabIndex = 4;
@@ -89,11 +91,35 @@
             RelatorioProdutosPadaria.UseVisualStyleBackColor = true;
             RelatorioProdutosPadaria.Click += RelatorioProdutosPadaria_Click;
             // 
+            // RelatorioEntradaProdutosFornecedores
+            // 
+            RelatorioEntradaProdutosFornecedores.Font = new Font("JetBrains Mono", 16F);
+            RelatorioEntradaProdutosFornecedores.Location = new Point(12, 199);
+            RelatorioEntradaProdutosFornecedores.Name = "RelatorioEntradaProdutosFornecedores";
+            RelatorioEntradaProdutosFornecedores.Size = new Size(300, 48);
+            RelatorioEntradaProdutosFornecedores.TabIndex = 5;
+            RelatorioEntradaProdutosFornecedores.Text = "Entrada - Fornecedor";
+            RelatorioEntradaProdutosFornecedores.UseVisualStyleBackColor = true;
+            RelatorioEntradaProdutosFornecedores.Click += RelatorioEntradaProdutosFornecedores_Click;
+            // 
+            // RelatorioSaidaProdutosPadaria
+            // 
+            RelatorioSaidaProdutosPadaria.Font = new Font("JetBrains Mono", 16F);
+            RelatorioSaidaProdutosPadaria.Location = new Point(12, 361);
+            RelatorioSaidaProdutosPadaria.Name = "RelatorioSaidaProdutosPadaria";
+            RelatorioSaidaProdutosPadaria.Size = new Size(300, 48);
+            RelatorioSaidaProdutosPadaria.TabIndex = 6;
+            RelatorioSaidaProdutosPadaria.Text = "Saída - Padaria";
+            RelatorioSaidaProdutosPadaria.UseVisualStyleBackColor = true;
+            RelatorioSaidaProdutosPadaria.Click += RelatorioSaidaProdutosPadaria_Click;
+            // 
             // FormRelatorio
             // 
             AutoScaleDimensions = new SizeF(21F, 47F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 761);
+            Controls.Add(RelatorioSaidaProdutosPadaria);
+            Controls.Add(RelatorioEntradaProdutosFornecedores);
             Controls.Add(RelatorioProdutosPadaria);
             Controls.Add(RelatorioReceita);
             Controls.Add(RelatorioProdutosFornecedores);
@@ -114,5 +140,7 @@
         private Button RelatorioProdutosFornecedores;
         private Button RelatorioReceita;
         private Button RelatorioProdutosPadaria;
+        private Button RelatorioEntradaProdutosFornecedores;
+        private Button RelatorioSaidaProdutosPadaria;
     }
 }
