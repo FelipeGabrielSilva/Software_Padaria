@@ -25,6 +25,7 @@ namespace WindowsForm_Padaria.Forms.Estoque
             epfs = new Estoque_Prod_Fornecedor_Service();
             lfp = new List<Fornecedor_Produto>();
             InitializeComponent();
+            epfs.PopularBanco();
             AtualizarGrid();
             AtualizarTabela();
         }

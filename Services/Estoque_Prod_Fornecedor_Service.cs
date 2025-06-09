@@ -49,9 +49,15 @@ namespace WindowsForm_Padaria.Services
         public void Deletar() {
         }
 
-        private void PopularBanco()
+        public void PopularBanco()
         {
+            if (_context.Estoque_Prod_Fornecedor.Any())
+            {
+                return;
+            }
             
+            EstoqueFornecedorProdutoData.GerarMovimentacoesEstoque(_context);
+
         }
     }
 }
