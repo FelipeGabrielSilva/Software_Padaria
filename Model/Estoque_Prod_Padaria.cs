@@ -21,6 +21,9 @@ namespace WindowsForm_Padaria.Model
         public required int Quantidade { get; set; }
         public required DateTime Data { get; set; }
         public required string? Descricao { get; set; }
+        public DateTime Entrada { get; set; }
+        public DateTime Saida { get; set; }
+        public DateTime Atualizacao { get; set; }
         public string Movimentacao
         {
             get
