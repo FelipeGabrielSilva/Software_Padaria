@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WindowsForm_Padaria.Forms.Cadastro;
 using WindowsForm_Padaria.Forms.DataView;
 using WindowsForm_Padaria.Forms.Estoque;
+using WindowsForm_Padaria.Forms.Relatorio;
 using WindowsForm_Padaria.Forms.Tabela;
 using WindowsForm_Padaria.Forms.Venda;
 
@@ -227,6 +228,18 @@ namespace WindowsForm_Padaria.Forms
 
             panel1.Controls.Add(v);
             v.Show();
+        }
+
+        private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            FormRelatorio fr = new FormRelatorio();
+            fr.TopLevel = false;
+            fr.FormBorderStyle = FormBorderStyle.None;
+            fr.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(fr);
+            fr.Show();
         }
     }
 }

@@ -42,15 +42,20 @@
             textBox2 = new TextBox();
             vendaBindingSource = new BindingSource(components);
             dataGridViewItensVenda = new DataGridView();
-            itemVendaBindingSource = new BindingSource(components);
-            lblTotalVenda = new Label();
-            label5 = new Label();
-            button2 = new Button();
             codigoProdutoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeProdutoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             quantidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             precoUnitarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             subtotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            itemVendaBindingSource = new BindingSource(components);
+            lblTotalVenda = new Label();
+            label5 = new Label();
+            button2 = new Button();
+            label6 = new Label();
+            textBox1 = new TextBox();
+            button3 = new Button();
+            label7 = new Label();
+            comboBox2 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewItensVenda).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itemVendaBindingSource).BeginInit();
@@ -156,7 +161,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridViewItensVenda.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewItensVenda.Location = new Point(222, 192);
+            dataGridViewItensVenda.Location = new Point(222, 230);
             dataGridViewItensVenda.Name = "dataGridViewItensVenda";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
@@ -168,40 +173,6 @@
             dataGridViewItensVenda.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewItensVenda.Size = new Size(1500, 400);
             dataGridViewItensVenda.TabIndex = 6;
-            dataGridViewItensVenda.CellContentClick += dataGridViewItensVenda_CellContentClick_1;
-            // 
-            // itemVendaBindingSource
-            // 
-            itemVendaBindingSource.DataSource = typeof(Model.ItemVenda);
-            // 
-            // lblTotalVenda
-            // 
-            lblTotalVenda.AutoSize = true;
-            lblTotalVenda.Location = new Point(1471, 617);
-            lblTotalVenda.Name = "lblTotalVenda";
-            lblTotalVenda.Size = new Size(251, 47);
-            lblTotalVenda.TabIndex = 7;
-            lblTotalVenda.Text = "Preço total";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(1315, 617);
-            label5.Name = "label5";
-            label5.Size = new Size(146, 47);
-            label5.TabIndex = 101;
-            label5.Text = "TOTAL:";
-            // 
-            // button2
-            // 
-            button2.Font = new Font("JetBrains Mono", 16F);
-            button2.Location = new Point(104, 730);
-            button2.Name = "button2";
-            button2.Size = new Size(200, 48);
-            button2.TabIndex = 102;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // codigoProdutoDataGridViewTextBoxColumn
             // 
@@ -239,11 +210,95 @@
             subtotalDataGridViewTextBoxColumn.ReadOnly = true;
             subtotalDataGridViewTextBoxColumn.Width = 142;
             // 
+            // itemVendaBindingSource
+            // 
+            itemVendaBindingSource.DataSource = typeof(Model.ItemVenda);
+            // 
+            // lblTotalVenda
+            // 
+            lblTotalVenda.AutoSize = true;
+            lblTotalVenda.Location = new Point(1471, 667);
+            lblTotalVenda.Name = "lblTotalVenda";
+            lblTotalVenda.Size = new Size(251, 47);
+            lblTotalVenda.TabIndex = 7;
+            lblTotalVenda.Text = "Preço total";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(1315, 667);
+            label5.Name = "label5";
+            label5.Size = new Size(146, 47);
+            label5.TabIndex = 101;
+            label5.Text = "TOTAL:";
+            // 
+            // button2
+            // 
+            button2.Font = new Font("JetBrains Mono", 16F);
+            button2.Location = new Point(222, 800);
+            button2.Name = "button2";
+            button2.Size = new Size(200, 48);
+            button2.TabIndex = 102;
+            button2.Text = "Cancelar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(12, 167);
+            label6.Name = "label6";
+            label6.Size = new Size(209, 47);
+            label6.TabIndex = 103;
+            label6.Text = "CPF/CNPJ:";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(227, 164);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(450, 53);
+            textBox1.TabIndex = 104;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // button3
+            // 
+            button3.Font = new Font("JetBrains Mono", 16F);
+            button3.Location = new Point(1522, 800);
+            button3.Name = "button3";
+            button3.Size = new Size(200, 48);
+            button3.TabIndex = 105;
+            button3.Text = "Confirmar";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(847, 725);
+            label7.Name = "label7";
+            label7.Size = new Size(419, 47);
+            label7.TabIndex = 106;
+            label7.Text = "Forma de pagamento:";
+            label7.Click += label7_Click;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(1272, 722);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(450, 55);
+            comboBox2.TabIndex = 107;
+            // 
             // RVenda
             // 
             AutoScaleDimensions = new SizeF(21F, 47F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2400, 1061);
+            Controls.Add(comboBox2);
+            Controls.Add(label7);
+            Controls.Add(button3);
+            Controls.Add(textBox1);
+            Controls.Add(label6);
             Controls.Add(button2);
             Controls.Add(label5);
             Controls.Add(lblTotalVenda);
@@ -289,5 +344,10 @@
         private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoUnitarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn subtotalDataGridViewTextBoxColumn;
+        private Label label6;
+        private TextBox textBox1;
+        private Button button3;
+        private Label label7;
+        private ComboBox comboBox2;
     }
 }

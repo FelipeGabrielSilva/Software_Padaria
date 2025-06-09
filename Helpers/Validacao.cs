@@ -213,9 +213,6 @@ namespace WindowsForm_Padaria
                 return res;
             }
 
-            if (string.IsNullOrWhiteSpace(v.CPF_CNPJ))
-                res.Erros.Add("CPF ou CNPJ é obrigatório.");
-
             if (v.Preco <= 0)
                 res.Erros.Add("Preço da venda deve ser maior que zero.");
 

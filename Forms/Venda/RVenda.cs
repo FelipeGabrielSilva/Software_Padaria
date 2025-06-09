@@ -16,28 +16,40 @@ namespace WindowsForm_Padaria.Forms.Venda
     {
         private readonly Padaria_Produto_Service pps;
         private List<ItemVenda> itensVendaAtual;
+        private readonly Venda_Service vs;
+        private readonly Pagamento_Service ps;
 
         public RVenda()
         {
             pps = new Padaria_Produto_Service();
+            vs = new Venda_Service();
+            ps = new Pagamento_Service();
             InitializeComponent();
-            GetProdutos();
+            GetInformacoes();
             itensVendaAtual = new List<ItemVenda>();
             AtualizarDataGridViewItensVenda();
             CalcularTotalVenda();
         }
 
-        private void GetProdutos()
+        private void GetInformacoes()
         {
             try
             {
                 List<Padaria_Produto> lp = new List<Padaria_Produto>();
                 lp = pps.ListarTodos();
 
+                List<Pagamento> lpg = new List<Pagamento>();
+                lpg = ps.ListarTodos();
+
                 comboBox1.ValueMember = "Id";
                 comboBox1.DisplayMember = "Nome";
                 comboBox1.DataSource = lp;
                 comboBox1.SelectedIndex = -1;
+
+                comboBox2.ValueMember = "Id";
+                comboBox2.DisplayMember = "Nome";
+                comboBox2.DataSource = lpg;
+                comboBox2.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -162,7 +174,7 @@ namespace WindowsForm_Padaria.Forms.Venda
 
         private void RVenda_Load(object sender, EventArgs e)
         {
-            GetProdutos();
+            GetInformacoes();
         }
 
         private void RVenda_Load_1(object sender, EventArgs e)
@@ -172,50 +184,90 @@ namespace WindowsForm_Padaria.Forms.Venda
 
         private void dataGridViewItensVenda_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            // Verifica se o clique foi dentro de uma célula válida
-            if (e.RowIndex < 0 || e.ColumnIndex < 0)
-                return;
 
-            // Verifica se clicou na coluna do botão "Remover"
-            if (dataGridViewItensVenda.Columns[e.ColumnIndex].Name == "btnRemoverItem")
-            {
-                if (e.RowIndex >= itensVendaAtual.Count)
-                {
-                    // Índice da linha é inválido para a lista de itens
-                    MessageBox.Show("Erro interno: índice fora da lista de itens da venda.");
-                    return;
-                }
-
-                // Confirmação da exclusão
-                DialogResult confirmacao = MessageBox.Show(
-                    "Deseja realmente remover este item da venda?",
-                    "Confirmar Remoção",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-                if (confirmacao == DialogResult.Yes)
-                {
-                    try
-                    {
-                        var item = dataGridViewItensVenda.Rows[e.RowIndex].DataBoundItem as ItemVenda;
-                        if (item != null)
-                        {
-                            itensVendaAtual.Remove(item);
-                            AtualizarDataGridViewItensVenda();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Erro ao remover item: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             itensVendaAtual.Clear();
             AtualizarDataGridViewItensVenda();
+        }
+
+        // Botão para reazlizar a venda
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!itensVendaAtual.Any())
+            {
+                MessageBox.Show("Não é possível finalizar uma venda sem itens.", "Venda Vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBox2.SelectedValue == null || (int)comboBox2.SelectedValue <= 0)
+            {
+                MessageBox.Show("Por favor, selecione uma forma de pagamento.", "Forma de Pagamento Necessária", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comboBox2.Focus();
+                return;
+            }
+
+            string cpfCnpjCliente = textBox1.Text;
+            int tipoPagamentoId = (int)comboBox2.SelectedValue;
+
+            if (string.IsNullOrWhiteSpace(cpfCnpjCliente))
+            {
+                cpfCnpjCliente = null;
+            }
+            else
+            {
+                cpfCnpjCliente = cpfCnpjCliente.Replace(".", "").Replace("-", "").Replace("/", "").Trim();
+
+                if (cpfCnpjCliente.Length != 11 && cpfCnpjCliente.Length != 14) 
+                {
+                    MessageBox.Show("CPF/CNPJ inválido. Digite 11 ou 14 dígitos.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBox1.Focus();
+                    return;
+                }
+            }
+
+            try
+            {
+                vs.Criar(itensVendaAtual, cpfCnpjCliente, tipoPagamentoId);
+
+                MessageBox.Show("Venda finalizada e salva com sucesso!", "Sucesso na Venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimparTelaParaNovaVenda();
+            }
+            catch (ArgumentException argEx)
+            {
+                MessageBox.Show($"Erro de validação: {argEx.Message}", "Erro de Venda", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao finalizar a venda: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimparTelaParaNovaVenda()
+        {
+            itensVendaAtual.Clear();
+            AtualizarDataGridViewItensVenda();
+
+            textBox1.Clear();
+            textBox2.Clear();
+            txtQuantidade.Text = "0";
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+
+            textBox2.Focus();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

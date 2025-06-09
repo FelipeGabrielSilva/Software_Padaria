@@ -52,6 +52,7 @@
             vENDAToolStripMenuItem1 = new ToolStripMenuItem();
             vENDAToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            relatórioToolStripMenuItem = new ToolStripMenuItem();
             menuStrip2.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             menuStrip2.BackColor = SystemColors.ControlLight;
             menuStrip2.Font = new Font("JetBrains Mono", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menuStrip2.ImageScalingSize = new Size(20, 20);
-            menuStrip2.Items.AddRange(new ToolStripItem[] { cADASTROToolStripMenuItem, eSTOQUEToolStripMenuItem, tABELAToolStripMenuItem, vENDAToolStripMenuItem });
+            menuStrip2.Items.AddRange(new ToolStripItem[] { cADASTROToolStripMenuItem, eSTOQUEToolStripMenuItem, tABELAToolStripMenuItem, vENDAToolStripMenuItem, relatórioToolStripMenuItem });
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
             menuStrip2.Size = new Size(1563, 55);
@@ -225,6 +226,13 @@
             panel1.Size = new Size(1563, 804);
             panel1.TabIndex = 2;
             // 
+            // relatórioToolStripMenuItem
+            // 
+            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            relatórioToolStripMenuItem.Size = new Size(221, 51);
+            relatórioToolStripMenuItem.Text = "Relatório";
+            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(20F, 45F);
@@ -268,5 +276,6 @@
         private ToolStripMenuItem vENDAToolStripMenuItem1;
         private ToolStripMenuItem padariaProdutosToolStripMenuItem;
         private ToolStripMenuItem fornecedorProdutosToolStripMenuItem;
+        private ToolStripMenuItem relatórioToolStripMenuItem;
     }
 }
