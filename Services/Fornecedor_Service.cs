@@ -14,9 +14,11 @@ namespace WindowsForm_Padaria.Services
     {
         private readonly AppDbContext _context;
         private readonly Validacao _valido;
+        private readonly Pagamento_Service ps;
 
         public Fornecedor_Service()
         {
+            ps = new Pagamento_Service();
             _context = new AppDbContext();
             _valido = new Validacao();
         }
@@ -85,13 +87,11 @@ namespace WindowsForm_Padaria.Services
                 return;
             }
 
-            List<Fornecedor> fornecedores = FornecedorData.GetFornecedores();
-            List<Pagamento> pagamentos = PagamentoData.GetPagamentos();
+            ps.PopularBanco();
 
             try
             {
-                _context.Pagamento.AddRange(pagamentos);
-                _context.SaveChanges();
+                List<Fornecedor> fornecedores = FornecedorData.GetFornecedores();
                 _context.Fornecedor.AddRange(fornecedores);
                 _context.SaveChanges();
 

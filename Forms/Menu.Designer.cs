@@ -214,6 +214,7 @@
             vENDAToolStripMenuItem.Name = "vENDAToolStripMenuItem";
             vENDAToolStripMenuItem.Size = new Size(137, 51);
             vENDAToolStripMenuItem.Text = "Venda";
+            vENDAToolStripMenuItem.Click += vENDAToolStripMenuItem_Click_1;
             // 
             // panel1
             // 

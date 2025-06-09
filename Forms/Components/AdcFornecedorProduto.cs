@@ -40,6 +40,8 @@ namespace WindowsForm_Padaria.Forms.Components
                 ProdutoId = _produtoId,
                 Quantidade = Convert.ToInt32(textBox1.Text),
                 Tipo = Tipo.Entrada,
+                Entrada = DateTime.Now,
+                Atualizacao = DateTime.Now,
             };
 
             epfs.Criar(epf);

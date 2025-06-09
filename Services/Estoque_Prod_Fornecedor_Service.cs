@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using WindowsForm_Padaria.GerarDados;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
 
@@ -31,18 +33,25 @@ namespace WindowsForm_Padaria.Services
 
             _context.Estoque_Prod_Fornecedor.Add(epf);
             _context.SaveChanges();
-            
-            MessageBox.Show($"Quantidade adicionada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public List<Estoque_Prod_Fornecedor> ListarTodos ()
         {
-            List<Estoque_Prod_Fornecedor> epf = _context.Estoque_Prod_Fornecedor.OrderByDescending(o => o.Id).ToList();
+            List<Estoque_Prod_Fornecedor> epf = _context.Estoque_Prod_Fornecedor
+                                    .Include(f => f.Produto)
+                                    .Include(f => f.Fornecedor)
+                                    .OrderByDescending(o => o.Id)
+                                    .ToList();
 
             return epf;
         }
 
         public void Deletar() {
+        }
+
+        private void PopularBanco()
+        {
+            
         }
     }
 }

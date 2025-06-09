@@ -11,6 +11,7 @@ using WindowsForm_Padaria.Forms.Cadastro;
 using WindowsForm_Padaria.Forms.DataView;
 using WindowsForm_Padaria.Forms.Estoque;
 using WindowsForm_Padaria.Forms.Tabela;
+using WindowsForm_Padaria.Forms.Venda;
 
 namespace WindowsForm_Padaria.Forms
 {
@@ -214,6 +215,18 @@ namespace WindowsForm_Padaria.Forms
         private void pADARIAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             return;
+        }
+
+        private void vENDAToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            RVenda v = new RVenda();
+            v.TopLevel = false;
+            v.FormBorderStyle = FormBorderStyle.None;
+            v.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(v);
+            v.Show();
         }
     }
 }

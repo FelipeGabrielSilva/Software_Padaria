@@ -39,7 +39,7 @@
             codigoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descricaoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fornecedorDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Fornecedor = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fornecedorProdutoBindingSource).BeginInit();
             SuspendLayout();
@@ -68,7 +68,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, codigoDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, descricaoDataGridViewTextBoxColumn, fornecedorDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, codigoDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, descricaoDataGridViewTextBoxColumn, Fornecedor });
             dataGridView1.DataSource = fornecedorProdutoBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
@@ -123,12 +123,12 @@
             descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
             descricaoDataGridViewTextBoxColumn.Width = 155;
             // 
-            // fornecedorDataGridViewTextBoxColumn
+            // Fornecedor
             // 
-            fornecedorDataGridViewTextBoxColumn.DataPropertyName = "Fornecedor";
-            fornecedorDataGridViewTextBoxColumn.HeaderText = "Fornecedor";
-            fornecedorDataGridViewTextBoxColumn.Name = "fornecedorDataGridViewTextBoxColumn";
-            fornecedorDataGridViewTextBoxColumn.Width = 168;
+            Fornecedor.DataPropertyName = "NomeFornecedor";
+            Fornecedor.HeaderText = "Fornecedor";
+            Fornecedor.Name = "Fornecedor";
+            Fornecedor.Width = 168;
             // 
             // DataView_FornecedorProduto
             // 
@@ -155,6 +155,6 @@
         private DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fornecedorDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Fornecedor;
     }
 }

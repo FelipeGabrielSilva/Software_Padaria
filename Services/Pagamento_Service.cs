@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsForm_Padaria.GerarDados;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
 
@@ -74,6 +75,36 @@ namespace WindowsForm_Padaria.Services
             _context.SaveChanges();
 
             MessageBox.Show($"O pagamento {p.Nome} foi deletado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void PopularBanco()
+        {
+            if (_context.Fornecedor.Any())
+            {
+                return;
+            }
+
+            List<Pagamento> pagamentos = PagamentoData.GetPagamentos();
+
+            try
+            {
+                _context.Pagamento.AddRange(pagamentos);
+                _context.SaveChanges();
+
+                MessageBox.Show($"Foram adicionados {pagamentos.Count} fornecedores ao banco de dados com sucesso!",
+                               "Sucesso",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+                MessageBox.Show($"Ocorreu um erro ao popular o banco de dados: {ex.Message}",
+                               "Erro",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+            }
         }
     }
 }

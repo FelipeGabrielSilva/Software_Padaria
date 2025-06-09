@@ -43,12 +43,15 @@
             comboBox1 = new ComboBox();
             pictureBox1 = new PictureBox();
             dataGridView2 = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            Fornecedor = new DataGridViewTextBoxColumn();
-            Produto = new DataGridViewTextBoxColumn();
-            Movimentacao = new DataGridViewTextBoxColumn();
             estoqueProdFornecedorBindingSource1 = new BindingSource(components);
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Produto = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            Movimentacao = new DataGridViewTextBoxColumn();
+            Fornecedor = new DataGridViewTextBoxColumn();
+            Entrada = new DataGridViewTextBoxColumn();
+            Saida = new DataGridViewTextBoxColumn();
+            Atualizacao = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)estoqueProdFornecedorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -126,14 +129,14 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(12, 150);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(480, 37);
+            comboBox1.Size = new Size(600, 37);
             comboBox1.TabIndex = 22;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(500, 140);
+            pictureBox1.Location = new Point(620, 140);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(50, 50);
             pictureBox1.TabIndex = 23;
@@ -154,7 +157,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, Fornecedor, Produto, Movimentacao });
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Produto, dataGridViewTextBoxColumn2, Movimentacao, Fornecedor, Entrada, Saida, Atualizacao });
             dataGridView2.DataSource = estoqueProdFornecedorBindingSource1;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
@@ -174,9 +177,13 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView2.Size = new Size(1519, 156);
+            dataGridView2.Size = new Size(1900, 156);
             dataGridView2.TabIndex = 24;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            // 
+            // estoqueProdFornecedorBindingSource1
+            // 
+            estoqueProdFornecedorBindingSource1.DataSource = typeof(Model.Estoque_Prod_Fornecedor);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -185,26 +192,20 @@
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.Width = 64;
             // 
+            // Produto
+            // 
+            Produto.DataPropertyName = "NomeProduto";
+            Produto.HeaderText = "Produto";
+            Produto.Name = "Produto";
+            Produto.ReadOnly = true;
+            Produto.Width = 129;
+            // 
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewTextBoxColumn2.DataPropertyName = "Quantidade";
             dataGridViewTextBoxColumn2.HeaderText = "Quantidade";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.Width = 168;
-            // 
-            // Fornecedor
-            // 
-            Fornecedor.DataPropertyName = "Fornecedor";
-            Fornecedor.HeaderText = "Fornecedor";
-            Fornecedor.Name = "Fornecedor";
-            Fornecedor.Width = 168;
-            // 
-            // Produto
-            // 
-            Produto.DataPropertyName = "Produto";
-            Produto.HeaderText = "Produto";
-            Produto.Name = "Produto";
-            Produto.Width = 129;
             // 
             // Movimentacao
             // 
@@ -214,9 +215,34 @@
             Movimentacao.ReadOnly = true;
             Movimentacao.Width = 194;
             // 
-            // estoqueProdFornecedorBindingSource1
+            // Fornecedor
             // 
-            estoqueProdFornecedorBindingSource1.DataSource = typeof(Model.Estoque_Prod_Fornecedor);
+            Fornecedor.DataPropertyName = "NomeFornecedor";
+            Fornecedor.HeaderText = "Fornecedor";
+            Fornecedor.Name = "Fornecedor";
+            Fornecedor.ReadOnly = true;
+            Fornecedor.Width = 168;
+            // 
+            // Entrada
+            // 
+            Entrada.DataPropertyName = "Entrada";
+            Entrada.HeaderText = "Entrada";
+            Entrada.Name = "Entrada";
+            Entrada.Width = 129;
+            // 
+            // Saida
+            // 
+            Saida.DataPropertyName = "Saida";
+            Saida.HeaderText = "Saida";
+            Saida.Name = "Saida";
+            Saida.Width = 103;
+            // 
+            // Atualizacao
+            // 
+            Atualizacao.DataPropertyName = "Atualizacao";
+            Atualizacao.HeaderText = "Atualizacao";
+            Atualizacao.Name = "Atualizacao";
+            Atualizacao.Width = 181;
             // 
             // E_Prod_Fornecedor
             // 
@@ -264,9 +290,12 @@
         private DataGridView dataGridView2;
         private BindingSource estoqueProdFornecedorBindingSource1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn Fornecedor;
         private DataGridViewTextBoxColumn Produto;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn Movimentacao;
+        private DataGridViewTextBoxColumn Fornecedor;
+        private DataGridViewTextBoxColumn Entrada;
+        private DataGridViewTextBoxColumn Saida;
+        private DataGridViewTextBoxColumn Atualizacao;
     }
 }

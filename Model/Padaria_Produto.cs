@@ -23,7 +23,6 @@ namespace WindowsForm_Padaria.Model
         [ForeignKey(nameof(CategoriaId))]
         public required int CategoriaId { get; set; }
         public Categoria Categoria { get; set; } = null!;
-
         public string TipoCategoria
         {
             get

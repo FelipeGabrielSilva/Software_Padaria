@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using WindowsForm_Padaria.GerarDados;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
@@ -40,7 +41,7 @@ namespace WindowsForm_Padaria.Services
         {
             List<Fornecedor_Produto> fp = new List<Fornecedor_Produto>();
 
-            fp = _context.Fornecedor_Produto.OrderByDescending(o => o.Id).ToList();
+            fp = _context.Fornecedor_Produto.Include(f => f.Fornecedor).OrderByDescending(o => o.Id).ToList();
 
             return fp;
         }
@@ -77,33 +78,32 @@ namespace WindowsForm_Padaria.Services
             MessageBox.Show($"O produto do fornecedor {f.Nome} foi deletado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void PopularFornecedorProduto()
+        public void PopularBanco()
         {
-            //if (_context.Fornecedor.Any())
-            //{
-            //    MessageBox.Show("O banco de dados já contém fornecedores.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    return;
-            //}
+            if (_context.Fornecedor_Produto.Any())
+            {
+                return;
+            }
 
-            //var fornecedores = FornecedorData.GetFornecedores();
+            List<Fornecedor_Produto> fps = FornecedorProdutoData.GetFornecedorProdutos();
 
-            //try
-            //{
-            //    _context.Fornecedor.AddRange(fornecedores);
-            //    _context.SaveChanges();
+            try
+            {
+                _context.Fornecedor_Produto.AddRange(fps);
+                _context.SaveChanges();
 
-            //    MessageBox.Show($"Foram adicionados {fornecedores.Count} fornecedores ao banco de dados com sucesso!",
-            //                   "Sucesso",
-            //                   MessageBoxButtons.OK,
-            //                   MessageBoxIcon.Information);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Ocorreu um erro ao popular o banco de dados: {ex.Message}",
-            //                   "Erro",
-            //                   MessageBoxButtons.OK,
-            //                   MessageBoxIcon.Error);
-            //}
+                MessageBox.Show($"Foram adicionadas {fps.Count} categorias ao banco de dados com sucesso!",
+                               "Sucesso",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao popular as categorias: {ex.Message}",
+                               "Erro",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+            }
         }
     }
 }

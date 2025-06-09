@@ -24,15 +24,31 @@ namespace WindowsForm_Padaria.Model
         public required int ProdutoId { get; set; }
         public Fornecedor_Produto Produto { get; set; } = null!;
         public required Tipo Tipo { get; set; }
-        public DateTime Entrada { get; set; }
-        public DateTime Saida { get; set; }
-        public DateTime Atualizacao { get; set; }
+        public DateTime? Entrada { get; set; }
+        public DateTime? Saida { get; set; }
+        public DateTime? Atualizacao { get; set; }
 
         public string Movimentacao
         {
             get
             {
                 return Tipo == Tipo.Entrada? "Entrada" : "Saída";
+            }
+        }
+
+        public string NomeFornecedor
+        {
+            get
+            {
+                return Fornecedor.Nome;
+            }
+        }
+
+        public string NomeProduto
+        {
+            get
+            {
+                return Produto.Nome;
             }
         }
     }
