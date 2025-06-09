@@ -70,7 +70,6 @@ namespace WindowsForm_Padaria.Forms.Estoque
         {
             comboBox1.ValueMember = "Id";
             comboBox1.DisplayMember = "Descricao";
-            comboBox1.SelectedIndex = -1;
             comboBox1.DataSource = fps.ListarTodos();
         }
 
