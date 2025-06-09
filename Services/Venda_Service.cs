@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
 
@@ -39,7 +40,7 @@ namespace WindowsForm_Padaria.Services
         {
             List<Venda> Vendas = new List<Venda>();
 
-            Vendas = _context.Venda.OrderByDescending(o => o.Id).ToList();
+            Vendas = _context.Venda.Include(v => v.Pagamento).Include(v => v.VendaProdutos).ThenInclude(vp => vp.Produto).OrderByDescending(o => o.Id).ToList();
 
             return Vendas;
         }

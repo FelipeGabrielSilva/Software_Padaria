@@ -15,11 +15,17 @@ namespace WindowsForm_Padaria.Forms.Venda
     public partial class RVenda : Form
     {
         private readonly Padaria_Produto_Service pps;
+        private List<ItemVenda> itensVendaAtual;
+
         public RVenda()
         {
             pps = new Padaria_Produto_Service();
             InitializeComponent();
             GetProdutos();
+            itensVendaAtual = new List<ItemVenda>(); 
+            ConfigurarDataGridViewItensVenda(); 
+            AtualizarDataGridViewItensVenda(); 
+            CalcularTotalVenda();
         }
 
         private void GetProdutos()
@@ -45,22 +51,21 @@ namespace WindowsForm_Padaria.Forms.Venda
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
-
                 PesquisarESelecionarProdutoPorCodigo();
+                txtQuantidade.Focus();
             }
         }
 
         private void PesquisarESelecionarProdutoPorCodigo()
         {
-            // Renomeie 'textBox1' no designer para 'textBox2' para maior clareza
-            if (string.IsNullOrWhiteSpace(textBox2.Text)) // Usando o nome claro
+            if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
-                comboBox1.SelectedIndex = -1; // Limpa a seleção na ComboBox
+                comboBox1.SelectedIndex = -1;
                 return;
             }
 
             int codigoDigitado;
-            if (!int.TryParse(textBox2.Text, out codigoDigitado)) // Usando o nome claro
+            if (!int.TryParse(textBox2.Text, out codigoDigitado))
             {
                 MessageBox.Show("Por favor, digite um código de produto numérico válido.", "Erro de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 comboBox1.SelectedIndex = -1;
@@ -84,10 +89,132 @@ namespace WindowsForm_Padaria.Forms.Venda
             else
             {
                 MessageBox.Show($"Produto com código '{codigoDigitado}' não encontrado.", "Produto Não Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                comboBox1.SelectedIndex = -1; 
-                textBox2.Clear(); 
-                textBox2.Focus(); 
+                comboBox1.SelectedIndex = -1;
+                textBox2.Clear();
+                textBox2.Focus();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedValue == null || (int)comboBox1.SelectedValue == -1)
+            {
+                MessageBox.Show("Por favor, selecione um produto.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int quantidade;
+            if (!int.TryParse(txtQuantidade.Text, out quantidade) || quantidade <= 0)
+            {
+                MessageBox.Show("Por favor, digite uma quantidade válida (número inteiro maior que zero).", "Erro de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtQuantidade.Focus();
+                return;
+            }
+
+            Padaria_Produto produtoSelecionado = comboBox1.SelectedItem as Padaria_Produto;
+
+            if (produtoSelecionado == null)
+            {
+                MessageBox.Show("Produto selecionado inválido. Tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ItemVenda itemExistente = itensVendaAtual.FirstOrDefault(item => item.ProdutoId == produtoSelecionado.Id);
+
+            if (itemExistente != null)
+            {
+                itemExistente.Quantidade += quantidade;
+            }
+            else
+            {
+                ItemVenda novoItem = new ItemVenda
+                {
+                    ProdutoId = produtoSelecionado.Id,
+                    CodigoProduto = produtoSelecionado.Codigo.ToString(),
+                    NomeProduto = produtoSelecionado.Nome,
+                    Quantidade = quantidade,
+                    PrecoUnitario = produtoSelecionado.Preco
+                };
+                itensVendaAtual.Add(novoItem);
+            }
+
+            AtualizarDataGridViewItensVenda();
+
+            textBox2.Clear(); 
+            txtQuantidade.Text = "1";
+            comboBox1.SelectedIndex = -1;
+            textBox2.Focus(); 
+        }
+
+        private void ConfigurarDataGridViewItensVenda()
+        {
+            dataGridViewItensVenda.AutoGenerateColumns = false;
+            dataGridViewItensVenda.Columns.Clear();
+
+            dataGridViewItensVenda.Columns.Add(new DataGridViewTextBoxColumn() { Name = "colCodigoProduto", HeaderText = "Código", DataPropertyName = "CodigoProduto", ReadOnly = true });
+            dataGridViewItensVenda.Columns.Add(new DataGridViewTextBoxColumn() { Name = "colNomeProduto", HeaderText = "Produto", DataPropertyName = "NomeProduto", ReadOnly = true, AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dataGridViewItensVenda.Columns.Add(new DataGridViewTextBoxColumn() { Name = "colQuantidade", HeaderText = "Qtd.", DataPropertyName = "Quantidade", ReadOnly = true });
+            dataGridViewItensVenda.Columns.Add(new DataGridViewTextBoxColumn() { Name = "colPrecoUnitario", HeaderText = "Preço", DataPropertyName = "PrecoUnitario", ReadOnly = true, DefaultCellStyle = { Format = "C2", FormatProvider = new System.Globalization.CultureInfo("pt-BR") } });
+            dataGridViewItensVenda.Columns.Add(new DataGridViewTextBoxColumn() { Name = "colSubtotal", HeaderText = "Subtotal", DataPropertyName = "Subtotal", ReadOnly = true, DefaultCellStyle = { Format = "C2", FormatProvider = new System.Globalization.CultureInfo("pt-BR") } });
+
+            DataGridViewButtonColumn btnRemove = new DataGridViewButtonColumn();
+            btnRemove.HeaderText = "Remover";
+            btnRemove.Text = "X";
+            btnRemove.UseColumnTextForButtonValue = true; 
+            btnRemove.Name = "btnRemoverItem";
+            dataGridViewItensVenda.Columns.Add(btnRemove);
+        }
+
+        private void AtualizarDataGridViewItensVenda()
+        {
+            dataGridViewItensVenda.DataSource = null; 
+            dataGridViewItensVenda.DataSource = itensVendaAtual;
+            CalcularTotalVenda(); 
+        }
+
+        private void CalcularTotalVenda()
+        {
+            decimal total = itensVendaAtual.Sum(item => item.Subtotal);
+            lblTotalVenda.Text = total.ToString("C2", new System.Globalization.CultureInfo("pt-BR")); 
+        }
+
+        private void dataGridViewItensVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 1. Verifica se o clique foi na coluna do botão "Remover"
+            //    e se foi em uma linha de dados (não no cabeçalho da coluna).
+            if (e.ColumnIndex == dataGridViewItensVenda.Columns["btnRemoverItem"].Index && e.RowIndex >= 0)
+            {
+                // 2. Opcional: Confirmar a remoção com o usuário
+                DialogResult confirmacao = MessageBox.Show(
+                    "Tem certeza que deseja remover este item da venda?",
+                    "Confirmar Remoção",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (confirmacao == DialogResult.Yes)
+                {
+                    // 3. Obtém o objeto ItemVenda da linha clicada
+                    //    DataBoundItem retorna o objeto que está vinculado a esta linha.
+                    ItemVenda itemParaRemover = dataGridViewItensVenda.Rows[e.RowIndex].DataBoundItem as ItemVenda;
+
+                    if (itemParaRemover != null)
+                    {
+                        // 4. Remove o item da lista em memória (itensVendaAtual)
+                        itensVendaAtual.Remove(itemParaRemover);
+
+                        // 5. Atualiza o DataGridView para refletir a remoção
+                        AtualizarDataGridViewItensVenda();
+
+                        MessageBox.Show("Item removido da venda com sucesso!", "Remoção Concluída", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
+
+        private void RVenda_Load(object sender, EventArgs e)
+        {
+            GetProdutos();
         }
     }
 }

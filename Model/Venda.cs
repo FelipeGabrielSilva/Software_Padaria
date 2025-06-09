@@ -31,5 +31,18 @@ namespace WindowsForm_Padaria.Model
         [ForeignKey(nameof(TipoPagamentoId))]
         public required int TipoPagamentoId { get; set; }
         public Pagamento Pagamento { get; set; } = null!;
+
+        public string NomeProduto
+        {
+            get
+            {
+                if (VendaProdutos == null || !VendaProdutos.Any())
+                {
+                    return "Nenhum produto";
+                }
+
+                return string.Join(", ", VendaProdutos.Select(vp => vp.Produto?.Nome ?? "Produto desconhecido"));
+            }
+        }
     }
 }
