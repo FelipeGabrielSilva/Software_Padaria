@@ -40,7 +40,6 @@
             emailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             enderecoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             bairroDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            numeroDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cNPJDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Pagamento = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -70,7 +69,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, telefoneDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, enderecoDataGridViewTextBoxColumn, bairroDataGridViewTextBoxColumn, numeroDataGridViewTextBoxColumn, cNPJDataGridViewTextBoxColumn, Pagamento });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, telefoneDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, enderecoDataGridViewTextBoxColumn, bairroDataGridViewTextBoxColumn, cNPJDataGridViewTextBoxColumn, Pagamento });
             dataGridView1.DataSource = fornecedorBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
@@ -139,14 +138,6 @@
             bairroDataGridViewTextBoxColumn.Name = "bairroDataGridViewTextBoxColumn";
             bairroDataGridViewTextBoxColumn.Width = 116;
             // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
-            numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
-            numeroDataGridViewTextBoxColumn.MinimumWidth = 6;
-            numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            numeroDataGridViewTextBoxColumn.Width = 116;
-            // 
             // cNPJDataGridViewTextBoxColumn
             // 
             cNPJDataGridViewTextBoxColumn.DataPropertyName = "CNPJ";
@@ -157,7 +148,7 @@
             // 
             // Pagamento
             // 
-            Pagamento.DataPropertyName = "Pagamento";
+            Pagamento.DataPropertyName = "TipoPagamento";
             Pagamento.HeaderText = "Pagamento";
             Pagamento.Name = "Pagamento";
             Pagamento.Width = 155;
@@ -185,13 +176,13 @@
         private Label label1;
         private DataGridView dataGridView1;
         private BindingSource fornecedorBindingSource;
+        private DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn enderecoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn bairroDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cNPJDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn Pagamento;
     }

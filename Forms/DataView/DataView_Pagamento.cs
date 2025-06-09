@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
+using WindowsForm_Padaria.Services;
 
 namespace WindowsForm_Padaria.Forms.Tabela
 {
     public partial class DataView_Pagamento : Form
     {
-        private readonly AppDbContext _context;
+        private readonly Pagamento_Service ps;
 
         public DataView_Pagamento()
         {
+            ps = new Pagamento_Service();
             InitializeComponent();
-            _context = new AppDbContext();
             AtualizarGrid();
         }
 
@@ -27,7 +28,7 @@ namespace WindowsForm_Padaria.Forms.Tabela
         private void AtualizarGrid ()
         {
             List<Pagamento> p = new List<Pagamento>();
-            p = _context.Pagamento.ToList();
+            p = ps.ListarTodos();
 
             dataGridView1.DataSource = p;
         }

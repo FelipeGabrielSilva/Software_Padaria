@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using WindowsForm_Padaria.GerarDados;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
@@ -39,7 +40,7 @@ namespace WindowsForm_Padaria.Services
         public List<Padaria_Produto> ListarTodos()
         {
             List<Padaria_Produto> pp = new List<Padaria_Produto>();
-            pp = _context.Padaria_Produto.ToList();
+            pp = _context.Padaria_Produto.Include(a => a.Categoria).ToList();
 
             return pp;
         }

@@ -24,5 +24,13 @@ namespace WindowsForm_Padaria.Model
         [ForeignKey(nameof(PagamentoId))]
         public required int PagamentoId { get; set; }
         public Pagamento Pagamento { get; set; } = null!;
+
+        public string TipoPagamento
+        {
+            get
+            {
+                return Pagamento.Nome;
+            }
+        }
     }
 }

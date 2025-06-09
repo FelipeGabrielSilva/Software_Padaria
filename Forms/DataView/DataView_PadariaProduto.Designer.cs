@@ -138,7 +138,7 @@
             // 
             // Categoria
             // 
-            Categoria.DataPropertyName = "Categoria";
+            Categoria.DataPropertyName = "TipoCategoria";
             Categoria.HeaderText = "Categoria";
             Categoria.Name = "Categoria";
             Categoria.Width = 155;
