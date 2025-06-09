@@ -38,7 +38,7 @@ namespace WindowsForm_Padaria.Services
                 throw new ArgumentException($"Tipo de pagamento com ID {pagamentoId} não encontrado.", nameof(pagamentoId));
             }
 
-            Venda venda = new Venda
+            CVenda venda = new CVenda
             {
                 Data = DateTime.Now,
                 Status = Status.Realizada,
@@ -93,16 +93,16 @@ namespace WindowsForm_Padaria.Services
             _context.SaveChanges();
         }
 
-        public List<Venda> ListarTodos()
+        public List<CVenda> ListarTodos()
         {
-            List<Venda> Vendas = new List<Venda>();
+            List<CVenda> Vendas = new List<CVenda>();
 
             Vendas = _context.Venda.Include(v => v.Pagamento).Include(v => v.VendaProdutos).ThenInclude(vp => vp.Produto).OrderByDescending(o => o.Id).ToList();
 
             return Vendas;
         }
 
-        public void Deletar(Venda r)
+        public void Deletar(CVenda r)
         {
             ResultadoValidacao res = _valido.Venda(r);
 

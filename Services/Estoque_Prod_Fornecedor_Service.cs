@@ -57,7 +57,6 @@ namespace WindowsForm_Padaria.Services
             }
             
             EstoqueFornecedorProdutoData.GerarMovimentacoesEstoque(_context);
-
         }
     }
 }

@@ -14,7 +14,7 @@ namespace WindowsForm_Padaria.Model
         Pendente,
         Cancelada,
     }
-    public class Venda
+    public class CVenda
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

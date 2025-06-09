@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using WindowsForm_Padaria.GerarDados;
 using WindowsForm_Padaria.Model;
 using WindowsForm_Padaria.Resources;
 
@@ -43,6 +44,16 @@ namespace WindowsForm_Padaria.Services
                                 .ToList();
 
             return epp;
+        }
+
+        public void PopularBanco()
+        {
+            if (_context.Estoque_Prod_Padaria.Any())
+            {
+                return;
+            }
+
+            VendaData.GerarVendas(_context);
         }
     }
 }

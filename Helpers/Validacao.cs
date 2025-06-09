@@ -203,7 +203,7 @@ namespace WindowsForm_Padaria
             return res;
         }
 
-        public ResultadoValidacao Venda(Venda v) 
+        public ResultadoValidacao Venda(CVenda v) 
         {
             var res = new ResultadoValidacao();
 

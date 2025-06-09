@@ -35,6 +35,7 @@
             RelatorioProdutosPadaria = new Button();
             RelatorioEntradaProdutosFornecedores = new Button();
             RelatorioSaidaProdutosPadaria = new Button();
+            RelatorioVendas = new Button();
             SuspendLayout();
             // 
             // RelatorioFornecedores
@@ -51,10 +52,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("JetBrains Mono", 48F);
+            label1.Font = new Font("JetBrains Mono", 38F);
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(453, 84);
+            label1.Size = new Size(370, 67);
             label1.TabIndex = 1;
             label1.Text = "Relatórios:";
             // 
@@ -113,11 +114,23 @@
             RelatorioSaidaProdutosPadaria.UseVisualStyleBackColor = true;
             RelatorioSaidaProdutosPadaria.Click += RelatorioSaidaProdutosPadaria_Click;
             // 
+            // RelatorioVendas
+            // 
+            RelatorioVendas.Font = new Font("JetBrains Mono", 16F);
+            RelatorioVendas.Location = new Point(12, 415);
+            RelatorioVendas.Name = "RelatorioVendas";
+            RelatorioVendas.Size = new Size(300, 48);
+            RelatorioVendas.TabIndex = 7;
+            RelatorioVendas.Text = "Venda";
+            RelatorioVendas.UseVisualStyleBackColor = true;
+            RelatorioVendas.Click += RelatorioVendas_Click;
+            // 
             // FormRelatorio
             // 
             AutoScaleDimensions = new SizeF(21F, 47F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 761);
+            Controls.Add(RelatorioVendas);
             Controls.Add(RelatorioSaidaProdutosPadaria);
             Controls.Add(RelatorioEntradaProdutosFornecedores);
             Controls.Add(RelatorioProdutosPadaria);
@@ -142,5 +155,6 @@
         private Button RelatorioProdutosPadaria;
         private Button RelatorioEntradaProdutosFornecedores;
         private Button RelatorioSaidaProdutosPadaria;
+        private Button RelatorioVendas;
     }
 }

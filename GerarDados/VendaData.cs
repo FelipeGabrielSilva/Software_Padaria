@@ -34,7 +34,7 @@ namespace WindowsForm_Padaria.GerarDados
             }
 
             Random rand = new Random();
-            List<Venda> novasVendas = new List<Venda>();
+            List<CVenda> novasVendas = new List<CVenda>();
             List<Estoque_Prod_Padaria> baixasEstoque = new List<Estoque_Prod_Padaria>(); // Para saídas de estoque
 
             // Arrays de CPFs/CNPJs de exemplo (para diversificar um pouco)
@@ -59,7 +59,7 @@ namespace WindowsForm_Padaria.GerarDados
                 // Tipo de pagamento aleatório
                 Pagamento tipoPagamentoSelecionado = tiposPagamento[rand.Next(0, tiposPagamento.Count)];
 
-                Venda novaVenda = new Venda
+                CVenda novaVenda = new CVenda
                 {
                     Data = dataVenda,
                     Status = statusVenda, // Usando o enum StatusVenda
@@ -116,6 +116,7 @@ namespace WindowsForm_Padaria.GerarDados
                         Quantidade = quantidade,
                         Tipo = Tipo.Saida, // Usando o enum TipoMovimentacao
                         Saida = dataVenda,
+                        Atualizacao = dataVenda,
                         Descricao = $"Saída por Venda"
                     });
                 }

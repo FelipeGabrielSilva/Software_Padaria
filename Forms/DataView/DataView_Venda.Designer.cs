@@ -141,7 +141,7 @@
             // 
             // vendaBindingSource
             // 
-            vendaBindingSource.DataSource = typeof(Model.Venda);
+            vendaBindingSource.DataSource = typeof(Model.CVenda);
             // 
             // DataView_Venda
             // 

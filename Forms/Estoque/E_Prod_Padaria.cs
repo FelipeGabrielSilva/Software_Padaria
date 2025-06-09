@@ -25,6 +25,7 @@ namespace WindowsForm_Padaria.Forms.Estoque
             InitializeComponent();
             AtualizarGrid();
             AtualizarTabela();
+            epps.PopularBanco();
         }
 
         private void button2_Click(object sender, EventArgs e)

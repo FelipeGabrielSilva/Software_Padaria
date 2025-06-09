@@ -15,7 +15,7 @@ namespace WindowsForm_Padaria.Resources
         public DbSet<Padaria_Produto> Padaria_Produto { get; set; }
         public DbSet<Pagamento> Pagamento { get; set; }
         public DbSet<Receita> Receita {  get; set; }
-        public DbSet<Venda> Venda { get; set; }
+        public DbSet<CVenda> Venda { get; set; }
         public DbSet<Venda_Produto> Venda_Produto { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -36,10 +36,10 @@ namespace WindowsForm_Padaria.Resources
 
             modelBuilder.Entity<Estoque_Prod_Fornecedor>().Property(e => e.Tipo).HasConversion<string>();
             modelBuilder.Entity<Estoque_Prod_Padaria>().Property(e => e.Tipo).HasConversion<string>();
-            modelBuilder.Entity<Venda>().Property(e=> e.Status).HasConversion<string>();
+            modelBuilder.Entity<CVenda>().Property(e=> e.Status).HasConversion<string>();
             modelBuilder.Entity<Padaria_Produto>().Property(e => e.Preco).HasColumnType("decimal(9,2)");
             modelBuilder.Entity<Venda_Produto>().Property(e => e.PrecoUnitario).HasColumnType("decimal(9,2)");
-            modelBuilder.Entity<Venda>().Property(e => e.Preco).HasColumnType("decimal(9,2)");
+            modelBuilder.Entity<CVenda>().Property(e => e.Preco).HasColumnType("decimal(9,2)");
             modelBuilder.Entity<Pagamento>().HasData(PagamentoData.GetPagamentos());
 
             modelBuilder.Entity<Fornecedor>(entity =>

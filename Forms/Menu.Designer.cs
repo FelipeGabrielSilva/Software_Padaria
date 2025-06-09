@@ -51,8 +51,8 @@
             rECEITAToolStripMenuItem1 = new ToolStripMenuItem();
             vENDAToolStripMenuItem1 = new ToolStripMenuItem();
             vENDAToolStripMenuItem = new ToolStripMenuItem();
-            panel1 = new Panel();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
+            panel1 = new Panel();
             menuStrip2.SuspendLayout();
             SuspendLayout();
             // 
@@ -135,7 +135,7 @@
             // 
             // eSTOQUEToolStripMenuItem
             // 
-            eSTOQUEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pADARIAToolStripMenuItem1, fORNECEDORToolStripMenuItem1 });
+            eSTOQUEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fORNECEDORToolStripMenuItem1, pADARIAToolStripMenuItem1 });
             eSTOQUEToolStripMenuItem.Name = "eSTOQUEToolStripMenuItem";
             eSTOQUEToolStripMenuItem.Size = new Size(179, 51);
             eSTOQUEToolStripMenuItem.Text = "Estoque";
@@ -217,6 +217,13 @@
             vENDAToolStripMenuItem.Text = "Venda";
             vENDAToolStripMenuItem.Click += vENDAToolStripMenuItem_Click_1;
             // 
+            // relatórioToolStripMenuItem
+            // 
+            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            relatórioToolStripMenuItem.Size = new Size(221, 51);
+            relatórioToolStripMenuItem.Text = "Relatório";
+            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
+            // 
             // panel1
             // 
             panel1.AutoSize = true;
@@ -225,13 +232,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1563, 804);
             panel1.TabIndex = 2;
-            // 
-            // relatórioToolStripMenuItem
-            // 
-            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            relatórioToolStripMenuItem.Size = new Size(221, 51);
-            relatórioToolStripMenuItem.Text = "Relatório";
-            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
             // 
             // Menu
             // 
