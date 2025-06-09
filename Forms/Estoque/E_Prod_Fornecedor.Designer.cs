@@ -150,7 +150,7 @@
             dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 20F);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -184,61 +184,61 @@
             // dataGridViewTextBoxColumn1
             // 
             dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            dataGridViewTextBoxColumn1.HeaderText = "Id";
+            dataGridViewTextBoxColumn1.HeaderText = "ID";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.Width = 64;
+            dataGridViewTextBoxColumn1.Width = 72;
             // 
             // Produto
             // 
             Produto.DataPropertyName = "NomeProduto";
-            Produto.HeaderText = "Produto";
+            Produto.HeaderText = "PRODUTO";
             Produto.Name = "Produto";
             Produto.ReadOnly = true;
-            Produto.Width = 129;
+            Produto.Width = 152;
             // 
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewTextBoxColumn2.DataPropertyName = "Quantidade";
-            dataGridViewTextBoxColumn2.HeaderText = "Quantidade";
+            dataGridViewTextBoxColumn2.HeaderText = "QUANTIDADE";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.Width = 168;
+            dataGridViewTextBoxColumn2.Width = 200;
             // 
             // Movimentacao
             // 
             Movimentacao.DataPropertyName = "Movimentacao";
-            Movimentacao.HeaderText = "Movimentacao";
+            Movimentacao.HeaderText = "TIPO";
             Movimentacao.Name = "Movimentacao";
             Movimentacao.ReadOnly = true;
-            Movimentacao.Width = 194;
+            Movimentacao.Width = 104;
             // 
             // Fornecedor
             // 
             Fornecedor.DataPropertyName = "NomeFornecedor";
-            Fornecedor.HeaderText = "Fornecedor";
+            Fornecedor.HeaderText = "FORNECEDOR";
             Fornecedor.Name = "Fornecedor";
             Fornecedor.ReadOnly = true;
-            Fornecedor.Width = 168;
+            Fornecedor.Width = 200;
             // 
             // Entrada
             // 
             Entrada.DataPropertyName = "Entrada";
-            Entrada.HeaderText = "Entrada";
+            Entrada.HeaderText = "DT ENTRADA";
             Entrada.Name = "Entrada";
-            Entrada.Width = 129;
+            Entrada.Width = 182;
             // 
             // Saida
             // 
             Saida.DataPropertyName = "Saida";
-            Saida.HeaderText = "Saida";
+            Saida.HeaderText = "DT SAÍDA";
             Saida.Name = "Saida";
-            Saida.Width = 103;
+            Saida.Width = 153;
             // 
             // Atualizacao
             // 
             Atualizacao.DataPropertyName = "Atualizacao";
-            Atualizacao.HeaderText = "Atualizacao";
+            Atualizacao.HeaderText = "DT ATUALIZAÇÃO";
             Atualizacao.Name = "Atualizacao";
-            Atualizacao.Width = 181;
+            Atualizacao.Width = 240;
             // 
             // estoqueProdFornecedorBindingSource1
             // 

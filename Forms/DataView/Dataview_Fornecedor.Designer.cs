@@ -63,7 +63,7 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 20F);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -98,50 +98,50 @@
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "ID";
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 64;
+            idDataGridViewTextBoxColumn.Width = 72;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
             nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            nomeDataGridViewTextBoxColumn.HeaderText = "NOME";
             nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
             nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.Width = 90;
+            nomeDataGridViewTextBoxColumn.Width = 104;
             // 
             // telefoneDataGridViewTextBoxColumn
             // 
             telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
-            telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            telefoneDataGridViewTextBoxColumn.HeaderText = "TELEFONE";
             telefoneDataGridViewTextBoxColumn.MinimumWidth = 6;
             telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            telefoneDataGridViewTextBoxColumn.Width = 142;
+            telefoneDataGridViewTextBoxColumn.Width = 168;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            emailDataGridViewTextBoxColumn.HeaderText = "E-MAIL";
             emailDataGridViewTextBoxColumn.MinimumWidth = 6;
             emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            emailDataGridViewTextBoxColumn.Width = 103;
+            emailDataGridViewTextBoxColumn.Width = 136;
             // 
             // enderecoDataGridViewTextBoxColumn
             // 
             enderecoDataGridViewTextBoxColumn.DataPropertyName = "Endereco";
-            enderecoDataGridViewTextBoxColumn.HeaderText = "Endereco";
+            enderecoDataGridViewTextBoxColumn.HeaderText = "ENDEREÇO";
             enderecoDataGridViewTextBoxColumn.MinimumWidth = 6;
             enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
-            enderecoDataGridViewTextBoxColumn.Width = 142;
+            enderecoDataGridViewTextBoxColumn.Width = 168;
             // 
             // bairroDataGridViewTextBoxColumn
             // 
             bairroDataGridViewTextBoxColumn.DataPropertyName = "Bairro";
-            bairroDataGridViewTextBoxColumn.HeaderText = "Bairro";
+            bairroDataGridViewTextBoxColumn.HeaderText = "BAIRRO";
             bairroDataGridViewTextBoxColumn.MinimumWidth = 6;
             bairroDataGridViewTextBoxColumn.Name = "bairroDataGridViewTextBoxColumn";
-            bairroDataGridViewTextBoxColumn.Width = 116;
+            bairroDataGridViewTextBoxColumn.Width = 136;
             // 
             // cNPJDataGridViewTextBoxColumn
             // 
@@ -149,15 +149,15 @@
             cNPJDataGridViewTextBoxColumn.HeaderText = "CNPJ";
             cNPJDataGridViewTextBoxColumn.MinimumWidth = 6;
             cNPJDataGridViewTextBoxColumn.Name = "cNPJDataGridViewTextBoxColumn";
-            cNPJDataGridViewTextBoxColumn.Width = 90;
+            cNPJDataGridViewTextBoxColumn.Width = 104;
             // 
             // Pagamento
             // 
             Pagamento.DataPropertyName = "TipoPagamento";
-            Pagamento.HeaderText = "Pagamento";
+            Pagamento.HeaderText = "PAGAMENTO";
             Pagamento.Name = "Pagamento";
             Pagamento.ReadOnly = true;
-            Pagamento.Width = 155;
+            Pagamento.Width = 184;
             // 
             // fornecedorBindingSource
             // 

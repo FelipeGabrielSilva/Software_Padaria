@@ -34,13 +34,13 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            padariaProdutoBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             codigoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descricaoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             precoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Categoria = new DataGridViewTextBoxColumn();
+            padariaProdutoBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)padariaProdutoBindingSource).BeginInit();
             SuspendLayout();
@@ -61,7 +61,7 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 20F);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -92,56 +92,57 @@
             dataGridView1.Size = new Size(1800, 500);
             dataGridView1.TabIndex = 1;
             // 
-            // padariaProdutoBindingSource
-            // 
-            padariaProdutoBindingSource.DataSource = typeof(Model.Padaria_Produto);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "ID";
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 64;
+            idDataGridViewTextBoxColumn.Width = 72;
             // 
             // codigoDataGridViewTextBoxColumn
             // 
             codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            codigoDataGridViewTextBoxColumn.HeaderText = "CÓDIGO";
             codigoDataGridViewTextBoxColumn.MinimumWidth = 6;
             codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            codigoDataGridViewTextBoxColumn.Width = 116;
+            codigoDataGridViewTextBoxColumn.Width = 136;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
             nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            nomeDataGridViewTextBoxColumn.HeaderText = "NOME";
             nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
             nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.Width = 90;
+            nomeDataGridViewTextBoxColumn.Width = 104;
             // 
             // descricaoDataGridViewTextBoxColumn
             // 
             descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            descricaoDataGridViewTextBoxColumn.HeaderText = "DESCRIÇÃO";
             descricaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            descricaoDataGridViewTextBoxColumn.Width = 155;
+            descricaoDataGridViewTextBoxColumn.Width = 184;
             // 
             // precoDataGridViewTextBoxColumn
             // 
             precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
-            precoDataGridViewTextBoxColumn.HeaderText = "Preco";
+            precoDataGridViewTextBoxColumn.HeaderText = "PREÇO";
             precoDataGridViewTextBoxColumn.MinimumWidth = 6;
             precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
-            precoDataGridViewTextBoxColumn.Width = 103;
+            precoDataGridViewTextBoxColumn.Width = 120;
             // 
             // Categoria
             // 
             Categoria.DataPropertyName = "TipoCategoria";
-            Categoria.HeaderText = "Categoria";
+            Categoria.HeaderText = "CATEGORIA";
             Categoria.Name = "Categoria";
-            Categoria.Width = 155;
+            Categoria.ReadOnly = true;
+            Categoria.Width = 184;
+            // 
+            // padariaProdutoBindingSource
+            // 
+            padariaProdutoBindingSource.DataSource = typeof(Model.Padaria_Produto);
             // 
             // DataView_PadariaProduto
             // 

@@ -34,12 +34,12 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            fornecedorProdutoBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             codigoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descricaoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Fornecedor = new DataGridViewTextBoxColumn();
+            fornecedorProdutoBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fornecedorProdutoBindingSource).BeginInit();
             SuspendLayout();
@@ -61,7 +61,7 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 20F);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -91,50 +91,51 @@
             dataGridView1.Size = new Size(1800, 500);
             dataGridView1.TabIndex = 3;
             // 
-            // fornecedorProdutoBindingSource
-            // 
-            fornecedorProdutoBindingSource.DataSource = typeof(Model.Fornecedor_Produto);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "ID";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 64;
+            idDataGridViewTextBoxColumn.Width = 72;
             // 
             // codigoDataGridViewTextBoxColumn
             // 
             codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            codigoDataGridViewTextBoxColumn.HeaderText = "CÓDIGO";
             codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            codigoDataGridViewTextBoxColumn.Width = 116;
+            codigoDataGridViewTextBoxColumn.Width = 136;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
             nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            nomeDataGridViewTextBoxColumn.HeaderText = "NOME";
             nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.Width = 90;
+            nomeDataGridViewTextBoxColumn.Width = 104;
             // 
             // descricaoDataGridViewTextBoxColumn
             // 
             descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            descricaoDataGridViewTextBoxColumn.HeaderText = "DESCRIÇÃO";
             descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            descricaoDataGridViewTextBoxColumn.Width = 155;
+            descricaoDataGridViewTextBoxColumn.Width = 184;
             // 
             // Fornecedor
             // 
             Fornecedor.DataPropertyName = "NomeFornecedor";
-            Fornecedor.HeaderText = "Fornecedor";
+            Fornecedor.HeaderText = "FORNECEDOR";
             Fornecedor.Name = "Fornecedor";
-            Fornecedor.Width = 168;
+            Fornecedor.ReadOnly = true;
+            Fornecedor.Width = 200;
+            // 
+            // fornecedorProdutoBindingSource
+            // 
+            fornecedorProdutoBindingSource.DataSource = typeof(Model.Fornecedor_Produto);
             // 
             // DataView_FornecedorProduto
             // 
             AutoScaleDimensions = new SizeF(21F, 47F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2400, 1061);
+            ClientSize = new Size(1924, 1061);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Font = new Font("JetBrains Mono", 26F);
