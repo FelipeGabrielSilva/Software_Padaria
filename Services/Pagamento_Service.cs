@@ -32,7 +32,7 @@ namespace WindowsForm_Padaria.Services
             _context.Pagamento.Add(p);
             _context.SaveChanges();
 
-            MessageBox.Show($"O pagamento {p.Descricao} foi criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"O pagamento {p.Nome} foi criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public List<Pagamento> ListarTodos()
@@ -57,7 +57,7 @@ namespace WindowsForm_Padaria.Services
             _context.Pagamento.Update(p);
             _context.SaveChanges();
 
-            MessageBox.Show($"O pagamento {p.Descricao} foi atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"O pagamento {p.Nome} foi atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void Deletar(Pagamento p)
@@ -73,7 +73,7 @@ namespace WindowsForm_Padaria.Services
             _context.Pagamento.Remove(p);
             _context.SaveChanges();
 
-            MessageBox.Show($"O pagamento {p.Descricao} foi deletado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"O pagamento {p.Nome} foi deletado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

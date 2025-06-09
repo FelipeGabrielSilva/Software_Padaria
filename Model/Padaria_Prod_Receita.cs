@@ -10,8 +10,6 @@ namespace WindowsForm_Padaria.Model
 {
     public class Padaria_Prod_Receita
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [ForeignKey(nameof(ReceitaId))]

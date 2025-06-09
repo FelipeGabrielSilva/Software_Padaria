@@ -12,8 +12,8 @@ using WindowsForm_Padaria.Resources;
 namespace WindowsForm_Padaria.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250608225248_Melhorias")]
-    partial class Melhorias
+    [Migration("20250609002404_MigrationInicialProjeto")]
+    partial class MigrationInicialProjeto
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -120,7 +120,7 @@ namespace WindowsForm_Padaria.Migrations
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -134,7 +134,7 @@ namespace WindowsForm_Padaria.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Numero")
+                    b.Property<string>("NumeroEndereco")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -145,10 +145,10 @@ namespace WindowsForm_Padaria.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("TipoPagamentoId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("CNPJ")
+                        .IsUnique();
 
                     b.HasIndex("PagamentoId");
 
@@ -179,6 +179,9 @@ namespace WindowsForm_Padaria.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Codigo")
+                        .IsUnique();
+
                     b.HasIndex("FornecedorId");
 
                     b.ToTable("Fornecedor_Produto");
@@ -202,7 +205,8 @@ namespace WindowsForm_Padaria.Migrations
 
                     b.HasIndex("ProdutoId");
 
-                    b.HasIndex("ReceitaId");
+                    b.HasIndex("ReceitaId", "ProdutoId")
+                        .IsUnique();
 
                     b.ToTable("Padaria_Prod_Receita");
                 });
@@ -230,11 +234,14 @@ namespace WindowsForm_Padaria.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<decimal>("Preco")
-                        .HasColumnType("decimal(8,2)");
+                        .HasColumnType("decimal(9,2)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoriaId");
+
+                    b.HasIndex("Codigo")
+                        .IsUnique();
 
                     b.ToTable("Padaria_Produto");
                 });
@@ -247,36 +254,30 @@ namespace WindowsForm_Padaria.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descricao")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
                     b.ToTable("Pagamento");
-                });
 
-            modelBuilder.Entity("WindowsForm_Padaria.Model.Produto_Receita", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ProdutoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReceitaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProdutoId");
-
-                    b.HasIndex("ReceitaId");
-
-                    b.ToTable("Produto_Receita");
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Nome = "Cartão de Crédito"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Nome = "Dinheiro"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Nome = "Pix"
+                        });
                 });
 
             modelBuilder.Entity("WindowsForm_Padaria.Model.Receita", b =>
@@ -320,8 +321,9 @@ namespace WindowsForm_Padaria.Migrations
                     b.Property<decimal>("Preco")
                         .HasColumnType("decimal(9,2)");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("TipoPagamentoId")
                         .HasColumnType("int");
@@ -357,7 +359,8 @@ namespace WindowsForm_Padaria.Migrations
 
                     b.HasIndex("ProdutoId");
 
-                    b.HasIndex("VendaId");
+                    b.HasIndex("VendaId", "ProdutoId")
+                        .IsUnique();
 
                     b.ToTable("Venda_Produto");
                 });
@@ -444,25 +447,6 @@ namespace WindowsForm_Padaria.Migrations
                     b.Navigation("Categoria");
                 });
 
-            modelBuilder.Entity("WindowsForm_Padaria.Model.Produto_Receita", b =>
-                {
-                    b.HasOne("WindowsForm_Padaria.Model.Padaria_Produto", "Produto")
-                        .WithMany()
-                        .HasForeignKey("ProdutoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WindowsForm_Padaria.Model.Receita", "Receita")
-                        .WithMany()
-                        .HasForeignKey("ReceitaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Produto");
-
-                    b.Navigation("Receita");
-                });
-
             modelBuilder.Entity("WindowsForm_Padaria.Model.Venda", b =>
                 {
                     b.HasOne("WindowsForm_Padaria.Model.Pagamento", "Pagamento")
@@ -483,7 +467,7 @@ namespace WindowsForm_Padaria.Migrations
                         .IsRequired();
 
                     b.HasOne("WindowsForm_Padaria.Model.Venda", "Venda")
-                        .WithMany("Produtos")
+                        .WithMany("VendaProdutos")
                         .HasForeignKey("VendaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -500,7 +484,7 @@ namespace WindowsForm_Padaria.Migrations
 
             modelBuilder.Entity("WindowsForm_Padaria.Model.Venda", b =>
                 {
-                    b.Navigation("Produtos");
+                    b.Navigation("VendaProdutos");
                 });
 #pragma warning restore 612, 618
         }

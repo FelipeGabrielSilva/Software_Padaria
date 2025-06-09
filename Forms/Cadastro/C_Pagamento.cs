@@ -26,7 +26,7 @@ namespace WindowsForm_Padaria.Forms.Cadastro
         {
             Pagamento p = new Pagamento
             {
-                Descricao = txtDescricao.Text,
+                Nome = txtDescricao.Text,
             };
 
             pagamento_Service.Criar(p);

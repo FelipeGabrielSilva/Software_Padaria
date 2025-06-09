@@ -39,7 +39,7 @@ namespace WindowsForm_Padaria.Forms.Components
                 FornecedorId = (int)comboBox1.SelectedValue,
                 ProdutoId = _produtoId,
                 Quantidade = Convert.ToInt32(textBox1.Text),
-                Tipo = Tipo.E.ToString(),
+                Tipo = Tipo.Entrada,
             };
 
             epfs.Criar(epf);

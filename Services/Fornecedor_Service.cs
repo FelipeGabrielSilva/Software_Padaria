@@ -86,9 +86,12 @@ namespace WindowsForm_Padaria.Services
             }
 
             List<Fornecedor> fornecedores = FornecedorData.GetFornecedores();
+            List<Pagamento> pagamentos = PagamentoData.GetPagamentos();
 
             try
             {
+                _context.Pagamento.AddRange(pagamentos);
+                _context.SaveChanges();
                 _context.Fornecedor.AddRange(fornecedores);
                 _context.SaveChanges();
 
@@ -99,6 +102,8 @@ namespace WindowsForm_Padaria.Services
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
+
                 MessageBox.Show($"Ocorreu um erro ao popular o banco de dados: {ex.Message}",
                                "Erro",
                                MessageBoxButtons.OK,

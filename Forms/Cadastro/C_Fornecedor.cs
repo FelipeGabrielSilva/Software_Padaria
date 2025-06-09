@@ -51,8 +51,8 @@ namespace WindowsForm_Padaria.Forms.Cadastro
                 Telefone = txtTelefone.Text,
                 Endereco = txtEndereco.Text,
                 Bairro = txtBairro.Text,
-                Numero = txtNumero.Text,
-                TipoPagamentoId = (int)cmbPagamento.SelectedValue,
+                NumeroEndereco = txtNumero.Text,
+                PagamentoId = (int)cmbPagamento.SelectedValue,
             };
 
             fs.Criar(f);

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WindowsForm_Padaria.GerarDados;
 using WindowsForm_Padaria.Model;
 
 namespace WindowsForm_Padaria.Resources
@@ -39,6 +40,7 @@ namespace WindowsForm_Padaria.Resources
             modelBuilder.Entity<Padaria_Produto>().Property(e => e.Preco).HasColumnType("decimal(9,2)");
             modelBuilder.Entity<Venda_Produto>().Property(e => e.PrecoUnitario).HasColumnType("decimal(9,2)");
             modelBuilder.Entity<Venda>().Property(e => e.Preco).HasColumnType("decimal(9,2)");
+            modelBuilder.Entity<Pagamento>().HasData(PagamentoData.GetPagamentos());
 
             modelBuilder.Entity<Fornecedor>(entity =>
             {
@@ -62,7 +64,7 @@ namespace WindowsForm_Padaria.Resources
 
             modelBuilder.Entity<Venda_Produto>(entity =>
             {
-                entity.HasKey(f => new { f.VendaId, f.ProdutoId });
+                entity.HasIndex(f => new { f.VendaId, f.ProdutoId }).IsUnique();
 
                 entity.HasOne(f => f.Venda)
                 .WithMany(v => v.VendaProdutos)
@@ -75,8 +77,11 @@ namespace WindowsForm_Padaria.Resources
 
             modelBuilder.Entity<Padaria_Prod_Receita>(entity =>
             {
-                entity.HasKey(f => new { f.ReceitaId, f.ProdutoId });
+                entity.HasIndex(f => new { f.ReceitaId, f.ProdutoId }).IsUnique();
+
+                entity.HasOne(f => f.Receita).WithMany().HasForeignKey(f => f.ReceitaId);
+                entity.HasOne(f => f.Produto).WithMany().HasForeignKey(f => f.ProdutoId);
             });
-        }
+        }   
     }
 }

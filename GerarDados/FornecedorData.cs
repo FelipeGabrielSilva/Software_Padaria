@@ -15,23 +15,25 @@ namespace WindowsForm_Padaria.GerarDados
         {
             new Fornecedor
             {
+                Id = 1,
                 Nome = "Alimentos Sabor & Arte Ltda",
                 Telefone = "(11) 3456-7890",
                 Email = "contato@saborearte.com.br",
                 Endereco = "Rua das Delícias",
                 Bairro = "Centro",
-                Numero = "123",
+                NumeroEndereco = "123",
                 CNPJ = "12.345.678/0001-90",
                 PagamentoId = 1
             },
             new Fornecedor
             {
+                Id = 2,
                 Nome = "Bebidas Refrescante SA",
                 Telefone = "(21) 2567-8901",
                 Email = "vendas@refrescante.com.br",
                 Endereco = "Avenida das Nações",
                 Bairro = "Jardim América",
-                Numero = "456",
+                NumeroEndereco = "456",
                 CNPJ = "23.456.789/0001-01",
                 PagamentoId = 1
             },
@@ -42,7 +44,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "sac@mercadofacil.com.br",
                 Endereco = "Rua dos Comerciantes",
                 Bairro = "Industrial",
-                Numero = "789",
+                NumeroEndereco = "789",
                 CNPJ = "34.567.890/0001-12",
                 PagamentoId = 1
             },
@@ -53,7 +55,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "suporte@tecnologiaavancada.com.br",
                 Endereco = "Avenida Digital",
                 Bairro = "Tecnopolis",
-                Numero = "101",
+                NumeroEndereco = "101",
                 CNPJ = "45.678.901/0001-23",
                 PagamentoId = 1
             },
@@ -64,7 +66,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@confortoestilo.com.br",
                 Endereco = "Rua das Madeiras",
                 Bairro = "Nova Cidade",
-                Numero = "202",
+                NumeroEndereco = "202",
                 CNPJ = "56.789.012/0001-34",
                 PagamentoId = 1
             },
@@ -75,7 +77,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "atendimento@papelariacriativa.com.br",
                 Endereco = "Avenida dos Escritórios",
                 Bairro = "Centro Empresarial",
-                Numero = "303",
+                NumeroEndereco = "303",
                 CNPJ = "67.890.123/0001-45",
                 PagamentoId = 1
             },
@@ -86,7 +88,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "sac@brilhototal.com.br",
                 Endereco = "Rua da Higiene",
                 Bairro = "Limpeza Pura",
-                Numero = "404",
+                NumeroEndereco = "404",
                 CNPJ = "78.901.234/0001-56",
                 PagamentoId = 1
             },
@@ -97,7 +99,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "orcamento@fortesegura.com.br",
                 Endereco = "Avenida dos Edifícios",
                 Bairro = "Nova Construção",
-                Numero = "505",
+                NumeroEndereco = "505",
                 CNPJ = "89.012.345/0001-67",
                 PagamentoId = 1
             },
@@ -108,7 +110,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "contato@modaelegante.com.br",
                 Endereco = "Rua das Modelagens",
                 Bairro = "Fashion Mall",
-                Numero = "606",
+                NumeroEndereco = "606",
                 CNPJ = "90.123.456/0001-78",
                 PagamentoId = 1
             },
@@ -119,7 +121,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@futurodigital.com.br",
                 Endereco = "Avenida Tecnológica",
                 Bairro = "Digital Park",
-                Numero = "707",
+                NumeroEndereco = "707",
                 CNPJ = "01.234.567/0001-89",
                 PagamentoId = 1
             },
@@ -130,7 +132,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "farmacia@bemestar.com.br",
                 Endereco = "Rua da Saúde",
                 Bairro = "Vida Saudável",
-                Numero = "808",
+                NumeroEndereco = "808",
                 CNPJ = "12.345.679/0001-90",
                 PagamentoId = 1
             },
@@ -141,7 +143,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "pecas@velozfurioso.com.br",
                 Endereco = "Avenida dos Carros",
                 Bairro = "Motor City",
-                Numero = "909",
+                NumeroEndereco = "909",
                 CNPJ = "23.456.780/0001-01",
                 PagamentoId = 1
             },
@@ -152,7 +154,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "atendimento@amigoanimal.com.br",
                 Endereco = "Rua dos Bichinhos",
                 Bairro = "Pet Village",
-                Numero = "1010",
+                NumeroEndereco = "1010",
                 CNPJ = "34.567.891/0001-12",
                 PagamentoId = 1
             },
@@ -163,7 +165,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "reservas@saborcaseiro.com.br",
                 Endereco = "Avenida Gastronômica",
                 Bairro = "Gourmet Square",
-                Numero = "111",
+                NumeroEndereco = "111",
                 CNPJ = "45.678.902/0001-23",
                 PagamentoId = 1
             },
@@ -174,7 +176,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "reservas@confortodescanso.com.br",
                 Endereco = "Rua do Repouso",
                 Bairro = "Bem Estar",
-                Numero = "1212",
+                NumeroEndereco = "1212",
                 CNPJ = "56.789.013/0001-34",
                 PagamentoId = 1
             },
@@ -185,7 +187,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "frete@rapidoseguro.com.br",
                 Endereco = "Avenida das Estradas",
                 Bairro = "Logística Center",
-                Numero = "1313",
+                NumeroEndereco = "1313",
                 CNPJ = "67.890.124/0001-45",
                 PagamentoId = 1
             },
@@ -196,7 +198,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "secretaria@futurobrilhante.com.br",
                 Endereco = "Rua do Conhecimento",
                 Bairro = "Saber Mais",
-                Numero = "1414",
+                NumeroEndereco = "1414",
                 CNPJ = "78.901.235/0001-56",
                 PagamentoId = 1
             },
@@ -207,7 +209,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "comercial@protecaototal.com.br",
                 Endereco = "Avenida da Segurança",
                 Bairro = "Protege Center",
-                Numero = "1515",
+                NumeroEndereco = "1515",
                 CNPJ = "89.012.346/0001-67",
                 PagamentoId = 1
             },
@@ -218,7 +220,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "agendamento@estiloglamour.com.br",
                 Endereco = "Rua da Vaidade",
                 Bairro = "Beleza Pura",
-                Numero = "1616",
+                NumeroEndereco = "1616",
                 CNPJ = "90.123.457/0001-78",
                 PagamentoId = 1
             },
@@ -229,7 +231,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "loja@energiaacao.com.br",
                 Endereco = "Avenida dos Esportes",
                 Bairro = "Atleta Center",
-                Numero = "1717",
+                NumeroEndereco = "1717",
                 CNPJ = "01.234.568/0001-89",
                 PagamentoId = 1
             },
@@ -240,7 +242,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "suporte@solucoesdigitais.com.br",
                 Endereco = "Rua dos Bits",
                 Bairro = "Tecno Park",
-                Numero = "1818",
+                NumeroEndereco = "1818",
                 CNPJ = "12.345.680/0001-90",
                 PagamentoId = 1
             },
@@ -251,7 +253,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@terrafertil.com.br",
                 Endereco = "Avenida Rural",
                 Bairro = "Campo Verde",
-                Numero = "1919",
+                NumeroEndereco = "1919",
                 CNPJ = "23.456.791/0001-01",
                 PagamentoId = 1
             },
@@ -262,7 +264,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@brilhoeterno.com.br",
                 Endereco = "Rua das Pedras",
                 Bairro = "Diamante Center",
-                Numero = "2020",
+                NumeroEndereco = "2020",
                 CNPJ = "34.567.892/0001-12",
                 PagamentoId = 1
             },
@@ -273,7 +275,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "atendimento@alegriainfantil.com.br",
                 Endereco = "Avenida da Criança",
                 Bairro = "Mundo Infantil",
-                Numero = "2121",
+                NumeroEndereco = "2121",
                 CNPJ = "45.678.903/0001-23",
                 PagamentoId = 1
             },
@@ -284,7 +286,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "contato@saberconhecimento.com.br",
                 Endereco = "Rua das Letras",
                 Bairro = "Cultura Center",
-                Numero = "2222",
+                NumeroEndereco = "2222",
                 CNPJ = "56.789.014/0001-34",
                 PagamentoId = 1
             },
@@ -295,7 +297,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "projetos@casaestilo.com.br",
                 Endereco = "Avenida do Design",
                 Bairro = "Decor Park",
-                Numero = "2323",
+                NumeroEndereco = "2323",
                 CNPJ = "67.890.125/0001-45",
                 PagamentoId = 1
             },
@@ -306,7 +308,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@aromasuave.com.br",
                 Endereco = "Rua dos Perfumes",
                 Bairro = "Fragrância Center",
-                Numero = "2424",
+                NumeroEndereco = "2424",
                 CNPJ = "78.901.236/0001-56",
                 PagamentoId = 1
             },
@@ -317,7 +319,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "atendimento@visaoclara.com.br",
                 Endereco = "Avenida da Visão",
                 Bairro = "Olho Vivo",
-                Numero = "2525",
+                NumeroEndereco = "2525",
                 CNPJ = "89.012.347/0001-67",
                 PagamentoId = 1
             },
@@ -328,7 +330,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "loja@emocoesespeciais.com.br",
                 Endereco = "Rua das Surpresas",
                 Bairro = "Presente Park",
-                Numero = "2626",
+                NumeroEndereco = "2626",
                 CNPJ = "90.123.458/0001-78",
                 PagamentoId = 1
             },
@@ -339,7 +341,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "contato@saborunico.com.br",
                 Endereco = "Avenida dos Sabores",
                 Bairro = "Cervejaria Village",
-                Numero = "2727",
+                NumeroEndereco = "2727",
                 CNPJ = "01.234.569/0001-89",
                 PagamentoId = 1
             },
@@ -350,7 +352,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@fortalezaconstrucao.com.br",
                 Endereco = "Rua dos Tijolos",
                 Bairro = "Constru Forte",
-                Numero = "2828",
+                NumeroEndereco = "2828",
                 CNPJ = "12.345.681/0001-90",
                 PagamentoId = 1
             },
@@ -361,7 +363,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "sac@casapratica.com.br",
                 Endereco = "Avenida dos Eletros",
                 Bairro = "Conforto Home",
-                Numero = "2929",
+                NumeroEndereco = "2929",
                 CNPJ = "23.456.792/0001-01",
                 PagamentoId = 1
             },
@@ -372,7 +374,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "orcamento@rodagemsegura.com.br",
                 Endereco = "Rua das Rodas",
                 Bairro = "Pneu Center",
-                Numero = "3030",
+                NumeroEndereco = "3030",
                 CNPJ = "34.567.893/0001-12",
                 PagamentoId = 1
             },
@@ -383,7 +385,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@comunicacaototal.com.br",
                 Endereco = "Avenida dos Aparelhos",
                 Bairro = "Mobile Park",
-                Numero = "3131",
+                NumeroEndereco = "3131",
                 CNPJ = "45.678.904/0001-23",
                 PagamentoId = 1
             },
@@ -394,7 +396,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "contato@harmoniainstrumentos.com.br",
                 Endereco = "Rua das Notas",
                 Bairro = "Musical Center",
-                Numero = "3232",
+                NumeroEndereco = "3232",
                 CNPJ = "56.789.015/0001-34",
                 PagamentoId = 1
             },
@@ -405,7 +407,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "loja@vidamarinha.com.br",
                 Endereco = "Avenida dos Peixes",
                 Bairro = "Aqua Park",
-                Numero = "3333",
+                NumeroEndereco = "3333",
                 CNPJ = "67.890.126/0001-45",
                 PagamentoId = 1
             },
@@ -416,7 +418,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "matricula@corpoperfeito.com.br",
                 Endereco = "Rua dos Exercícios",
                 Bairro = "Health Center",
-                Numero = "3434",
+                NumeroEndereco = "3434",
                 CNPJ = "78.901.237/0001-56",
                 PagamentoId = 1
             },
@@ -427,7 +429,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "agendamento@momentosunicos.com.br",
                 Endereco = "Avenida das Lembranças",
                 Bairro = "Foto Park",
-                Numero = "3535",
+                NumeroEndereco = "3535",
                 CNPJ = "89.012.348/0001-67",
                 PagamentoId = 1
             },
@@ -438,7 +440,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@pedallivre.com.br",
                 Endereco = "Rua das Bicicletas",
                 Bairro = "Bike Center",
-                Numero = "3636",
+                NumeroEndereco = "3636",
                 CNPJ = "90.123.459/0001-78",
                 PagamentoId = 1
             },
@@ -449,7 +451,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "atendimento@tempopreciso.com.br",
                 Endereco = "Avenida do Tempo",
                 Bairro = "Relógio Center",
-                Numero = "3737",
+                NumeroEndereco = "3737",
                 CNPJ = "01.234.570/0001-89",
                 PagamentoId = 1
             },
@@ -460,7 +462,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "contato@aromaintenso.com.br",
                 Endereco = "Rua do Café",
                 Bairro = "Coffee Village",
-                Numero = "3838",
+                NumeroEndereco = "3838",
                 CNPJ = "12.345.682/0001-90",
                 PagamentoId = 1
             },
@@ -471,7 +473,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@coresvibrantes.com.br",
                 Endereco = "Avenida das Cores",
                 Bairro = "Pintura Center",
-                Numero = "3939",
+                NumeroEndereco = "3939",
                 CNPJ = "23.456.793/0001-01",
                 PagamentoId = 1
             },
@@ -482,7 +484,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "orcamento@transparenciaperfeita.com.br",
                 Endereco = "Rua dos Vidros",
                 Bairro = "Vidro Park",
-                Numero = "4040",
+                NumeroEndereco = "4040",
                 CNPJ = "34.567.894/0001-12",
                 PagamentoId = 1
             },
@@ -493,7 +495,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "sac@fixacaosegura.com.br",
                 Endereco = "Avenida dos Parafusos",
                 Bairro = "Ferramentas Center",
-                Numero = "4141",
+                NumeroEndereco = "4141",
                 CNPJ = "45.678.905/0001-23",
                 PagamentoId = 1
             },
@@ -504,7 +506,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "pedidos@naturezaviva.com.br",
                 Endereco = "Rua das Flores",
                 Bairro = "Garden Center",
-                Numero = "4242",
+                NumeroEndereco = "4242",
                 CNPJ = "56.789.016/0001-34",
                 PagamentoId = 1
             },
@@ -515,7 +517,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@docetentacao.com.br",
                 Endereco = "Avenida do Cacau",
                 Bairro = "Chocolate Village",
-                Numero = "4343",
+                NumeroEndereco = "4343",
                 CNPJ = "67.890.127/0001-45",
                 PagamentoId = 1
             },
@@ -526,7 +528,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "loja@maostalentosas.com.br",
                 Endereco = "Rua do Artesanato",
                 Bairro = "Arte Center",
-                Numero = "4444",
+                NumeroEndereco = "4444",
                 CNPJ = "78.901.238/0001-56",
                 PagamentoId = 1
             },
@@ -537,7 +539,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "projetos@aguacristalina.com.br",
                 Endereco = "Avenida das Piscinas",
                 Bairro = "Água Park",
-                Numero = "4545",
+                NumeroEndereco = "4545",
                 CNPJ = "89.012.349/0001-67",
                 PagamentoId = 1
             },
@@ -548,7 +550,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "contato@tempopassado.com.br",
                 Endereco = "Rua das Relíquias",
                 Bairro = "Antique Center",
-                Numero = "4646",
+                NumeroEndereco = "4646",
                 CNPJ = "90.123.460/0001-78",
                 PagamentoId = 1
             },
@@ -559,7 +561,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@autoperformance.com.br",
                 Endereco = "Avenida dos Acessórios",
                 Bairro = "Auto Center",
-                Numero = "4747",
+                NumeroEndereco = "4747",
                 CNPJ = "01.234.571/0001-89",
                 PagamentoId = 1
             },
@@ -570,7 +572,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "sac@agua-forte.com.br",
                 Endereco = "Rua das Bombas",
                 Bairro = "Hidráulica Center",
-                Numero = "4848",
+                NumeroEndereco = "4848",
                 CNPJ = "12.345.683/0001-90",
                 PagamentoId = 1
             },
@@ -581,7 +583,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "comercial@alertatotal.com.br",
                 Endereco = "Avenida da Vigilância",
                 Bairro = "Segurança Park",
-                Numero = "4949",
+                NumeroEndereco = "4949",
                 CNPJ = "23.456.794/0001-01",
                 PagamentoId = 1
             },
@@ -592,7 +594,7 @@ namespace WindowsForm_Padaria.GerarDados
                 Email = "vendas@producaoplus.com.br",
                 Endereco = "Rua das Máquinas",
                 Bairro = "Industrial Park",
-                Numero = "5050",
+                NumeroEndereco = "5050",
                 CNPJ = "34.567.895/0001-12",
                 PagamentoId = 1
             }
