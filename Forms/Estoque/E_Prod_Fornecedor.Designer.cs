@@ -43,7 +43,6 @@
             comboBox1 = new ComboBox();
             pictureBox1 = new PictureBox();
             dataGridView2 = new DataGridView();
-            estoqueProdFornecedorBindingSource1 = new BindingSource(components);
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             Produto = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
@@ -52,6 +51,7 @@
             Entrada = new DataGridViewTextBoxColumn();
             Saida = new DataGridViewTextBoxColumn();
             Atualizacao = new DataGridViewTextBoxColumn();
+            estoqueProdFornecedorBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)estoqueProdFornecedorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -181,10 +181,6 @@
             dataGridView2.TabIndex = 24;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
-            // estoqueProdFornecedorBindingSource1
-            // 
-            estoqueProdFornecedorBindingSource1.DataSource = typeof(Model.Estoque_Prod_Fornecedor);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             dataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -243,6 +239,10 @@
             Atualizacao.HeaderText = "Atualizacao";
             Atualizacao.Name = "Atualizacao";
             Atualizacao.Width = 181;
+            // 
+            // estoqueProdFornecedorBindingSource1
+            // 
+            estoqueProdFornecedorBindingSource1.DataSource = typeof(Model.Estoque_Prod_Fornecedor);
             // 
             // E_Prod_Fornecedor
             // 

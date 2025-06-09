@@ -17,10 +17,13 @@ namespace WindowsForm_Padaria.Forms.Estoque
     {
         private readonly Fornecedor_Produto_Service fps;
         private readonly Estoque_Prod_Fornecedor_Service epfs;
+        private List<Fornecedor_Produto> lfp = new List<Fornecedor_Produto>();
+
         public E_Prod_Fornecedor()
         {
             fps = new Fornecedor_Produto_Service();
             epfs = new Estoque_Prod_Fornecedor_Service();
+            lfp = new List<Fornecedor_Produto>();
             InitializeComponent();
             AtualizarGrid();
             AtualizarTabela();
@@ -60,6 +63,7 @@ namespace WindowsForm_Padaria.Forms.Estoque
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -70,7 +74,9 @@ namespace WindowsForm_Padaria.Forms.Estoque
         {
             comboBox1.ValueMember = "Id";
             comboBox1.DisplayMember = "Descricao";
-            comboBox1.DataSource = fps.ListarTodos();
+            lfp = fps.ListarTodos();
+            comboBox1.DataSource = lfp;
+            comboBox1.SelectedIndex = -1;
         }
 
         private void AtualizarTabela()
@@ -84,6 +90,10 @@ namespace WindowsForm_Padaria.Forms.Estoque
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void AplicarFiltroProdutos()
+        {
         }
     }
 }

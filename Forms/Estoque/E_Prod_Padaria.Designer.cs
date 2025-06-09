@@ -37,20 +37,20 @@
             button1 = new Button();
             button2 = new Button();
             dataGridView1 = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Produto = new DataGridViewTextBoxColumn();
+            Quantidade = new DataGridViewTextBoxColumn();
+            Descricao = new DataGridViewTextBoxColumn();
+            Movimentacao = new DataGridViewTextBoxColumn();
+            Entrada = new DataGridViewTextBoxColumn();
+            Saida = new DataGridViewTextBoxColumn();
+            Atualizacao = new DataGridViewTextBoxColumn();
             estoqueProdPadariaBindingSource = new BindingSource(components);
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
             comboBox1 = new ComboBox();
             pictureBox1 = new PictureBox();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            Produto = new DataGridViewTextBoxColumn();
-            Fornecedor = new DataGridViewTextBoxColumn();
-            Quantidade = new DataGridViewTextBoxColumn();
-            Tipo = new DataGridViewTextBoxColumn();
-            Entrada = new DataGridViewTextBoxColumn();
-            Saida = new DataGridViewTextBoxColumn();
-            Atualizacao = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)estoqueProdPadariaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -99,7 +99,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, Produto, Fornecedor, Quantidade, Tipo, Entrada, Saida, Atualizacao });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, Produto, Quantidade, Descricao, Movimentacao, Entrada, Saida, Atualizacao });
             dataGridView1.DataSource = estoqueProdPadariaBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
@@ -120,8 +120,67 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1500, 500);
+            dataGridView1.Size = new Size(1900, 500);
             dataGridView1.TabIndex = 13;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // Produto
+            // 
+            Produto.DataPropertyName = "NomeProduto";
+            Produto.HeaderText = "Produto";
+            Produto.Name = "Produto";
+            Produto.ReadOnly = true;
+            Produto.Width = 129;
+            // 
+            // Quantidade
+            // 
+            Quantidade.DataPropertyName = "Quantidade";
+            Quantidade.HeaderText = "Quantidade";
+            Quantidade.Name = "Quantidade";
+            Quantidade.Width = 168;
+            // 
+            // Descricao
+            // 
+            Descricao.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Descricao.DataPropertyName = "Descricao";
+            Descricao.HeaderText = "Descricao";
+            Descricao.Name = "Descricao";
+            // 
+            // Movimentacao
+            // 
+            Movimentacao.DataPropertyName = "Movimentacao";
+            Movimentacao.HeaderText = "Movimentacao";
+            Movimentacao.Name = "Movimentacao";
+            Movimentacao.ReadOnly = true;
+            Movimentacao.Width = 194;
+            // 
+            // Entrada
+            // 
+            Entrada.DataPropertyName = "Entrada";
+            Entrada.HeaderText = "Entrada";
+            Entrada.Name = "Entrada";
+            Entrada.Width = 129;
+            // 
+            // Saida
+            // 
+            Saida.DataPropertyName = "Saida";
+            Saida.HeaderText = "Saida";
+            Saida.Name = "Saida";
+            Saida.Width = 103;
+            // 
+            // Atualizacao
+            // 
+            Atualizacao.DataPropertyName = "Atualizacao";
+            Atualizacao.HeaderText = "Atualizacao";
+            Atualizacao.Name = "Atualizacao";
+            Atualizacao.Width = 181;
             // 
             // estoqueProdPadariaBindingSource
             // 
@@ -180,63 +239,6 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // Produto
-            // 
-            Produto.DataPropertyName = "NomeProduto";
-            Produto.HeaderText = "Produto";
-            Produto.Name = "Produto";
-            Produto.Width = 129;
-            // 
-            // Fornecedor
-            // 
-            Fornecedor.DataPropertyName = "NomeFornecedor";
-            Fornecedor.HeaderText = "Fornecedor";
-            Fornecedor.Name = "Fornecedor";
-            Fornecedor.Width = 168;
-            // 
-            // Quantidade
-            // 
-            Quantidade.DataPropertyName = "Id";
-            Quantidade.HeaderText = "Quantidade";
-            Quantidade.Name = "Quantidade";
-            Quantidade.Width = 168;
-            // 
-            // Tipo
-            // 
-            Tipo.DataPropertyName = "Id";
-            Tipo.HeaderText = "Tipo";
-            Tipo.Name = "Tipo";
-            Tipo.Width = 90;
-            // 
-            // Entrada
-            // 
-            Entrada.DataPropertyName = "Id";
-            Entrada.HeaderText = "Data Entrada";
-            Entrada.Name = "Entrada";
-            Entrada.Width = 194;
-            // 
-            // Saida
-            // 
-            Saida.DataPropertyName = "Id";
-            Saida.HeaderText = "Data Saída";
-            Saida.Name = "Saida";
-            Saida.Width = 168;
-            // 
-            // Atualizacao
-            // 
-            Atualizacao.DataPropertyName = "Id";
-            Atualizacao.HeaderText = "Data Atualização";
-            Atualizacao.Name = "Atualizacao";
-            Atualizacao.Width = 223;
-            // 
             // E_Prod_Padaria
             // 
             AutoScaleDimensions = new SizeF(21F, 47F);
@@ -269,7 +271,6 @@
         private Button button1;
         private Button button2;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn produtoIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
@@ -281,10 +282,11 @@
         private Button button5;
         private ComboBox comboBox1;
         private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn Produto;
-        private DataGridViewTextBoxColumn Fornecedor;
         private DataGridViewTextBoxColumn Quantidade;
-        private DataGridViewTextBoxColumn Tipo;
+        private DataGridViewTextBoxColumn Descricao;
+        private DataGridViewTextBoxColumn Movimentacao;
         private DataGridViewTextBoxColumn Entrada;
         private DataGridViewTextBoxColumn Saida;
         private DataGridViewTextBoxColumn Atualizacao;

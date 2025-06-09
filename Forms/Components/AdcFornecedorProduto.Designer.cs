@@ -69,7 +69,7 @@
             textBox1.Location = new Point(226, 9);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(168, 36);
-            textBox1.TabIndex = 3;
+            textBox1.TabIndex = 1;
             // 
             // button1
             // 
@@ -86,7 +86,7 @@
             button2.Location = new Point(690, 168);
             button2.Name = "button2";
             button2.Size = new Size(200, 48);
-            button2.TabIndex = 5;
+            button2.TabIndex = 3;
             button2.Text = "Confirmar";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;

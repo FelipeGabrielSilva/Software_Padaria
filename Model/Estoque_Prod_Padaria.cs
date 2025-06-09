@@ -30,5 +30,13 @@ namespace WindowsForm_Padaria.Model
                 return Tipo == Tipo.Entrada ? "Entrada" : "Saída";
             }
         }
+
+        public string NomeProduto
+        {
+            get
+            {
+                return Produto.Nome;
+            }
+        }
     }
 }
