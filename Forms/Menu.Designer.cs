@@ -102,6 +102,7 @@
             pADARIAToolStripMenuItem.Name = "pADARIAToolStripMenuItem";
             pADARIAToolStripMenuItem.Size = new Size(310, 52);
             pADARIAToolStripMenuItem.Text = "Padaria";
+            pADARIAToolStripMenuItem.Click += pADARIAToolStripMenuItem_Click;
             // 
             // pRODUTOToolStripMenuItem1
             // 

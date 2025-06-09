@@ -80,7 +80,6 @@ namespace WindowsForm_Padaria.Forms.Cadastro
             cmbPagamento.Items.Clear();
             cmbPagamento.ValueMember = "Id";
             cmbPagamento.DisplayMember = "Nome";
-            cmbPagamento.SelectedIndex = -1;
             cmbPagamento.DataSource = ps.ListarTodos();
         }
     }

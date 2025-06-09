@@ -26,10 +26,17 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Informe um código para o produto.", "Erro ao cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (cmbCategoria.SelectedIndex != -1)
             {
                 Padaria_Produto p = new Padaria_Produto
                 {
+                    Codigo = Convert.ToInt32(textBox1.Text),
                     Nome = txtNome.Text,
                     Descricao = txtDescricao.Text,
                     Preco = decimal.Parse(txtPreco.Text),
@@ -54,7 +61,6 @@ namespace WindowsForm_Padaria.Forms.Cadastro
             cmbCategoria.Items.Clear();
             cmbCategoria.ValueMember = "Id";
             cmbCategoria.DisplayMember = "Nome";
-            cmbCategoria.SelectedIndex = -1;
             cmbCategoria.DataSource = cs.ListarTodos();
         }
     }

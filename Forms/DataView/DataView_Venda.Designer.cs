@@ -34,13 +34,13 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            vendaBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             statusDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cPFCNPJDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             precoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Pagamento = new DataGridViewTextBoxColumn();
+            vendaBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             SuspendLayout();
@@ -72,7 +72,7 @@
             dataGridView1.DataSource = vendaBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 12F);
+            dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 16F);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -82,7 +82,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 12F);
+            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 16F);
             dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -91,10 +91,6 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1800, 500);
             dataGridView1.TabIndex = 1;
-            // 
-            // vendaBindingSource
-            // 
-            vendaBindingSource.DataSource = typeof(Model.Venda);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -142,6 +138,10 @@
             Pagamento.HeaderText = "Pagamento";
             Pagamento.Name = "Pagamento";
             Pagamento.Width = 155;
+            // 
+            // vendaBindingSource
+            // 
+            vendaBindingSource.DataSource = typeof(Model.Venda);
             // 
             // DataView_Venda
             // 

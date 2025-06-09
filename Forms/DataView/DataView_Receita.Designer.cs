@@ -47,7 +47,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(233, 58);
+            label1.Size = new Size(188, 47);
             label1.TabIndex = 0;
             label1.Text = "Receitas";
             // 
@@ -69,7 +69,7 @@
             dataGridView1.DataSource = receitaBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 12F);
+            dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 16F);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -79,7 +79,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 12F);
+            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 16F);
             dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -95,7 +95,7 @@
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 76;
+            idDataGridViewTextBoxColumn.Width = 64;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -103,7 +103,7 @@
             nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
             nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.Width = 108;
+            nomeDataGridViewTextBoxColumn.Width = 90;
             // 
             // descricaoDataGridViewTextBoxColumn
             // 
@@ -111,7 +111,7 @@
             descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
             descricaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            descricaoDataGridViewTextBoxColumn.Width = 188;
+            descricaoDataGridViewTextBoxColumn.Width = 155;
             // 
             // receitaBindingSource
             // 
@@ -119,7 +119,7 @@
             // 
             // DataView_Receita
             // 
-            AutoScaleDimensions = new SizeF(26F, 57F);
+            AutoScaleDimensions = new SizeF(21F, 47F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);

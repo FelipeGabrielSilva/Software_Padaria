@@ -55,7 +55,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(571, 58);
+            label1.Size = new Size(461, 47);
             label1.TabIndex = 0;
             label1.Text = "Cadastro - Fornecedor";
             // 
@@ -64,7 +64,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(12, 93);
             label2.Name = "label2";
-            label2.Size = new Size(155, 58);
+            label2.Size = new Size(125, 47);
             label2.TabIndex = 1;
             label2.Text = "Nome:";
             // 
@@ -73,121 +73,121 @@
             label3.AutoSize = true;
             label3.Location = new Point(14, 163);
             label3.Name = "label3";
-            label3.Size = new Size(181, 58);
+            label3.Size = new Size(146, 47);
             label3.TabIndex = 2;
             label3.Text = "Email:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 231);
+            label4.Location = new Point(12, 246);
             label4.Name = "label4";
-            label4.Size = new Size(259, 58);
+            label4.Size = new Size(209, 47);
             label4.TabIndex = 3;
             label4.Text = "Telefone:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 303);
+            label5.Location = new Point(12, 325);
             label5.Name = "label5";
-            label5.Size = new Size(259, 58);
+            label5.Size = new Size(209, 47);
             label5.TabIndex = 4;
             label5.Text = "Endereço:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(14, 373);
+            label6.Location = new Point(14, 413);
             label6.Name = "label6";
-            label6.Size = new Size(207, 58);
+            label6.Size = new Size(167, 47);
             label6.TabIndex = 5;
             label6.Text = "Bairro:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(12, 446);
+            label7.Location = new Point(12, 484);
             label7.Name = "label7";
-            label7.Size = new Size(207, 58);
+            label7.Size = new Size(167, 47);
             label7.TabIndex = 6;
             label7.Text = "Número:";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(12, 516);
+            label8.Location = new Point(12, 570);
             label8.Name = "label8";
-            label8.Size = new Size(155, 58);
+            label8.Size = new Size(125, 47);
             label8.TabIndex = 7;
             label8.Text = "CNPJ:";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(12, 591);
+            label9.Location = new Point(12, 653);
             label9.Name = "label9";
-            label9.Size = new Size(285, 58);
+            label9.Size = new Size(230, 47);
             label9.TabIndex = 8;
             label9.Text = "Pagamento:";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(173, 90);
+            txtNome.Location = new Point(143, 90);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(800, 64);
+            txtNome.Size = new Size(800, 53);
             txtNome.TabIndex = 9;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(201, 160);
+            txtEmail.Location = new Point(166, 160);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(800, 64);
+            txtEmail.Size = new Size(800, 53);
             txtEmail.TabIndex = 10;
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(277, 230);
+            txtTelefone.Location = new Point(227, 243);
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(500, 64);
+            txtTelefone.Size = new Size(500, 53);
             txtTelefone.TabIndex = 11;
             txtTelefone.TextChanged += txtTelefone_TextChanged;
             // 
             // txtEndereco
             // 
-            txtEndereco.Location = new Point(277, 300);
+            txtEndereco.Location = new Point(227, 322);
             txtEndereco.Name = "txtEndereco";
-            txtEndereco.Size = new Size(800, 64);
+            txtEndereco.Size = new Size(800, 53);
             txtEndereco.TabIndex = 12;
             // 
             // txtNumero
             // 
-            txtNumero.Location = new Point(227, 443);
+            txtNumero.Location = new Point(185, 481);
             txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(300, 64);
+            txtNumero.Size = new Size(300, 53);
             txtNumero.TabIndex = 14;
             // 
             // txtBairro
             // 
-            txtBairro.Location = new Point(227, 370);
+            txtBairro.Location = new Point(187, 410);
             txtBairro.Name = "txtBairro";
-            txtBairro.Size = new Size(750, 64);
+            txtBairro.Size = new Size(750, 53);
             txtBairro.TabIndex = 13;
             // 
             // txtCnpj
             // 
-            txtCnpj.Location = new Point(173, 513);
+            txtCnpj.Location = new Point(143, 567);
             txtCnpj.Name = "txtCnpj";
-            txtCnpj.Size = new Size(750, 64);
+            txtCnpj.Size = new Size(750, 53);
             txtCnpj.TabIndex = 15;
             txtCnpj.TextChanged += textBox7_TextChanged;
             // 
             // cmbPagamento
             // 
             cmbPagamento.FormattingEnabled = true;
-            cmbPagamento.Location = new Point(303, 588);
+            cmbPagamento.Location = new Point(248, 650);
             cmbPagamento.Name = "cmbPagamento";
-            cmbPagamento.Size = new Size(300, 65);
+            cmbPagamento.Size = new Size(500, 53);
             cmbPagamento.TabIndex = 16;
             cmbPagamento.SelectedIndexChanged += cmbPagamento_SelectedIndexChanged;
             // 
@@ -222,7 +222,7 @@
             // 
             // C_Fornecedor
             // 
-            AutoScaleDimensions = new SizeF(26F, 57F);
+            AutoScaleDimensions = new SizeF(20F, 45F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);

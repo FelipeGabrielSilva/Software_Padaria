@@ -13,9 +13,10 @@ namespace WindowsForm_Padaria.GerarDados
         {
             return new List<Pagamento>
             {
-                new Pagamento { Id = 1, Nome = "Cartão de Crédito" }, // Importante que o ID seja 1
-                new Pagamento { Id = 2, Nome = "Dinheiro" },
-                new Pagamento { Id = 3, Nome = "Pix" }
+                new Pagamento { Id = 1, Nome = "Cartão de Crédito" },
+                new Pagamento { Id = 2, Nome = "Cartão de Débito" },
+                new Pagamento { Id = 3, Nome = "Dinheiro" },
+                new Pagamento { Id = 4, Nome = "Pix" }
             };
         }
     }

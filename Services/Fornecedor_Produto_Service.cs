@@ -40,7 +40,7 @@ namespace WindowsForm_Padaria.Services
         {
             List<Fornecedor_Produto> fp = new List<Fornecedor_Produto>();
 
-            fp = _context.Fornecedor_Produto.ToList();
+            fp = _context.Fornecedor_Produto.OrderByDescending(o => o.Id).ToList();
 
             return fp;
         }

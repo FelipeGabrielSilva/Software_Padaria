@@ -40,7 +40,7 @@ namespace WindowsForm_Padaria.Services
         public List<Padaria_Produto> ListarTodos()
         {
             List<Padaria_Produto> pp = new List<Padaria_Produto>();
-            pp = _context.Padaria_Produto.Include(a => a.Categoria).ToList();
+            pp = _context.Padaria_Produto.Include(a => a.Categoria).OrderByDescending(o => o.Id).ToList();
 
             return pp;
         }

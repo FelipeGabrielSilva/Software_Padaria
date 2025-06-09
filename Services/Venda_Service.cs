@@ -39,7 +39,7 @@ namespace WindowsForm_Padaria.Services
         {
             List<Venda> Vendas = new List<Venda>();
 
-            Vendas = _context.Venda.ToList();
+            Vendas = _context.Venda.OrderByDescending(o => o.Id).ToList();
 
             return Vendas;
         }

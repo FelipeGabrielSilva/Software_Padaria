@@ -34,9 +34,9 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            pagamentoBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Nome = new DataGridViewTextBoxColumn();
+            pagamentoBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pagamentoBindingSource).BeginInit();
             SuspendLayout();
@@ -68,7 +68,7 @@
             dataGridView1.DataSource = pagamentoBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 12F);
+            dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 16F);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -78,7 +78,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 12F);
+            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 16F);
             dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -88,10 +88,6 @@
             dataGridView1.RowTemplate.Height = 64;
             dataGridView1.Size = new Size(1800, 500);
             dataGridView1.TabIndex = 1;
-            // 
-            // pagamentoBindingSource
-            // 
-            pagamentoBindingSource.DataSource = typeof(Model.Pagamento);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -107,6 +103,10 @@
             Nome.HeaderText = "Nome";
             Nome.Name = "Nome";
             Nome.Width = 90;
+            // 
+            // pagamentoBindingSource
+            // 
+            pagamentoBindingSource.DataSource = typeof(Model.Pagamento);
             // 
             // DataView_Pagamento
             // 

@@ -46,7 +46,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(857, 58);
+            label1.Size = new Size(692, 47);
             label1.TabIndex = 0;
             label1.Text = "Cadastro - Produtos (Fornecedor)";
             // 
@@ -55,7 +55,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(12, 101);
             label2.Name = "label2";
-            label2.Size = new Size(207, 58);
+            label2.Size = new Size(167, 47);
             label2.TabIndex = 1;
             label2.Text = "Código:";
             // 
@@ -64,7 +64,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(12, 177);
             label3.Name = "label3";
-            label3.Size = new Size(155, 58);
+            label3.Size = new Size(125, 47);
             label3.TabIndex = 2;
             label3.Text = "Nome:";
             // 
@@ -73,29 +73,29 @@
             label4.AutoSize = true;
             label4.Location = new Point(12, 378);
             label4.Name = "label4";
-            label4.Size = new Size(285, 58);
+            label4.Size = new Size(230, 47);
             label4.TabIndex = 3;
             label4.Text = "Descrição:";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(225, 98);
+            textBox1.Location = new Point(185, 98);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 65);
+            textBox1.Size = new Size(150, 53);
             textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(173, 174);
+            textBox2.Location = new Point(143, 174);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(800, 65);
+            textBox2.Size = new Size(800, 53);
             textBox2.TabIndex = 5;
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(303, 378);
+            richTextBox1.Location = new Point(248, 375);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(670, 300);
+            richTextBox1.Size = new Size(800, 300);
             richTextBox1.TabIndex = 6;
             richTextBox1.Text = "";
             // 
@@ -124,7 +124,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(12, 279);
             label5.Name = "label5";
-            label5.Size = new Size(311, 58);
+            label5.Size = new Size(251, 47);
             label5.TabIndex = 9;
             label5.Text = "Fornecedor:";
             // 
@@ -134,15 +134,15 @@
             comboBox1.Font = new Font("JetBrains Mono", 26F);
             comboBox1.FormattingEnabled = true;
             comboBox1.IntegralHeight = false;
-            comboBox1.Location = new Point(329, 272);
+            comboBox1.Location = new Point(269, 276);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(644, 65);
+            comboBox1.Size = new Size(800, 55);
             comboBox1.TabIndex = 10;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // C_FornecedorProduto
             // 
-            AutoScaleDimensions = new SizeF(26F, 57F);
+            AutoScaleDimensions = new SizeF(21F, 47F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);

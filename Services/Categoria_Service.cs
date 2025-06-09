@@ -40,7 +40,7 @@ namespace WindowsForm_Padaria.Services
         {
             List<Categoria> categorias = new List<Categoria>();
                 
-            categorias = _context.Categoria.ToList();
+            categorias = _context.Categoria.OrderByDescending(o => o.Id).ToList();
 
             return categorias;
         }

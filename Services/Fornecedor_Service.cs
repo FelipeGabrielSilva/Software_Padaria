@@ -41,7 +41,7 @@ namespace WindowsForm_Padaria.Services
         {
             List<Fornecedor> Fornecedores = new List<Fornecedor>();
 
-            Fornecedores = _context.Fornecedor.Include(p => p.Pagamento).ToList();
+            Fornecedores = _context.Fornecedor.Include(p => p.Pagamento).OrderByDescending(o => o.Id).ToList();
 
             return Fornecedores;
         }

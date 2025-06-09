@@ -37,7 +37,7 @@ namespace WindowsForm_Padaria.Services
 
         public List<Estoque_Prod_Fornecedor> ListarTodos ()
         {
-            List<Estoque_Prod_Fornecedor> epf = _context.Estoque_Prod_Fornecedor.ToList();
+            List<Estoque_Prod_Fornecedor> epf = _context.Estoque_Prod_Fornecedor.OrderByDescending(o => o.Id).ToList();
 
             return epf;
         }

@@ -40,7 +40,7 @@ namespace WindowsForm_Padaria.Services
         {
             List<Receita> receitas = new List<Receita>();
 
-            receitas = _context.Receita.ToList();
+            receitas = _context.Receita.OrderByDescending(o => o.Id).ToList();
 
             return receitas;
         }

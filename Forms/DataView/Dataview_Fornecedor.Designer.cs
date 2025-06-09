@@ -31,9 +31,9 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            fornecedorBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             telefoneDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -42,6 +42,7 @@
             bairroDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cNPJDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Pagamento = new DataGridViewTextBoxColumn();
+            fornecedorBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fornecedorBindingSource).BeginInit();
             SuspendLayout();
@@ -73,7 +74,7 @@
             dataGridView1.DataSource = fornecedorBindingSource;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 12F);
+            dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 16F);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -81,14 +82,18 @@
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Location = new Point(12, 100);
             dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 64;
             dataGridView1.Size = new Size(1800, 500);
             dataGridView1.TabIndex = 1;
-            // 
-            // fornecedorBindingSource
-            // 
-            fornecedorBindingSource.DataSource = typeof(Model.Fornecedor);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -151,7 +156,12 @@
             Pagamento.DataPropertyName = "TipoPagamento";
             Pagamento.HeaderText = "Pagamento";
             Pagamento.Name = "Pagamento";
+            Pagamento.ReadOnly = true;
             Pagamento.Width = 155;
+            // 
+            // fornecedorBindingSource
+            // 
+            fornecedorBindingSource.DataSource = typeof(Model.Fornecedor);
             // 
             // Dataview_Fornecedor
             // 

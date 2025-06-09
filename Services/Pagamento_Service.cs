@@ -39,7 +39,7 @@ namespace WindowsForm_Padaria.Services
         {
             List<Pagamento> pagamentos = new List<Pagamento>();
 
-            pagamentos = _context.Pagamento.ToList();
+            pagamentos = _context.Pagamento.OrderByDescending(o => o.Id).ToList();
 
             return pagamentos;
         }

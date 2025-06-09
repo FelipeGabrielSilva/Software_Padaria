@@ -33,18 +33,24 @@ namespace WindowsForm_Padaria.Forms.Cadastro
         {
             comboBox1.ValueMember = "Id";
             comboBox1.DisplayMember = "Nome";
-            comboBox1.SelectedIndex = -1;
             comboBox1.DataSource = fs.ListarTodos();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "")
+            {
+
+                MessageBox.Show("Informe um código para o produto.", "Erro ao cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (comboBox1.SelectedIndex != -1)
             {
                 Fornecedor_Produto fp = new Fornecedor_Produto
                 {
                     Codigo = Convert.ToInt32(textBox1.Text),
-                    Nome = textBox1.Text,
+                    Nome = textBox2.Text,
                     Descricao = richTextBox1.Text,
                     FornecedorId = (int)comboBox1.SelectedValue,
                 };

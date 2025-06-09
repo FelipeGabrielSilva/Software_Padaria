@@ -28,14 +28,7 @@ namespace WindowsForm_Padaria.Forms
 
         private void fORNECEDORToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            C_Fornecedor f = new C_Fornecedor();
-            f.TopLevel = false;
-            f.FormBorderStyle = FormBorderStyle.None;
-            f.Dock = DockStyle.Fill;
-
-            panel1.Controls.Add(f);
-            f.Show();
+            return;
         }
 
         private void eMPRESAToolStripMenuItem_Click(object sender, EventArgs e)
@@ -216,6 +209,11 @@ namespace WindowsForm_Padaria.Forms
 
             panel1.Controls.Add(dtfp);
             dtfp.Show();
+        }
+
+        private void pADARIAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            return;
         }
     }
 }
