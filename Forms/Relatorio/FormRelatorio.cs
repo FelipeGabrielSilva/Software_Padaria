@@ -606,7 +606,7 @@ namespace WindowsForm_Padaria.Forms.Relatorio
                         .SetBackgroundColor(iText.Kernel.Colors.ColorConstants.LIGHT_GRAY)
                         .SetPaddingRight(5));
                     table.AddCell(new Cell() 
-                        .Add(new Paragraph(totalVendasPreco.ToString("C2", new System.Globalization.CultureInfo("pt-BR"))).SetFont(fontNegrito).SetFontSize(10).SetTextAlignment(TextAlignment.RIGHT))
+                        .Add(new Paragraph(totalVendasPreco.ToString("C2", new System.Globalization.CultureInfo("pt-BR"))).SetFont(fontNegrito).SetFontSize(10).SetTextAlignment(TextAlignment.CENTER))
                         .SetBackgroundColor(iText.Kernel.Colors.ColorConstants.LIGHT_GRAY));
 
                     doc.Add(table);

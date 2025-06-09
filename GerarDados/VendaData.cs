@@ -125,17 +125,14 @@ namespace WindowsForm_Padaria.GerarDados
                 novasVendas.Add(novaVenda);
             }
 
-            // --- 4. Adicionar ao Contexto e Salvar ---
             if (novasVendas.Any())
             {
-                // Use o DbSet correto para Venda (context.Vendas se plural, context.Venda se singular)
                 context.Venda.AddRange(novasVendas);
                 Console.WriteLine($"Adicionadas {novasVendas.Count} vendas.");
             }
 
             if (baixasEstoque.Any())
             {
-                // Use o DbSet correto para Estoque_Prod_Padaria (context.EstoquesProdPadaria se plural, context.Estoque_Prod_Padaria se singular)
                 context.Estoque_Prod_Padaria.AddRange(baixasEstoque);
                 Console.WriteLine($"Adicionadas {baixasEstoque.Count} baixas de estoque relacionadas às vendas.");
             }
