@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             comboBox1 = new ComboBox();
@@ -42,10 +42,18 @@
             textBox2 = new TextBox();
             vendaBindingSource = new BindingSource(components);
             dataGridViewItensVenda = new DataGridView();
+            itemVendaBindingSource = new BindingSource(components);
             lblTotalVenda = new Label();
             label5 = new Label();
+            button2 = new Button();
+            codigoProdutoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomeProdutoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            quantidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            precoUnitarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            subtotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewItensVenda).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)itemVendaBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -125,38 +133,46 @@
             // dataGridViewItensVenda
             // 
             dataGridViewItensVenda.AllowUserToResizeRows = false;
+            dataGridViewItensVenda.AutoGenerateColumns = false;
             dataGridViewItensVenda.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewItensVenda.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewItensVenda.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("JetBrains Mono", 16F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridViewItensVenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewItensVenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewItensVenda.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("JetBrains Mono", 16F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridViewItensVenda.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewItensVenda.Columns.AddRange(new DataGridViewColumn[] { codigoProdutoDataGridViewTextBoxColumn, nomeProdutoDataGridViewTextBoxColumn, quantidadeDataGridViewTextBoxColumn, precoUnitarioDataGridViewTextBoxColumn, subtotalDataGridViewTextBoxColumn });
+            dataGridViewItensVenda.DataSource = itemVendaBindingSource;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewItensVenda.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewItensVenda.Location = new Point(222, 192);
             dataGridViewItensVenda.Name = "dataGridViewItensVenda";
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("JetBrains Mono", 16F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridViewItensVenda.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridViewItensVenda.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewItensVenda.Size = new Size(1500, 400);
             dataGridViewItensVenda.TabIndex = 6;
+            dataGridViewItensVenda.CellContentClick += dataGridViewItensVenda_CellContentClick_1;
+            // 
+            // itemVendaBindingSource
+            // 
+            itemVendaBindingSource.DataSource = typeof(Model.ItemVenda);
             // 
             // lblTotalVenda
             // 
@@ -176,11 +192,59 @@
             label5.TabIndex = 101;
             label5.Text = "TOTAL:";
             // 
+            // button2
+            // 
+            button2.Font = new Font("JetBrains Mono", 16F);
+            button2.Location = new Point(104, 730);
+            button2.Name = "button2";
+            button2.Size = new Size(200, 48);
+            button2.TabIndex = 102;
+            button2.Text = "Cancelar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // codigoProdutoDataGridViewTextBoxColumn
+            // 
+            codigoProdutoDataGridViewTextBoxColumn.DataPropertyName = "CodigoProduto";
+            codigoProdutoDataGridViewTextBoxColumn.HeaderText = "Código";
+            codigoProdutoDataGridViewTextBoxColumn.Name = "codigoProdutoDataGridViewTextBoxColumn";
+            codigoProdutoDataGridViewTextBoxColumn.Width = 116;
+            // 
+            // nomeProdutoDataGridViewTextBoxColumn
+            // 
+            nomeProdutoDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            nomeProdutoDataGridViewTextBoxColumn.DataPropertyName = "NomeProduto";
+            nomeProdutoDataGridViewTextBoxColumn.HeaderText = "Produto";
+            nomeProdutoDataGridViewTextBoxColumn.Name = "nomeProdutoDataGridViewTextBoxColumn";
+            // 
+            // quantidadeDataGridViewTextBoxColumn
+            // 
+            quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
+            quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
+            quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            quantidadeDataGridViewTextBoxColumn.Width = 168;
+            // 
+            // precoUnitarioDataGridViewTextBoxColumn
+            // 
+            precoUnitarioDataGridViewTextBoxColumn.DataPropertyName = "PrecoUnitario";
+            precoUnitarioDataGridViewTextBoxColumn.HeaderText = "Preço Un.";
+            precoUnitarioDataGridViewTextBoxColumn.Name = "precoUnitarioDataGridViewTextBoxColumn";
+            precoUnitarioDataGridViewTextBoxColumn.Width = 155;
+            // 
+            // subtotalDataGridViewTextBoxColumn
+            // 
+            subtotalDataGridViewTextBoxColumn.DataPropertyName = "Subtotal";
+            subtotalDataGridViewTextBoxColumn.HeaderText = "Subtotal";
+            subtotalDataGridViewTextBoxColumn.Name = "subtotalDataGridViewTextBoxColumn";
+            subtotalDataGridViewTextBoxColumn.ReadOnly = true;
+            subtotalDataGridViewTextBoxColumn.Width = 142;
+            // 
             // RVenda
             // 
             AutoScaleDimensions = new SizeF(21F, 47F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2400, 1061);
+            Controls.Add(button2);
             Controls.Add(label5);
             Controls.Add(lblTotalVenda);
             Controls.Add(dataGridViewItensVenda);
@@ -196,8 +260,10 @@
             Margin = new Padding(9);
             Name = "RVenda";
             Text = "Venda";
+            Load += RVenda_Load_1;
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewItensVenda).EndInit();
+            ((System.ComponentModel.ISupportInitialize)itemVendaBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -216,5 +282,12 @@
         private DataGridView dataGridViewItensVenda;
         private Label lblTotalVenda;
         private Label label5;
+        private BindingSource itemVendaBindingSource;
+        private Button button2;
+        private DataGridViewTextBoxColumn codigoProdutoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomeProdutoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn precoUnitarioDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn subtotalDataGridViewTextBoxColumn;
     }
 }

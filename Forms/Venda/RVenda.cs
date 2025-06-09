@@ -22,9 +22,8 @@ namespace WindowsForm_Padaria.Forms.Venda
             pps = new Padaria_Produto_Service();
             InitializeComponent();
             GetProdutos();
-            itensVendaAtual = new List<ItemVenda>(); 
-            ConfigurarDataGridViewItensVenda(); 
-            AtualizarDataGridViewItensVenda(); 
+            itensVendaAtual = new List<ItemVenda>();
+            AtualizarDataGridViewItensVenda();
             CalcularTotalVenda();
         }
 
@@ -140,81 +139,83 @@ namespace WindowsForm_Padaria.Forms.Venda
 
             AtualizarDataGridViewItensVenda();
 
-            textBox2.Clear(); 
+            textBox2.Clear();
             txtQuantidade.Text = "1";
             comboBox1.SelectedIndex = -1;
-            textBox2.Focus(); 
-        }
-
-        private void ConfigurarDataGridViewItensVenda()
-        {
-            dataGridViewItensVenda.AutoGenerateColumns = false;
-            dataGridViewItensVenda.Columns.Clear();
-
-            dataGridViewItensVenda.Columns.Add(new DataGridViewTextBoxColumn() { Name = "colCodigoProduto", HeaderText = "Código", DataPropertyName = "CodigoProduto", ReadOnly = true });
-            dataGridViewItensVenda.Columns.Add(new DataGridViewTextBoxColumn() { Name = "colNomeProduto", HeaderText = "Produto", DataPropertyName = "NomeProduto", ReadOnly = true, AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
-            dataGridViewItensVenda.Columns.Add(new DataGridViewTextBoxColumn() { Name = "colQuantidade", HeaderText = "Qtd.", DataPropertyName = "Quantidade", ReadOnly = true });
-            dataGridViewItensVenda.Columns.Add(new DataGridViewTextBoxColumn() { Name = "colPrecoUnitario", HeaderText = "Preço", DataPropertyName = "PrecoUnitario", ReadOnly = true, DefaultCellStyle = { Format = "C2", FormatProvider = new System.Globalization.CultureInfo("pt-BR") } });
-            dataGridViewItensVenda.Columns.Add(new DataGridViewTextBoxColumn() { Name = "colSubtotal", HeaderText = "Subtotal", DataPropertyName = "Subtotal", ReadOnly = true, DefaultCellStyle = { Format = "C2", FormatProvider = new System.Globalization.CultureInfo("pt-BR") } });
-
-            DataGridViewButtonColumn btnRemove = new DataGridViewButtonColumn();
-            btnRemove.HeaderText = "Remover";
-            btnRemove.Text = "X";
-            btnRemove.UseColumnTextForButtonValue = true; 
-            btnRemove.Name = "btnRemoverItem";
-            dataGridViewItensVenda.Columns.Add(btnRemove);
+            textBox2.Focus();
         }
 
         private void AtualizarDataGridViewItensVenda()
         {
-            dataGridViewItensVenda.DataSource = null; 
+            dataGridViewItensVenda.DataSource = null;
             dataGridViewItensVenda.DataSource = itensVendaAtual;
-            CalcularTotalVenda(); 
+            CalcularTotalVenda();
         }
 
         private void CalcularTotalVenda()
         {
             decimal total = itensVendaAtual.Sum(item => item.Subtotal);
-            lblTotalVenda.Text = total.ToString("C2", new System.Globalization.CultureInfo("pt-BR")); 
+            lblTotalVenda.Text = total.ToString("C2", new System.Globalization.CultureInfo("pt-BR"));
         }
 
-        private void dataGridViewItensVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+        private void RVenda_Load(object sender, EventArgs e)
         {
-            // 1. Verifica se o clique foi na coluna do botão "Remover"
-            //    e se foi em uma linha de dados (não no cabeçalho da coluna).
-            if (e.ColumnIndex == dataGridViewItensVenda.Columns["btnRemoverItem"].Index && e.RowIndex >= 0)
+            GetProdutos();
+        }
+
+        private void RVenda_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewItensVenda_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica se o clique foi dentro de uma célula válida
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            // Verifica se clicou na coluna do botão "Remover"
+            if (dataGridViewItensVenda.Columns[e.ColumnIndex].Name == "btnRemoverItem")
             {
-                // 2. Opcional: Confirmar a remoção com o usuário
+                if (e.RowIndex >= itensVendaAtual.Count)
+                {
+                    // Índice da linha é inválido para a lista de itens
+                    MessageBox.Show("Erro interno: índice fora da lista de itens da venda.");
+                    return;
+                }
+
+                // Confirmação da exclusão
                 DialogResult confirmacao = MessageBox.Show(
-                    "Tem certeza que deseja remover este item da venda?",
+                    "Deseja realmente remover este item da venda?",
                     "Confirmar Remoção",
                     MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                );
+                    MessageBoxIcon.Question);
 
                 if (confirmacao == DialogResult.Yes)
                 {
-                    // 3. Obtém o objeto ItemVenda da linha clicada
-                    //    DataBoundItem retorna o objeto que está vinculado a esta linha.
-                    ItemVenda itemParaRemover = dataGridViewItensVenda.Rows[e.RowIndex].DataBoundItem as ItemVenda;
-
-                    if (itemParaRemover != null)
+                    try
                     {
-                        // 4. Remove o item da lista em memória (itensVendaAtual)
-                        itensVendaAtual.Remove(itemParaRemover);
-
-                        // 5. Atualiza o DataGridView para refletir a remoção
-                        AtualizarDataGridViewItensVenda();
-
-                        MessageBox.Show("Item removido da venda com sucesso!", "Remoção Concluída", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var item = dataGridViewItensVenda.Rows[e.RowIndex].DataBoundItem as ItemVenda;
+                        if (item != null)
+                        {
+                            itensVendaAtual.Remove(item);
+                            AtualizarDataGridViewItensVenda();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Erro ao remover item: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
         }
 
-        private void RVenda_Load(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            GetProdutos();
+            itensVendaAtual.Clear();
+            AtualizarDataGridViewItensVenda();
         }
     }
 }
