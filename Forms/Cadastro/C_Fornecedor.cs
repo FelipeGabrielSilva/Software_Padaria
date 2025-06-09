@@ -43,19 +43,26 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Fornecedor f = new Fornecedor
+            if (cmbPagamento.SelectedIndex != -1)
             {
-                Nome = txtNome.Text,
-                Email = txtEmail.Text,
-                CNPJ = txtCnpj.Text,
-                Telefone = txtTelefone.Text,
-                Endereco = txtEndereco.Text,
-                Bairro = txtBairro.Text,
-                NumeroEndereco = txtNumero.Text,
-                PagamentoId = (int)cmbPagamento.SelectedValue,
-            };
+                Fornecedor f = new Fornecedor
+                {
+                    Nome = txtNome.Text,
+                    Email = txtEmail.Text,
+                    CNPJ = txtCnpj.Text,
+                    Telefone = txtTelefone.Text,
+                    Endereco = txtEndereco.Text,
+                    Bairro = txtBairro.Text,
+                    NumeroEndereco = txtNumero.Text,
+                    PagamentoId = (int)cmbPagamento.SelectedValue,
+                };
 
-            fs.Criar(f);
+                fs.Criar(f);
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma forma de pagamento.", "Erro ao cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -72,7 +79,8 @@ namespace WindowsForm_Padaria.Forms.Cadastro
         {
             cmbPagamento.Items.Clear();
             cmbPagamento.ValueMember = "Id";
-            cmbPagamento.DisplayMember = "Descricao";
+            cmbPagamento.DisplayMember = "Nome";
+            cmbPagamento.SelectedIndex = -1;
             cmbPagamento.DataSource = ps.ListarTodos();
         }
     }

@@ -51,6 +51,10 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 
                 fps.Criar(fp);
             }
+            else
+            {
+                MessageBox.Show("Selecione um fornecedor.", "Erro ao cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

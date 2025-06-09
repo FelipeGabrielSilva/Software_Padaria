@@ -43,12 +43,12 @@
             comboBox1 = new ComboBox();
             pictureBox1 = new PictureBox();
             dataGridView2 = new DataGridView();
-            estoqueProdFornecedorBindingSource1 = new BindingSource(components);
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             Fornecedor = new DataGridViewTextBoxColumn();
             Produto = new DataGridViewTextBoxColumn();
             Movimentacao = new DataGridViewTextBoxColumn();
+            estoqueProdFornecedorBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)estoqueProdFornecedorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -89,7 +89,7 @@
             // 
             // button3
             // 
-            button3.Font = new Font("JetBrains Mono", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.Font = new Font("JetBrains Mono", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.Location = new Point(12, 86);
             button3.Name = "button3";
             button3.Size = new Size(200, 48);
@@ -101,7 +101,7 @@
             // button4
             // 
             button4.Font = new Font("JetBrains Mono", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(291, 86);
+            button4.Location = new Point(290, 86);
             button4.Name = "button4";
             button4.Size = new Size(200, 48);
             button4.TabIndex = 20;
@@ -112,7 +112,7 @@
             // button5
             // 
             button5.Font = new Font("JetBrains Mono", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.Location = new Point(567, 86);
+            button5.Location = new Point(570, 86);
             button5.Name = "button5";
             button5.Size = new Size(200, 48);
             button5.TabIndex = 21;
@@ -124,16 +124,16 @@
             // 
             comboBox1.Font = new Font("JetBrains Mono", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(15, 147);
+            comboBox1.Location = new Point(12, 150);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(476, 37);
+            comboBox1.Size = new Size(480, 37);
             comboBox1.TabIndex = 22;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(497, 141);
+            pictureBox1.Location = new Point(500, 140);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(50, 50);
             pictureBox1.TabIndex = 23;
@@ -164,11 +164,11 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView2.Location = new Point(12, 217);
+            dataGridView2.Location = new Point(12, 210);
             dataGridView2.Name = "dataGridView2";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 12F);
+            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 16F);
             dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -177,10 +177,6 @@
             dataGridView2.Size = new Size(1519, 156);
             dataGridView2.TabIndex = 24;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
-            // 
-            // estoqueProdFornecedorBindingSource1
-            // 
-            estoqueProdFornecedorBindingSource1.DataSource = typeof(Model.Estoque_Prod_Fornecedor);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -217,6 +213,10 @@
             Movimentacao.Name = "Movimentacao";
             Movimentacao.ReadOnly = true;
             Movimentacao.Width = 194;
+            // 
+            // estoqueProdFornecedorBindingSource1
+            // 
+            estoqueProdFornecedorBindingSource1.DataSource = typeof(Model.Estoque_Prod_Fornecedor);
             // 
             // E_Prod_Fornecedor
             // 

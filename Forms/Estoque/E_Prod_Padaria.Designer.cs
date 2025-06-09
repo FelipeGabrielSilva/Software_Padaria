@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(E_Prod_Padaria));
             label1 = new Label();
             button1 = new Button();
@@ -58,7 +59,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(727, 58);
+            label1.Size = new Size(587, 47);
             label1.TabIndex = 0;
             label1.Text = "Estoque - Produto (Padaria)";
             // 
@@ -87,27 +88,35 @@
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = SystemColors.Control;
-            dataGridViewCellStyle13.Font = new Font("JetBrains Mono", 16F);
-            dataGridViewCellStyle13.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, produtoIdDataGridViewTextBoxColumn, tipoDataGridViewTextBoxColumn, quantidadeDataGridViewTextBoxColumn, dataDataGridViewTextBoxColumn, descricaoDataGridViewTextBoxColumn });
             dataGridView1.DataSource = estoqueProdPadariaBindingSource;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = SystemColors.Window;
-            dataGridViewCellStyle14.Font = new Font("JetBrains Mono", 10F);
-            dataGridViewCellStyle14.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
-            dataGridView1.Location = new Point(12, 250);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.Location = new Point(12, 210);
             dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("JetBrains Mono", 16F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1500, 500);
             dataGridView1.TabIndex = 13;
@@ -118,7 +127,7 @@
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 76;
+            idDataGridViewTextBoxColumn.Width = 64;
             // 
             // produtoIdDataGridViewTextBoxColumn
             // 
@@ -126,7 +135,7 @@
             produtoIdDataGridViewTextBoxColumn.HeaderText = "ProdutoId";
             produtoIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             produtoIdDataGridViewTextBoxColumn.Name = "produtoIdDataGridViewTextBoxColumn";
-            produtoIdDataGridViewTextBoxColumn.Width = 188;
+            produtoIdDataGridViewTextBoxColumn.Width = 155;
             // 
             // tipoDataGridViewTextBoxColumn
             // 
@@ -134,7 +143,7 @@
             tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             tipoDataGridViewTextBoxColumn.MinimumWidth = 6;
             tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            tipoDataGridViewTextBoxColumn.Width = 108;
+            tipoDataGridViewTextBoxColumn.Width = 90;
             // 
             // quantidadeDataGridViewTextBoxColumn
             // 
@@ -142,7 +151,7 @@
             quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
             quantidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
             quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
-            quantidadeDataGridViewTextBoxColumn.Width = 204;
+            quantidadeDataGridViewTextBoxColumn.Width = 168;
             // 
             // dataDataGridViewTextBoxColumn
             // 
@@ -150,7 +159,7 @@
             dataDataGridViewTextBoxColumn.HeaderText = "Data";
             dataDataGridViewTextBoxColumn.MinimumWidth = 6;
             dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            dataDataGridViewTextBoxColumn.Width = 108;
+            dataDataGridViewTextBoxColumn.Width = 90;
             // 
             // descricaoDataGridViewTextBoxColumn
             // 
@@ -158,7 +167,7 @@
             descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
             descricaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            descricaoDataGridViewTextBoxColumn.Width = 188;
+            descricaoDataGridViewTextBoxColumn.Width = 155;
             // 
             // estoqueProdPadariaBindingSource
             // 
@@ -178,7 +187,7 @@
             // button4
             // 
             button4.Font = new Font("JetBrains Mono", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(288, 86);
+            button4.Location = new Point(290, 86);
             button4.Name = "button4";
             button4.Size = new Size(200, 48);
             button4.TabIndex = 15;
@@ -189,7 +198,7 @@
             // button5
             // 
             button5.Font = new Font("JetBrains Mono", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.Location = new Point(564, 86);
+            button5.Location = new Point(570, 86);
             button5.Name = "button5";
             button5.Size = new Size(200, 48);
             button5.TabIndex = 16;
@@ -201,16 +210,16 @@
             // 
             comboBox1.Font = new Font("JetBrains Mono", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 151);
+            comboBox1.Location = new Point(12, 150);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(476, 44);
+            comboBox1.Size = new Size(480, 37);
             comboBox1.TabIndex = 17;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(494, 145);
+            pictureBox1.Location = new Point(500, 140);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(50, 50);
             pictureBox1.TabIndex = 18;
@@ -219,7 +228,7 @@
             // 
             // E_Prod_Padaria
             // 
-            AutoScaleDimensions = new SizeF(26F, 57F);
+            AutoScaleDimensions = new SizeF(21F, 47F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(1924, 1055);

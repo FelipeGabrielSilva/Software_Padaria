@@ -33,7 +33,7 @@ namespace WindowsForm_Padaria.Services
             _context.Padaria_Produto.Add(pp);
             _context.SaveChanges();
 
-            MessageBox.Show($"A categoria {pp.Nome} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"O produto {pp.Nome} foi criada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

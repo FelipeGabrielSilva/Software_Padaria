@@ -38,6 +38,10 @@ namespace WindowsForm_Padaria.Forms.Cadastro
 
                 pps.Criar(p);
             }
+            else
+            {
+                MessageBox.Show("Selecione uma categoria.", "Erro ao cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

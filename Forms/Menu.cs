@@ -205,5 +205,17 @@ namespace WindowsForm_Padaria.Forms
             panel1.Controls.Add(dtpp);
             dtpp.Show();
         }
+
+        private void fornecedorProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            DataView_FornecedorProduto dtfp = new DataView_FornecedorProduto();
+            dtfp.TopLevel = false;
+            dtfp.FormBorderStyle = FormBorderStyle.None;
+            dtfp.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(dtfp);
+            dtfp.Show();
+        }
     }
 }
